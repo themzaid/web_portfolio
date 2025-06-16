@@ -53,9 +53,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-10 pt-6 border-t border-border/40 text-center text-sm text-muted-foreground">
-          <p>
-            © {new Date().getFullYear()} Mohammed Zaid. All rights reserved.
-          </p>
+          <p>v25.1 © {new Date().getFullYear()} by Mohammed Zaid</p>
         </div>
       </div>
     </footer>
