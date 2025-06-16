@@ -103,8 +103,8 @@ export const Navbar = () => {
                     to={item.path}
                     className={({ isActive }) =>
                       cn(
-                        "text-sm font-medium relative px-1 py-1.5 transition-colors",
-                        "after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300",
+                        "text-sm font-medium font-playfair relative px-1 py-1.5 transition-colors",
+                        "after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-0 after:bg-primary after:transition-all after:duration-300",
                         isActive
                           ? "after:w-full text-primary"
                           : "text-muted-foreground hover:text-primary hover:after:w-full"
@@ -134,13 +134,24 @@ export const Navbar = () => {
             </div>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button with Custom 2-Line Animation */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden relative z-20 p-1 text-primary"
+            className="sm:hidden relative z-20 p-2 w-6 h-8 flex flex-col justify-center items-center"
             aria-label={isOpen ? "Close menu" : "Open menu"}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            <span
+              className={cn(
+                "block h-0.5 w-5 bg-primary transition-all duration-500 ease-in-out",
+                isOpen ? "rotate-45 translate-y-0.6" : "-translate-y-[3px]"
+              )}
+            />
+            <span
+              className={cn(
+                "block h-0.5 w-5 bg-primary transition-all duration-500 ease-in-out",
+                isOpen ? "-rotate-45 -translate-y-0.5" : "translate-y-[4px]"
+              )}
+            />
           </button>
         </nav>
       </div>
@@ -154,7 +165,7 @@ export const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-background/100 backdrop-blur-md flex flex-col pt-20 px-6 overflow-auto"
+            className="fixed inset-0 bg-background/100 backdrop-blur-md flex flex-col pt-20 px-6 overflow-auto "
             style={{
               position: "fixed",
               top: 0,
@@ -181,7 +192,7 @@ export const Navbar = () => {
                     to={item.path}
                     className={({ isActive }) =>
                       cn(
-                        "text-2xl font-medium transition-colors",
+                        "text-2xl font-medium font-playfair transition-colors",
                         isActive
                           ? "text-primary"
                           : "text-muted-foreground hover:text-primary"
