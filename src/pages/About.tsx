@@ -1,0 +1,255 @@
+import { motion } from "framer-motion";
+import Layout from "@/components/layout/Layout";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { ArrowRight, Calendar, Code, Monitor, Palette } from "lucide-react";
+
+const About = () => {
+  const timeline = [
+    {
+      year: "Mar 2025 - Present",
+      role: "QA Analyst",
+      company: "Pleximus Inc - Mumbai",
+      description:
+        "Leading frontend development for enterprise clients, implementing modern web technologies and mentoring junior developers.",
+    },
+    {
+      year: "Apr 2020 - Jul 2021",
+      role: "Web Designer & Developer",
+      company: "Freelance - Remote",
+      description:
+        "Designed and created websites and logos based on client requirements.",
+    },
+    {
+      year: "Jan 2020 - Apr 2020",
+      role: "Web Development Intern",
+      company: "Blue LLC - Dubai",
+      description:
+        "Led the ux/ui design for employee management system as the sole designer and frontend developer. I designed and built a custom User Interface for Data Visualisation, CMS, Dashboard and UI Components.",
+    },
+    {
+      year: "Nov 2018 - April 2019",
+      role: "Research & Development Intern",
+      company: "The Assembly - Dubai",
+      description:
+        " Researched, developed and conducted workshops under the following topics: Introduction to Web Virtual Reality with A-Frame, Developed an object tracking game using OpenCV in Unity, Developed a 3D survival shooter game in Unity, Built a ToDo App using ElectronJS",
+    },
+  ];
+
+  const services = [
+    {
+      icon: Code,
+      title: "Frontend Development",
+      description:
+        "Building responsive, accessible, and performant web applications using modern JavaScript frameworks.",
+    },
+    {
+      icon: Palette,
+      title: "UI/UX Design",
+      description:
+        "Creating intuitive and engaging user interfaces with a focus on usability and aesthetic appeal.",
+    },
+    {
+      icon: Monitor,
+      title: "Interactive Experiences",
+      description:
+        "Developing interactive web experiences with animations and micro-interactions to enhance user engagement.",
+    },
+  ];
+
+  return (
+    <Layout>
+      {/* Hero Section */}
+      <section className="pt-16 pb-24 px-2">
+        <div className="container mx-auto max-w-5xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <span className="px-4 py-1.5 text-xs font-medium rounded-full bg-secondary text-secondary-foreground inline-block mb-4">
+                ABOUT ME
+              </span>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-playfair">
+                Hi, I'm Mohammed Zaid
+              </h1>
+              <p className="text-muted-foreground mb-6">
+                A frontend developer and an independent designer focused on
+                functional design and amazing user experiences.
+              </p>
+              <p className="text-muted-foreground mb-6">
+                With over 5 years of experience in the industry, I've had the
+                privilege of working with a diverse range of clients, from
+                startups to large enterprises, helping them achieve their
+                digital goals through thoughtful design and clean code.
+              </p>
+              <div className="flex flex-wrap gap-4 mt-8">
+                <Button asChild>
+                  <Link to="/contact" className="flex items-center">
+                    Contact me <ArrowRight size={16} className="ml-2" />
+                  </Link>
+                </Button>
+                <Button variant="outline" asChild>
+                  <a
+                    href="https://drive.google.com/file/d/1unD0erosPpxqZL_fulFAxKKVSSv-sAp5/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Download Resume
+                  </a>
+                </Button>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="relative"
+            >
+              <div className="aspect-square overflow-hidden rounded-3xl border border-border/60 shadow-sm">
+                <img
+                  src="src/assets/self_portrait_bw.jpg"
+                  alt="Mohammed Zaid - Frontend Developer and Designer"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-5 -right-5 -z-10 h-full w-full rounded-3xl border border-border/60 bg-background"></div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-24 px-2 bg-secondary/50">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="px-4 py-1.5 text-xs font-medium rounded-full bg-secondary text-secondary-foreground inline-block mb-4">
+              SERVICES
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-playfair">
+              What I Do
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              I offer specialized frontend development services focused on
+              creating exceptional digital experiences.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-card border border-border/60 rounded-lg p-8 hover:border-border hover:shadow-sm transition-all duration-300"
+              >
+                <div className="p-3 bg-secondary inline-block rounded-lg mb-4">
+                  <service.icon className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+                <p className="text-muted-foreground text-sm">
+                  {service.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section className="py-24 px-2">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="px-4 py-1.5 text-xs font-medium rounded-full bg-secondary text-secondary-foreground inline-block mb-4">
+              EXPERIENCE
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-playfair">
+              My Journey
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              A timeline of my professional experience in the industry.
+            </p>
+          </motion.div>
+
+          <div className="space-y-8">
+            {timeline.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="flex flex-col md:flex-row gap-6 md:gap-10"
+              >
+                <div className="md:w-1/4 flex items-start">
+                  <div className="flex items-center">
+                    <div className="p-2 rounded-full bg-secondary flex-shrink-0">
+                      <Calendar className="h-4 w-4 text-primary" />
+                    </div>
+                    <div className="ml-3">
+                      <span className="text-sm font-medium">{item.year}</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="md:w-3/4 bg-card border border-border/60 rounded-lg p-6 hover:border-border hover:shadow-sm transition-all duration-300">
+                  <h3 className="text-lg font-semibold mb-1">{item.role}</h3>
+                  <p className="text-primary mb-3 text-sm">{item.company}</p>
+                  <p className="text-muted-foreground text-sm">
+                    {item.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 px-2 bg-primary text-primary-foreground">
+        <div className="container mx-auto max-w-4xl text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-playfair">
+              Let's Work Together
+            </h2>
+            <p className="mb-8 max-w-2xl mx-auto opacity-80">
+              I'm always interested in new opportunities and collaborations.
+              Whether you have a project in mind or just want to connect, I'd
+              love to hear from you.
+            </p>
+            <Button
+              asChild
+              variant="secondary"
+              size="lg"
+              className="rounded-full"
+            >
+              <Link to="/contact">Get in Touch</Link>
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+    </Layout>
+  );
+};
+
+export default About;
