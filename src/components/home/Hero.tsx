@@ -31,7 +31,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-balance font-playfair"
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-normal mb-6 tracking-tight text-balance font-playfair"
           >
             Complex challenges. <br /> Simple solutions.
           </motion.h1>

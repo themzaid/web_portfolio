@@ -10,7 +10,8 @@ const Footer = () => {
               Mohammed Zaid
             </span>
             <p className="text-sm text-muted-foreground mt-2 text-balance">
-              Creating beautiful digital experiences through code and design.
+              Creating beautiful digital experiences by bridging the gap between
+              design and code.
             </p>
           </div>
 
