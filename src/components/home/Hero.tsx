@@ -43,7 +43,7 @@ const Hero = () => {
             className="text-md page-description max-w-2xl mb-10 text-balance"
           >
             I'm Mohammed Zaid, a frontend developer with a good eye for design,
-            focused on delivering functional, and user-centered digital
+            focused on delivering functional and user-centric digital
             experiences.
           </motion.p>
 
