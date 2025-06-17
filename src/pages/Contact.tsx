@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import Layout from "@/components/layout/Layout";
 import ContactForm from "@/components/contact/ContactForm";
 import ContactInfo from "@/components/contact/ContactInfo";
-import { Github, Codepen, Linkedin } from "lucide-react";
+import { Codepen } from "lucide-react";
+import { GitHub, LinkedIn } from "@mui/icons-material";
 
 const Contact = () => {
   return (
@@ -15,7 +16,7 @@ const Contact = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <span className="px-4 py-1.5 text-xs font-medium rounded-full bg-secondary text-secondary-foreground inline-block mb-4">
+            <span className="px-4 py-1.5 text-xs font-medium font-mono rounded-full bg-primary/5 text-secondary-foreground inline-block mb-4">
               CONTACT
             </span>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-playfair">
@@ -28,13 +29,13 @@ const Contact = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+          <div className="grid grid-cols-1 md:grid-cols-[3fr_5fr] lg:grid-cols-[3fr_4fr] gap-12 md:gap-8 lg:gap-20">
             <div>
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-2xl font-semibold mb-6 font-playfair"
+                className="text-2xl font-semibold mb-6 font-playfair max-w-lg md:max-w-xl mx-auto"
               >
                 Send Me a Message
               </motion.h2>
@@ -46,7 +47,7 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-2xl font-semibold mb-6 font-playfair"
+                className="text-2xl font-semibold mb-6 font-playfair max-w-lg md:max-w-xl mx-auto"
               >
                 Contact Information
               </motion.h2>
@@ -64,28 +65,28 @@ const Contact = () => {
                     href="https://github.com/themzaid"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 bg-card border border-border/60 rounded-full hover:border-border hover:shadow-sm transition-all duration-300"
+                    className="p-2.5 bg-card border border-border/60 rounded-full hover:border-border hover:shadow-sm transition-all duration-300"
                     aria-label="GitHub"
                   >
-                    <Github size={20} />
+                    <GitHub fontSize="medium" style={{ fontSize: 28 }} />
                   </a>
                   <a
                     href="https://codepen.io/themzaid"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 bg-card border border-border/60 rounded-full hover:border-border hover:shadow-sm transition-all duration-300"
+                    className="p-2.5 bg-card border border-border/60 rounded-full hover:border-border hover:shadow-sm transition-all duration-300"
                     aria-label="CodePen"
                   >
-                    <Codepen size={20} />
+                    <Codepen size={28} />
                   </a>
                   <a
                     href="https://linkedin.com/in/themzaid"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 bg-card border border-border/60 rounded-full hover:border-border hover:shadow-sm transition-all duration-300"
+                    className="p-2.5 bg-card border border-border/60 rounded-full hover:border-border hover:shadow-sm transition-all duration-300"
                     aria-label="LinkedIn"
                   >
-                    <Linkedin size={20} />
+                    <LinkedIn fontSize="medium" style={{ fontSize: 28 }} />
                   </a>
                 </div>
               </motion.div>
