@@ -1,6 +1,6 @@
-
 import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 interface PageTransitionProps {
   children: ReactNode;
@@ -9,10 +9,17 @@ interface PageTransitionProps {
 const variants = {
   hidden: { opacity: 0, y: 20 },
   enter: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -20 }
+  exit: { opacity: 0, y: -20 },
 };
 
 const PageTransition = ({ children }: PageTransitionProps) => {
+  const { pathname } = useLocation();
+
+  // Reset scroll position when the route changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <motion.main
       variants={variants}

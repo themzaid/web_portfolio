@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { Github, Codepen, Linkedin, Menu, X } from "lucide-react";
+import { Codepen, Menu, X } from "lucide-react";
+import { GitHub, LinkedIn } from "@mui/icons-material";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -70,9 +71,13 @@ export const Navbar = () => {
 
   // Social links
   const socialLinks = [
-    { icon: Github, link: "https://github.com", label: "GitHub" },
-    { icon: Codepen, link: "https://codepen.io", label: "CodePen" },
-    { icon: Linkedin, link: "https://linkedin.com", label: "LinkedIn" },
+    { icon: GitHub, link: "https://github.com/themzaid", label: "GitHub" },
+    { icon: Codepen, link: "https://codepen.io/themzaid", label: "CodePen" },
+    {
+      icon: LinkedIn,
+      link: "https://linkedin.com/in//themzaid",
+      label: "LinkedIn",
+    },
   ];
 
   return (
@@ -89,13 +94,14 @@ export const Navbar = () => {
           {/* Logo/Brand */}
           <NavLink
             to="/"
-            className="text-2xl font-bold tracking-tight relative z-20"
+            className="text-2xl font-normal tracking-normal relative z-20"
           >
-            <span className="font-playfair">Mohammed Zaid</span>
+            <span className="font-playfair hidden sm:block">Mohammed Zaid</span>
+            <span className="font-playfair sm:hidden">MZ</span>
           </NavLink>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden sm:flex items-center space-x-8">
             <ul className="flex space-x-6">
               {navItems.map((item) => (
                 <li key={item.path}>
@@ -103,8 +109,8 @@ export const Navbar = () => {
                     to={item.path}
                     className={({ isActive }) =>
                       cn(
-                        "text-sm font-medium font-playfair relative px-1 py-1.5 transition-colors",
-                        "after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-0 after:bg-primary after:transition-all after:duration-300",
+                        "text-sm font-normal relative px-1 py-1.5 transition-colors font-playfair tracking-wide",
+                        "after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-0 after:bg-[#222] after:transition-all after:duration-300",
                         isActive
                           ? "after:w-full text-primary"
                           : "text-muted-foreground hover:text-primary hover:after:w-full"
@@ -118,7 +124,7 @@ export const Navbar = () => {
             </ul>
 
             {/* Social Links */}
-            <div className="flex items-center space-x-4">
+            <div className="hidden md:flex items-center space-x-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -165,7 +171,7 @@ export const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-background/100 backdrop-blur-md flex flex-col pt-20 px-6 overflow-auto "
+            className="fixed inset-0 bg-background/100 backdrop-blur-md flex flex-col pt-20 px-6 overflow-auto"
             style={{
               position: "fixed",
               top: 0,
@@ -180,7 +186,7 @@ export const Navbar = () => {
               paddingTop: "5rem",
             }}
           >
-            <ul className="flex flex-col space-y-5 items-center mt-auto">
+            <ul className="flex flex-col space-y-7 items-center mt-auto">
               {navItems.map((item) => (
                 <motion.li
                   key={item.path}
@@ -192,7 +198,7 @@ export const Navbar = () => {
                     to={item.path}
                     className={({ isActive }) =>
                       cn(
-                        "text-2xl font-medium font-playfair transition-colors",
+                        "text-3xl font-normal transition-colors font-playfair",
                         isActive
                           ? "text-primary"
                           : "text-muted-foreground hover:text-primary"
@@ -221,7 +227,7 @@ export const Navbar = () => {
                   aria-label={social.label}
                   className="text-muted-foreground hover:text-primary transition-colors p-2"
                 >
-                  <social.icon size={24} />
+                  <social.icon sx={{ fontSize: 24 }} />
                 </a>
               ))}
             </motion.div>
