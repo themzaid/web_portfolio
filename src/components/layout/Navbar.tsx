@@ -1,10 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { Codepen, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { IoLogoCodepen } from "react-icons/io";
 import { GitHub, LinkedIn } from "@mui/icons-material";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
+
+const ICON_SIZE = 26;
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -71,10 +74,18 @@ export const Navbar = () => {
 
   // Social links
   const socialLinks = [
-    { icon: GitHub, link: "https://github.com/themzaid", label: "GitHub" },
-    { icon: Codepen, link: "https://codepen.io/themzaid", label: "CodePen" },
     {
-      icon: LinkedIn,
+      icon: (props) => <GitHub {...props} size={ICON_SIZE} />,
+      link: "https://github.com/themzaid",
+      label: "GitHub",
+    },
+    {
+      icon: (props) => <IoLogoCodepen {...props} size={ICON_SIZE} />,
+      link: "https://codepen.io/themzaid",
+      label: "CodePen",
+    },
+    {
+      icon: (props) => <LinkedIn {...props} size={ICON_SIZE} />,
       link: "https://linkedin.com/in//themzaid",
       label: "LinkedIn",
     },
@@ -134,7 +145,7 @@ export const Navbar = () => {
                   aria-label={social.label}
                   className="text-muted-foreground hover:text-primary transition-colors duration-200"
                 >
-                  <social.icon size={18} />
+                  {social.icon({})}
                 </a>
               ))}
             </div>
@@ -227,7 +238,7 @@ export const Navbar = () => {
                   aria-label={social.label}
                   className="text-muted-foreground hover:text-primary transition-colors p-2"
                 >
-                  <social.icon sx={{ fontSize: 24 }} />
+                  {social.icon({})}
                 </a>
               ))}
             </motion.div>

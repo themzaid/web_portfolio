@@ -1,4 +1,7 @@
-import { Github, Codepen, Linkedin, Mail } from "lucide-react";
+import { IoLogoCodepen } from "react-icons/io";
+import { GitHub, LinkedIn, Mail } from "@mui/icons-material";
+
+const ICON_SIZE = 28;
 
 const Footer = () => {
   return (
@@ -23,7 +26,7 @@ const Footer = () => {
               aria-label="GitHub"
               className="text-muted-foreground hover:text-primary transition-colors duration-200"
             >
-              <Github size={20} />
+              <GitHub size={ICON_SIZE} />
             </a>
             <a
               href="https://codepen.io/themzaid"
@@ -32,7 +35,7 @@ const Footer = () => {
               aria-label="CodePen"
               className="text-muted-foreground hover:text-primary transition-colors duration-200"
             >
-              <Codepen size={20} />
+              <IoLogoCodepen size={ICON_SIZE} />
             </a>
             <a
               href="https://linkedin.com/in/themzaid"
@@ -41,20 +44,20 @@ const Footer = () => {
               aria-label="LinkedIn"
               className="text-muted-foreground hover:text-primary transition-colors duration-200"
             >
-              <Linkedin size={20} />
+              <LinkedIn size={ICON_SIZE} />
             </a>
             <a
               href="mailto:themzaid@gmail.com"
               aria-label="Email"
               className="text-muted-foreground hover:text-primary transition-colors duration-200"
             >
-              <Mail size={20} />
+              <Mail size={ICON_SIZE} />
             </a>
           </div>
         </div>
 
         <div className="mt-10 pt-6 border-t border-border/40 text-center text-sm text-muted-foreground">
-          <p>v25.1 © {new Date().getFullYear()} by Mohammed Zaid</p>
+          <p>v25.2 © {new Date().getFullYear()} by Mohammed Zaid</p>
         </div>
       </div>
     </footer>
