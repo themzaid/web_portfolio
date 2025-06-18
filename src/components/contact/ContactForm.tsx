@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
-import { Mail, Send, User, FileText } from "lucide-react";
+// import { Mail, Send, User, FileText } from "lucide-react";
+import { Email, Send, Person, Subject } from "@mui/icons-material";
 import { cn } from "@/lib/utils";
+import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -27,12 +29,27 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    // Replace these with your actual EmailJS values
+    const SERVICE_ID = "service_07k7s9s";
+    const TEMPLATE_ID = "template_t53l9ch";
+    const PUBLIC_KEY = "flIspkXa1UMtwUP_R";
+
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        PUBLIC_KEY
+      );
       toast({
         title: "Message sent successfully!",
         description: "I'll get back to you as soon as possible.",
@@ -43,8 +60,19 @@ const ContactForm = () => {
         subject: "",
         message: "",
       });
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      toast({
+        title: "Failed to send message",
+        description:
+          typeof error === "string"
+            ? error
+            : error?.text || "Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (
@@ -52,15 +80,15 @@ const ContactForm = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="w-full max-w-xl mx-auto"
+      className="w-full max-w-lg mx-auto tracking-wide"
     >
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="space-y-2">
           <div className="relative">
-            <User className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
+            <Person className="absolute left-3 top-2.5 text-muted-foreground" />
             <Input
               placeholder="Your Name"
-              className="pl-10"
+              className="pl-10 text-sm font-normal"
               name="name"
               value={formData.name}
               onChange={handleChange}
@@ -71,7 +99,7 @@ const ContactForm = () => {
 
         <div className="space-y-2">
           <div className="relative">
-            <Mail className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
+            <Email className="absolute left-3 top-2.5 text-muted-foreground" />
             <Input
               type="email"
               placeholder="Your Email"
@@ -86,10 +114,13 @@ const ContactForm = () => {
 
         <div className="space-y-2">
           <div className="relative">
-            <FileText className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
+            <Subject
+              sx={{ fontSize: 20 }}
+              className="absolute left-3 top-2.5 text-muted-foreground"
+            />
             <Input
               placeholder="Subject"
-              className="pl-10"
+              className="pl-10 text-sm font-normal"
               name="subject"
               value={formData.subject}
               onChange={handleChange}
@@ -101,7 +132,7 @@ const ContactForm = () => {
         <div className="space-y-2">
           <Textarea
             placeholder="Your Message"
-            className="min-h-[150px] resize-none"
+            className="min-h-[150px] resize-none text-sm font-normal"
             name="message"
             value={formData.message}
             onChange={handleChange}
@@ -125,13 +156,13 @@ const ContactForm = () => {
                 transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                 className="ml-2"
               >
-                <Send size={16} />
+                <Send sx={{ fontSize: 16 }} />
               </motion.div>
             </span>
           ) : (
             <span className="flex items-center">
               Send Message
-              <Send size={16} className="ml-2" />
+              <Send sx={{ fontSize: 16 }} className="ml-2" />
             </span>
           )}
         </Button>
