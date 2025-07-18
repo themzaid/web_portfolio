@@ -86,7 +86,7 @@ export const Navbar = () => {
     },
     {
       icon: (props) => <LinkedIn {...props} size={ICON_SIZE} />,
-      link: "https://linkedin.com/in//themzaid",
+      link: "https://linkedin.com/in/themzaid",
       label: "LinkedIn",
     },
   ];
