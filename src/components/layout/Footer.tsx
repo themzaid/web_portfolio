@@ -5,13 +5,12 @@ const ICON_SIZE = 28;
 
 const Footer = () => {
   return (
-    <footer className="py-6 px-2 border-t border-border/40">
+    // change 0 to 40 fo border to appear if below section is uncommented
+    <footer className="py-6 px-2 border-t border-border/0">
       <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+        {/* <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-col">
-            <span className="font-playfair text-xl font-medium">
-              Mohammed Zaid
-            </span>
+            <span className="font-serif text-xl font-medium">Mohammed Zaid</span>
             <p className="text-sm text-muted-foreground mt-2 text-balance">
               Creating beautiful digital experiences by bridging the gap between
               design and code.
@@ -54,10 +53,11 @@ const Footer = () => {
               <Mail size={ICON_SIZE} />
             </a>
           </div>
-        </div>
+        </div> */}
 
-        <div className="mt-10 pt-6 border-t border-border/40 text-center text-sm text-muted-foreground">
-          <p>v25.2 © {new Date().getFullYear()} by Mohammed Zaid</p>
+        {/*  change mt-0 to 10 when above is uncommented */}
+        <div className="mt-0 pt-6 border-t border-border/40 text-center text-sm text-muted-foreground">
+          <p>v25.3 © {new Date().getFullYear()} by Mohammed Zaid</p>
         </div>
       </div>
     </footer>

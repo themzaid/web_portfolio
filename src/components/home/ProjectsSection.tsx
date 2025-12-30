@@ -71,12 +71,11 @@ const ProjectsSection = () => {
           <span className="section-tag px-4 py-1.5 inline-block mb-4">
             PORTFOLIO
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-playfair">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif">
             Featured Projects
           </h2>
           <p className="page-description max-w-2xl mx-auto text-balance">
-            A selection of my work, showcasing my skills in design, development
-            and interactive user experiences.
+            A selection of my work in the past, showcasing my skills in design and frontend development.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">

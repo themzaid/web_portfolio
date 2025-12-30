@@ -23,7 +23,7 @@ const Hero = () => {
             className="mb-4"
           >
             <span className="section-tag px-4 py-1.5 inline-block">
-              FRONTEND DEVELOPER & DESIGNER
+              Software Development Engineer
             </span>
           </motion.div>
 
@@ -31,9 +31,9 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-normal mb-6 tracking-tight text-balance font-playfair"
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-normal mb-6 tracking-tight text-balance font-serif"
           >
-            Complex challenges. <br /> Simple solutions.
+            Building Scalable <br /> Automation Syatems
           </motion.h1>
 
           <motion.p
@@ -42,9 +42,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-md page-description max-w-2xl mb-10 text-balance"
           >
-            I'm Mohammed Zaid, a frontend developer with a good eye for design,
-            focused on delivering functional and user-centric digital
-            experiences.
+            Software engineer with a background in design, frontend development, and QA, currently focused on building scalable test automation frameworks engineered for long-term growth.
           </motion.p>
 
           <motion.div

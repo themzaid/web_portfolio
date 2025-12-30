@@ -19,7 +19,7 @@ const About = () => {
       role: "QA Analyst",
       company: "Pleximus Inc - Mumbai",
       description:
-        "Software Testing - Manual/Automated. Testing mobile and web applications, writing test cases, and ensuring quality standards. Automating tests using Selenium.",
+        "Manual testing, test automation, and automation framework development for web and mobile applications using Selenium and Appium.",
     },
     {
       year: "Apr 2020 - Jul 2021",
@@ -46,28 +46,28 @@ const About = () => {
 
   const services = [
     {
-      icon: Code,
-      title: "Frontend Development",
-      description:
-        "Building responsive, accessible, and performant web applications using modern JavaScript frameworks.",
-    },
-    {
       icon: Palette,
       title: "UI/UX Design",
       description:
-        "Designing intuitive and engaging user interfaces with core focus on usability, accessibility and functionality.",
+        "Designing intuitive user interfaces with an emphasis on usability, accessibility, and practical interaction patterns that translate well into real-world implementations.",
+    },
+    {
+      icon: Code,
+      title: "Frontend Development",
+      description:
+        "Building clean, responsive, and accessible frontend applications with a strong focus on performance, maintainability, and user experience.",
     },
     {
       icon: Monitor,
-      title: "Interactive Experiences",
+      title: "Automation Engineering",
       description:
-        "Developing interactive web experiences with animations and micro-interactions to enhance user engagement.",
+        "Designing and developing scalable test automation frameworks using software engineering principles to ensure reliability, extensibility, and long-term quality.",
     },
     {
       icon: Award,
-      title: "QA & Testing",
+      title: "QA & Validation",
       description:
-        "Ensuring software quality by resolving issues before release, improving stability, reliability and performance.",
+        "Validating software functionality through structured testing and automation, focusing on stability, regression prevention, and confidence in system behavior.",
     },
   ];
 
@@ -85,18 +85,17 @@ const About = () => {
               <span className="px-4 py-1.5 text-xs font-medium font-mono rounded-full bg-primary/5 text-secondary-foreground inline-block mb-4">
                 ABOUT ME
               </span>
-              <h1 className="text-[28px] tracking-normal md:text-4xl lg:text-5xl font-bold mb-5 font-playfair">
+              <h1 className="text-[28px] tracking-normal md:text-4xl lg:text-5xl font-bold mb-5 font-serif">
                 Hi, I'm Mohammed Zaid
               </h1>
               <p className="text-muted-foreground mb-5">
-                A frontend developer and an independent designer focused on
-                functional design and amazing user experiences.
+                I am a software engineer with over three years of experience building and validating products for clients across diverse domains. My work involves software development, test automation, and frontend implementation, with a strong focus on writing maintainable, production-quality code.
               </p>
-              <p className="text-muted-foreground mb-5">
-                With over 3 years of experience in the industry, I've had the
-                privilege of working with a diverse range of clients, from
-                startups to large enterprises, helping them achieve their
-                digital goals through thoughtful design and clean code.
+              {/* <p className="text-muted-foreground mb-5">
+              With a background in QA, frontend development, and product design, I bring a system-level perspective to engineering, understanding not only how software functions, but how it is experienced by end users. This allows me to design automation and software systems that are both technically robust and aligned with real user behavior.
+              </p> */}
+              <p  className="text-muted-foreground mb-5">
+              Currently, I focus on building scalable test automation frameworks, applying software engineering principles to ensure reliability, extensibility, and long-term maintainability, while continuing to leverage my design and frontend foundations where they add the most value.
               </p>
               <div className="flex flex-wrap gap-4 mt-8">
                 <Button asChild>
@@ -148,12 +147,11 @@ const About = () => {
             <span className="px-4 py-1.5 text-xs font-medium font-mono rounded-full bg-primary/5 text-secondary-foreground inline-block mb-4">
               SERVICES
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-playfair">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif">
               What I Do
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              I offer specialized frontend development services focused on
-              creating exceptional digital experiences.
+              I design and develop test automation frameworks alongside frontend applications, focusing on clean architecture, reliability, and long-term maintainability.
             </p>
           </motion.div>
 
@@ -195,7 +193,7 @@ const About = () => {
             <span className="px-4 py-1.5 text-xs font-medium font-mono rounded-full bg-primary/5 text-secondary-foreground inline-block mb-4">
               EXPERIENCE
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-playfair">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif">
               My Journey
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -251,7 +249,7 @@ const About = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-normal mb-6 font-playfair">
+            <h2 className="text-3xl md:text-4xl font-normal mb-6 font-serif">
               Let's Work Together
             </h2>
             <p className="mb-8 max-w-2xl mx-auto opacity-80">

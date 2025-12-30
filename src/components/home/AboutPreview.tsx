@@ -34,20 +34,17 @@ const AboutPreview = () => {
             <span className="section-tag px-4 py-1.5 inline-block mb-4">
               ABOUT ME
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-playfair">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-serif">
               Passionate about creating beautiful digital experiences.
             </h2>
             <p className="page-description mb-6 text-balance">
-              I'm a frontend developer and designer with over 3 years of
+              Software engineer with over 3 years of
               experience building products for clients around the world. I
               specialize in creating exceptional, functional, and user-centered
               digital experiences.
             </p>
             <p className="page-description mb-6 text-balance">
-              With a background in both design and development, I bridge the gap
-              between aesthetics and functionality, ensuring that the final
-              product not only looks great, but also delivers an exceptional
-              user experience.
+              With a background in QA, frontend development and product design, I bring a system-level perspective to engineering, understanding not only how software functions, but how it is experienced by end users. This allows me to design automation and software systems that are both technically robust and aligned with real user behavior.
             </p>
             <div className="mt-8">
               <Button
@@ -72,7 +69,7 @@ const AboutPreview = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            <div className="bg-card border border-border/60 rounded-[20px] p-8 shadow-sm relative overflow-hidden">
+            <div className="bg-card border border-border-gray-100 rounded-[20px] p-8 shadow-sm relative overflow-hidden">
               <div className="absolute top-0 right-0 w-40 h-40 bg-secondary/30 rounded-full filter blur-3xl -translate-y-1/2 translate-x-1/4"></div>
 
               <h3 className="text-xl font-normal mb-6 relative z-10">

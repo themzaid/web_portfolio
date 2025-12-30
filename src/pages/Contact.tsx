@@ -19,7 +19,7 @@ const Contact = () => {
             <span className="px-4 py-1.5 text-xs font-medium font-mono rounded-full bg-primary/5 text-secondary-foreground inline-block mb-4">
               CONTACT
             </span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-playfair">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-serif">
               Get in Touch
             </h1>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -35,7 +35,7 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-2xl font-semibold mb-6 font-playfair max-w-lg md:max-w-xl mx-auto"
+                className="text-2xl font-semibold mb-6 font-serif max-w-lg md:max-w-xl mx-auto"
               >
                 Send Me a Message
               </motion.h2>
@@ -47,7 +47,7 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-2xl font-semibold mb-6 font-playfair max-w-lg md:max-w-xl mx-auto"
+                className="text-2xl font-semibold mb-6 font-serif max-w-lg md:max-w-xl mx-auto"
               >
                 Contact Information
               </motion.h2>
@@ -57,7 +57,7 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="mt-12"
+                className="mt-9"
               >
                 <h3 className="text-lg font-medium mb-4">Connect with me</h3>
                 <div className="flex space-x-6">
@@ -65,7 +65,7 @@ const Contact = () => {
                     href="https://github.com/themzaid"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2.5 bg-card border border-border/60 rounded-full hover:border-border hover:shadow-sm transition-all duration-300"
+                    className="p-2.5 bg-card border border-gray-200 rounded-full hover:border-border hover:shadow-sm transition-all duration-300"
                     aria-label="GitHub"
                   >
                     <GitHub fontSize="medium" style={{ fontSize: 28 }} />
@@ -74,7 +74,7 @@ const Contact = () => {
                     href="https://codepen.io/themzaid"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2.5 bg-card border border-border/60 rounded-full hover:border-border hover:shadow-sm transition-all duration-300"
+                    className="p-2.5 bg-card border border-gray-200 rounded-full hover:border-border hover:shadow-sm transition-all duration-300"
                     aria-label="CodePen"
                   >
                     <Codepen size={28} />
@@ -83,7 +83,7 @@ const Contact = () => {
                     href="https://linkedin.com/in/themzaid"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2.5 bg-card border border-border/60 rounded-full hover:border-border hover:shadow-sm transition-all duration-300"
+                    className="p-2.5 bg-card border border-gray-200 rounded-full hover:border-border hover:shadow-sm transition-all duration-300"
                     aria-label="LinkedIn"
                   >
                     <LinkedIn fontSize="medium" style={{ fontSize: 28 }} />

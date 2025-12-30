@@ -24,30 +24,32 @@ const ContactInfo = () => {
     {
       icon: LocationPin,
       title: "Location",
-      details: "Mumbai, Maharashtra, India",
+      details: "Navi Mumbai, Maharashtra, India",
       link: null,
     },
-    {
-      icon: GroupRounded,
-      title: "Social Media",
-      details: "GitHub, LinkedIn, CodePen",
-      link: null,
-    },
+    // {
+    //   icon: GroupRounded,
+    //   title: "Social Media",
+    //   details: "GitHub, LinkedIn, CodePen",
+    //   link: null,
+    // },
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-wrap max-w-lg md:max-w-xl mx-auto">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-wrap max-w-5xl mx-auto">
       {contactDetails.map((item, index) => (
         <motion.div
           key={index}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: index * 0.1 }}
-          className="bg-card border border-border/60 rounded-[20px] p-6 hover:border-border hover:shadow-sm transition-all duration-300"
+          className={`bg-card border border-gray-200 rounded-[20px] p-4 md:p-6 transition-all duration-300 ${
+            index === 2 ? "sm:col-span-2" : ""
+          }`}
         >
           <div className="flex items-start">
             <div className="flex-shrink-0 mr-4">
-              <div className="p-3 bg-secondary rounded-full">
+              <div className="p-2.5 bg-gray-200/60 rounded-full">
                 <item.icon sx={{ fontSize: 24 }} className="text-primary" />
               </div>
             </div>

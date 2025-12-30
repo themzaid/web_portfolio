@@ -107,8 +107,8 @@ export const Navbar = () => {
             to="/"
             className="text-2xl font-normal tracking-normal relative z-20"
           >
-            <span className="font-playfair hidden sm:block">Mohammed Zaid</span>
-            <span className="font-playfair sm:hidden">MZ</span>
+            <span className="font-serif hidden sm:block">Mohammed Zaid</span>
+            <span className="font-serif sm:hidden">MZ</span>
           </NavLink>
 
           {/* Desktop Navigation */}
@@ -120,7 +120,7 @@ export const Navbar = () => {
                     to={item.path}
                     className={({ isActive }) =>
                       cn(
-                        "text-sm font-normal relative px-1 py-1.5 transition-colors font-playfair tracking-wide",
+                        "text-sm font-normal relative px-1 py-1.5 transition-colors font-serif tracking-wide",
                         "after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-0 after:bg-[#222] after:transition-all after:duration-300",
                         isActive
                           ? "after:w-full text-primary"
@@ -209,7 +209,7 @@ export const Navbar = () => {
                     to={item.path}
                     className={({ isActive }) =>
                       cn(
-                        "text-3xl font-normal transition-colors font-playfair",
+                        "text-3xl font-normal transition-colors font-serif",
                         isActive
                           ? "text-primary"
                           : "text-muted-foreground hover:text-primary"

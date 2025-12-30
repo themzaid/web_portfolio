@@ -5,7 +5,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 // import { Mail, Send, User, FileText } from "lucide-react";
-import { Email, Send, Person, Subject } from "@mui/icons-material";
+import {
+  EmailOutlined,
+  PersonOutline,
+  Send,
+  Subject,
+} from "@mui/icons-material";
 import { cn } from "@/lib/utils";
 import emailjs from "@emailjs/browser";
 
@@ -85,10 +90,10 @@ const ContactForm = () => {
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="space-y-2">
           <div className="relative">
-            <Person className="absolute left-3 top-2.5 text-muted-foreground" />
+            <PersonOutline className="absolute left-3 top-2 text-muted-foreground/90" />
             <Input
               placeholder="Your Name"
-              className="pl-10 text-sm font-normal"
+              className="pl-10 text-sm font-medium"
               name="name"
               value={formData.name}
               onChange={handleChange}
@@ -99,11 +104,11 @@ const ContactForm = () => {
 
         <div className="space-y-2">
           <div className="relative">
-            <Email className="absolute left-3 top-2.5 text-muted-foreground" />
+            <EmailOutlined className="absolute left-3 top-2 text-muted-foreground/90" />
             <Input
               type="email"
               placeholder="Your Email"
-              className="pl-10"
+              className="pl-10 text-sm font-medium"
               name="email"
               value={formData.email}
               onChange={handleChange}
@@ -116,11 +121,11 @@ const ContactForm = () => {
           <div className="relative">
             <Subject
               sx={{ fontSize: 20 }}
-              className="absolute left-3 top-2.5 text-muted-foreground"
+              className="absolute left-3 top-2.5 text-muted-foreground/90"
             />
             <Input
               placeholder="Subject"
-              className="pl-10 text-sm font-normal"
+              className="pl-10 text-sm font-medium"
               name="subject"
               value={formData.subject}
               onChange={handleChange}
@@ -132,7 +137,7 @@ const ContactForm = () => {
         <div className="space-y-2">
           <Textarea
             placeholder="Your Message"
-            className="min-h-[150px] resize-none text-sm font-normal"
+            className="min-h-[150px] resize-none text-sm font-medium"
             name="message"
             value={formData.message}
             onChange={handleChange}

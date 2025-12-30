@@ -81,7 +81,7 @@
   h4,
   h5,
   h6 {
-    @apply font-playfair;
+    @apply font-serif;
   }
 
   .section-tag {
@@ -149,7 +149,7 @@
   transition: opacity 0.5s, transform 0.5s, filter 0.5s;
 }
 
-.font-playfair {
+.font-serif {
   font-family: "Adamina", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
