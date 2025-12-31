@@ -33,7 +33,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-normal mb-6 tracking-tight text-balance font-serif"
           >
-            Building Scalable <br /> Automation Syatems
+            Building Scalable <br /> Automation Systems
           </motion.h1>
 
           <motion.p
@@ -42,7 +42,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-md page-description max-w-2xl mb-10 text-balance"
           >
-            Software engineer with a background in design, frontend development, and QA, currently focused on building scalable test automation frameworks engineered for long-term growth.
+            Software engineer with a background in Design, Frontend Development and QA, currently focused on building scalable Test Automation Frameworks engineered for long-term growth.
           </motion.p>
 
           <motion.div

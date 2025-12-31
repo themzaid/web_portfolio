@@ -42,8 +42,8 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       </div>
 
       {/* Body */}
-      <div className="p-4 md:p-6 flex flex-col flex-grow">
-        <h3 className="text-[22px] font-medium text-gray-800 dark:text-gray-300 dark:hover:text-white mt-1 mb-1">
+      <div className="p-6 md:p-6 flex flex-col flex-grow">
+        <h3 className="text-[22px] font-medium text-gray-800 dark:text-gray-300 dark:hover:text-white mb-1">
           {project.title}
         </h3>
         <p className="text-[14px] mb-1 tracking-wide text-gray-500 dark:text-gray-500">

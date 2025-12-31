@@ -89,7 +89,7 @@
   }
 
   .page-description {
-    @apply text-muted-foreground tracking-normal;
+    @apply text-foreground tracking-normal;
   }
 }
 
@@ -150,7 +150,7 @@
 }
 
 .font-serif {
-  font-family: "Adamina", serif;
+  font-family: "IBM Plex Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 500;

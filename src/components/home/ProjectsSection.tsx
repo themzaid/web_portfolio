@@ -71,7 +71,7 @@ const ProjectsSection = () => {
           <span className="section-tag px-4 py-1.5 inline-block mb-4">
             PORTFOLIO
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif tracking-tight">
             Featured Projects
           </h2>
           <p className="page-description max-w-2xl mx-auto text-balance">

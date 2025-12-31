@@ -19,7 +19,7 @@ const About = () => {
       role: "QA Analyst",
       company: "Pleximus Inc - Mumbai",
       description:
-        "Manual testing, test automation, and automation framework development for web and mobile applications using Selenium and Appium.",
+        "Manuala & Automated testing and Automation Framework development for web and mobile applications using Selenium and Appium.",
     },
     {
       year: "Apr 2020 - Jul 2021",
@@ -40,7 +40,7 @@ const About = () => {
       role: "Research & Development Intern",
       company: "The Assembly - Dubai",
       description:
-        " Researched, developed and conducted workshops under the following topics: Introduction to Web Virtual Reality with A-Frame. Developed an object tracking game using OpenCV in Unity. Developed a 3D survival shooter game in Unity. Built a ToDo App using ElectronJS.",
+        " Researched, developed and conducted workshops under the following topics: Introduction to Web Virtual Reality with A-Frame, Developed an object tracking game using OpenCV in Unity, Developed a 3D survival shooter game in Unity, Built a ToDo App using ElectronJS.",
     },
   ];
 
@@ -49,7 +49,13 @@ const About = () => {
       icon: Palette,
       title: "UI/UX Design",
       description:
-        "Designing intuitive user interfaces with an emphasis on usability, accessibility, and practical interaction patterns that translate well into real-world implementations.",
+        "Designing interfaces that prioritize usability, accessibility, and seamless user interactions, with an emphasis on functional design.",
+    },
+    {
+      icon: Monitor,
+      title: "Interactive Experiences",
+      description:
+        "Creating interactive experiences with thoughtful animations and micro‑interactions that make products engaging and intuitive.",
     },
     {
       icon: Code,
@@ -58,16 +64,10 @@ const About = () => {
         "Building clean, responsive, and accessible frontend applications with a strong focus on performance, maintainability, and user experience.",
     },
     {
-      icon: Monitor,
-      title: "Automation Engineering",
-      description:
-        "Designing and developing scalable test automation frameworks using software engineering principles to ensure reliability, extensibility, and long-term quality.",
-    },
-    {
       icon: Award,
       title: "QA & Validation",
       description:
-        "Validating software functionality through structured testing and automation, focusing on stability, regression prevention, and confidence in system behavior.",
+        "Designing scalable test automation frameworks and validating software functionality through structured testing, ensuring and long-term reliability.",
     },
   ];
 
@@ -88,13 +88,13 @@ const About = () => {
               <h1 className="text-[28px] tracking-normal md:text-4xl lg:text-5xl font-bold mb-5 font-serif">
                 Hi, I'm Mohammed Zaid
               </h1>
-              <p className="text-muted-foreground mb-5">
+              <p className="page-desciption mb-5">
                 I am a software engineer with over three years of experience building and validating products for clients across diverse domains. My work involves software development, test automation, and frontend implementation, with a strong focus on writing maintainable, production-quality code.
               </p>
-              {/* <p className="text-muted-foreground mb-5">
+              {/* <p className="page-desciption mb-5">
               With a background in QA, frontend development, and product design, I bring a system-level perspective to engineering, understanding not only how software functions, but how it is experienced by end users. This allows me to design automation and software systems that are both technically robust and aligned with real user behavior.
               </p> */}
-              <p  className="text-muted-foreground mb-5">
+              <p  className="page-desciption mb-5">
               Currently, I focus on building scalable test automation frameworks, applying software engineering principles to ensure reliability, extensibility, and long-term maintainability, while continuing to leverage my design and frontend foundations where they add the most value.
               </p>
               <div className="flex flex-wrap gap-4 mt-8">
@@ -121,14 +121,14 @@ const About = () => {
               transition={{ duration: 0.5 }}
               className="relative"
             >
-              <div className="aspect-square overflow-hidden rounded-[20px] border border-border/60 shadow-sm">
+              <div className="aspect-square overflow-hidden rounded-[20px] border border-gray-200 shadow-sm">
                 <img
                   src="zaid.jpg"
                   alt="Mohammed Zaid - Frontend Developer and Designer"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-5 -right-5 -z-10 h-full w-full rounded-[28px] border border-border/60 bg-background"></div>
+              <div className="absolute -bottom-5 -right-5 -z-10 h-full w-full rounded-[28px] border border-gray-200 bg-background"></div>
             </motion.div>
           </div>
         </div>
@@ -150,7 +150,7 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif">
               What I Do
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="page-desciption max-w-2xl mx-auto">
               I design and develop test automation frameworks alongside frontend applications, focusing on clean architecture, reliability, and long-term maintainability.
             </p>
           </motion.div>
@@ -163,9 +163,9 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-card border border-border/60 rounded-[20px] p-6"
+                className="bg-card border border-gray-200 rounded-[20px] p-6"
               >
-                <div className="p-3 border border-border/20 bg-secondary inline-block rounded-[5px] mb-3">
+                <div className="p-3 border border-gray-200 bg-gray-100 inline-block rounded-[7px] mb-3">
                   <service.icon className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="text-xl font-medium font-sans mb-3">
@@ -196,7 +196,7 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif">
               My Journey
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="page-description max-w-2xl mx-auto">
               A timeline of my professional experience in the industry.
             </p>
           </motion.div>
@@ -213,7 +213,7 @@ const About = () => {
               >
                 <div className="md:w-1/4 flex items-start">
                   <div className="flex items-center">
-                    <div className="p-2 rounded-full border border-border/60 bg-white flex-shrink-0">
+                    <div className="p-2 rounded-full border border-gray-200 bg-white flex-shrink-0">
                       <CalendarMonthRounded className="h-4 w-4 text-primary" />
                     </div>
                     <div className="ml-3">
@@ -223,11 +223,11 @@ const About = () => {
                     </div>
                   </div>
                 </div>
-                <div className="md:w-3/4 bg-card border border-border/60 rounded-[20px] p-6">
+                <div className="md:w-3/4 bg-card border border-gray-200 rounded-[20px] px-6 py-5">
                   <h3 className="text-lg font-sans font-medium mb-1">
                     {item.role}
                   </h3>
-                  <p className="text-primary font-medium mb-2 text-sm">
+                  <p className="text-primary font-medium mb-1.5 text-sm">
                     {item.company}
                   </p>
                   <p className="text-muted-foreground text-sm/[21px]">
