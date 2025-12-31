@@ -19,7 +19,7 @@ const Contact = () => {
             <span className="px-4 py-1.5 text-xs font-medium font-mono rounded-full bg-primary/5 text-secondary-foreground inline-block mb-4">
               CONTACT
             </span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-serif">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-serif tracking-tight">
               Get in Touch
             </h1>
             <p className="page-description max-w-2xl mx-auto">

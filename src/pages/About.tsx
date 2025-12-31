@@ -85,7 +85,7 @@ const About = () => {
               <span className="px-4 py-1.5 text-xs font-medium font-mono rounded-full bg-primary/5 text-secondary-foreground inline-block mb-4">
                 ABOUT ME
               </span>
-              <h1 className="text-[28px] tracking-normal md:text-4xl lg:text-5xl font-bold mb-5 font-serif">
+              <h1 className="text-[28px] tracking-tight md:text-4xl lg:text-5xl font-bold mb-5 font-serif">
                 Hi, I'm Mohammed Zaid
               </h1>
               <p className="page-desciption mb-5">
@@ -147,7 +147,7 @@ const About = () => {
             <span className="px-4 py-1.5 text-xs font-medium font-mono rounded-full bg-primary/5 text-secondary-foreground inline-block mb-4">
               SERVICES
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif tracking-tight">
               What I Do
             </h2>
             <p className="page-desciption max-w-2xl mx-auto">
@@ -193,7 +193,7 @@ const About = () => {
             <span className="px-4 py-1.5 text-xs font-medium font-mono rounded-full bg-primary/5 text-secondary-foreground inline-block mb-4">
               EXPERIENCE
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif tracking-tight">
               My Journey
             </h2>
             <p className="page-description max-w-2xl mx-auto">
@@ -249,7 +249,7 @@ const About = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-normal mb-6 font-serif">
+            <h2 className="text-3xl md:text-4xl font-normal mb-6 font-serif tracking-tight">
               Let's Work Together
             </h2>
             <p className="mb-8 max-w-2xl mx-auto opacity-80">
