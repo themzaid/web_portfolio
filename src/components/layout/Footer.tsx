@@ -57,7 +57,7 @@ const Footer = () => {
 
         {/*  change mt-0 to 10 when above is uncommented */}
         <div className="mt-0 pt-6 border-t border-gray-200 text-center text-sm text-muted-foreground">
-          <p>v25.3 © {new Date().getFullYear()} by Mohammed Zaid</p>
+          <p>v26.0 © {new Date().getFullYear()} by Mohammed Zaid</p>
         </div>
       </div>
     </footer>
