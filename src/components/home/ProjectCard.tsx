@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Code, Palette } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 export interface Project {
   id: number;
@@ -64,37 +65,40 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       </div>
 
       {/* Stretched Action Buttons */}
-      <div className="mt-auto flex divide-x divide-gray-200 dark:divide-gray-700 border-t border-gray-200 dark:border-gray-700 font-mono text-xs font-semibold tracking-wider">
+      <div className="mt-auto flex divide-x divide-gray-200 dark:divide-gray-700 border-t border-gray-200 dark:border-gray-700">
         {project.designLink ? (
-          <a
-            className="w-full py-4 px-auto inline-flex justify-center items-center gap-x-2 bg-white text-gray-900 hover:text-gray-700 transition-all duration-500 ease-in-out shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-            href={project.designLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View design
-            <Palette className="flex-shrink-0 w-4 h-4" />
-          </a>
+          <Button variant="outline" asChild className="w-full h-auto py-4 rounded-none border-0 ring-0 shadow-none bg-transparent dark:bg-transparent font-mono text-xs font-semibold tracking-wider hover:bg-gray-50 dark:hover:bg-slate-800 text-gray-900 dark:text-white">
+            <a
+              href={project.designLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View design
+              <Palette className="flex-shrink-0 w-4 h-4 ml-2" />
+            </a>
+          </Button>
         ) : (
+          <Button variant="outline" asChild className="w-full h-auto py-4 rounded-none border-0 ring-0 shadow-none bg-transparent dark:bg-transparent font-mono text-xs font-semibold tracking-wider hover:bg-gray-50 dark:hover:bg-slate-800 text-gray-900 dark:text-white">
+            <a
+              href={project.codeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View code
+              <Code className="flex-shrink-0 w-4 h-4 ml-2" />
+            </a>
+          </Button>
+        )}
+        <Button variant="outline" asChild className="w-full h-auto py-4 rounded-none border-0 ring-0 shadow-none bg-transparent dark:bg-transparent font-mono text-xs font-semibold tracking-wider hover:bg-gray-50 dark:hover:bg-slate-800 text-gray-900 dark:text-white">
           <a
-            className="w-full py-4 px-auto inline-flex justify-center items-center gap-x-2 bg-white text-gray-900 hover:text-gray-700 transition-all duration-500 ease-in-out shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-            href={project.codeLink}
+            href={project.link}
             target="_blank"
             rel="noopener noreferrer"
           >
-            View code
-            <Code className="flex-shrink-0 w-4 h-4" />
+            View project
+            <ExternalLink className="flex-shrink-0 w-4 h-4 ml-2" />
           </a>
-        )}
-        <a
-          className="w-full py-4 px-auto inline-flex justify-center items-center gap-x-2 bg-white text-gray-900 hover:text-gray-700 transition-all duration-500 ease-in-out shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View project
-          <ExternalLink className="flex-shrink-0 w-4 h-4 ml-1" />
-        </a>
+        </Button>
       </div>
     </motion.div>
   );

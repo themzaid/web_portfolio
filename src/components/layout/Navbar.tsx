@@ -120,11 +120,11 @@ export const Navbar = () => {
                     to={item.path}
                     className={({ isActive }) =>
                       cn(
-                        "text-sm font-normal relative px-1 py-1.5 transition-colors font-serif tracking-wide",
+                        "text-sm font-normal relative px-2 py-1.5 transition-colors font-serif tracking-wide",
                         "after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-0 after:bg-[#222] after:transition-all after:duration-300",
                         isActive
-                          ? "after:w-full text-primary"
-                          : "text-muted-foreground hover:text-primary hover:after:w-full"
+                          ? "after:w-full text-primary [text-shadow:0_0_10px_rgba(0,0,0,0.2)] dark:[text-shadow:0_0_10px_rgba(255,255,255,0.22)]"
+                          : "text-muted-foreground hover:text-primary hover:after:w-full hover:[text-shadow:0_0_10px_rgba(0,0,0,0.2)] dark:hover:[text-shadow:0_0_10px_rgba(255,255,255,0.22)]"
                       )
                     }
                   >
@@ -211,8 +211,8 @@ export const Navbar = () => {
                       cn(
                         "text-3xl font-normal transition-colors font-serif",
                         isActive
-                          ? "text-primary"
-                          : "text-muted-foreground hover:text-primary"
+                          ? "text-primary [text-shadow:0_0_12px_rgba(0,0,0,0.24)] dark:[text-shadow:0_0_12px_rgba(255,255,255,0.24)]"
+                          : "text-muted-foreground hover:text-primary hover:[text-shadow:0_0_12px_rgba(0,0,0,0.24)] dark:hover:[text-shadow:0_0_12px_rgba(255,255,255,0.24)]"
                       )
                     }
                   >

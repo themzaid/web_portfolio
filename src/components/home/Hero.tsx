@@ -23,7 +23,7 @@ const Hero = () => {
             className="mb-4"
           >
             <span className="section-tag px-4 py-1.5 inline-block">
-              Software Development Engineer
+              Software Automation Engineer
             </span>
           </motion.div>
 

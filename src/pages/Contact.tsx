@@ -4,6 +4,7 @@ import ContactForm from "@/components/contact/ContactForm";
 import ContactInfo from "@/components/contact/ContactInfo";
 import { Codepen } from "lucide-react";
 import { GitHub, LinkedIn } from "@mui/icons-material";
+import { Button } from "@/components/ui/button";
 
 const Contact = () => {
   return (
@@ -61,33 +62,36 @@ const Contact = () => {
               >
                 <h3 className="text-lg font-medium mb-4">Connect with me</h3>
                 <div className="flex space-x-6">
-                  <a
-                    href="https://github.com/themzaid"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2.5 bg-card border border-gray-200 rounded-full hover:border-border hover:shadow-sm transition-all duration-300"
-                    aria-label="GitHub"
-                  >
-                    <GitHub fontSize="medium" style={{ fontSize: 28 }} />
-                  </a>
-                  <a
-                    href="https://codepen.io/themzaid"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2.5 bg-card border border-gray-200 rounded-full hover:border-border hover:shadow-sm transition-all duration-300"
-                    aria-label="CodePen"
-                  >
-                    <Codepen size={28} />
-                  </a>
-                  <a
-                    href="https://linkedin.com/in/themzaid"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2.5 bg-card border border-gray-200 rounded-full hover:border-border hover:shadow-sm transition-all duration-300"
-                    aria-label="LinkedIn"
-                  >
-                    <LinkedIn fontSize="medium" style={{ fontSize: 28 }} />
-                  </a>
+                  <Button variant="secondary" size="icon" asChild className="h-[46px] w-[46px] rounded-full [&_svg]:size-[26px]">
+                    <a
+                      href="https://github.com/themzaid"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="GitHub"
+                    >
+                      <GitHub fontSize="medium" />
+                    </a>
+                  </Button>
+                  <Button variant="secondary" size="icon" asChild className="h-[46px] w-[46px] rounded-full [&_svg]:size-[26px] p-0 flex items-center justify-center">
+                    <a
+                      href="https://codepen.io/themzaid"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="CodePen"
+                    >
+                      <Codepen />
+                    </a>
+                  </Button>
+                  <Button variant="secondary" size="icon" asChild className="h-[46px] w-[46px] rounded-full [&_svg]:size-[26px]">
+                    <a
+                      href="https://linkedin.com/in/themzaid"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
+                    >
+                      <LinkedIn fontSize="medium" />
+                    </a>
+                  </Button>
                 </div>
               </motion.div>
             </div>
