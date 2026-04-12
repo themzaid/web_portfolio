@@ -10,7 +10,7 @@ const Contact = () => {
   return (
     <Layout>
       <section className="pt-16 pb-24 px-2">
-        <div className="container mx-auto max-w-5xl">
+        <div className="container mx-auto max-w-reading">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -20,10 +20,10 @@ const Contact = () => {
             <span className="px-4 py-1.5 text-xs font-medium font-mono rounded-full bg-primary/5 text-secondary-foreground inline-block mb-4">
               CONTACT
             </span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-serif tracking-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl mb-4 tracking-tight">
               Get in Touch
             </h1>
-            <p className="page-description max-w-2xl mx-auto">
+            <p className="page-description max-w-compact mx-auto">
               Have a project in mind or want to discuss potential opportunities?
               I'd love to hear from you. Fill out the form below or reach out
               directly.
@@ -36,7 +36,7 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-2xl font-semibold mb-6 font-serif max-w-lg md:max-w-xl mx-auto"
+                className="text-2xl mb-6 max-w-lg md:max-w-xl mx-auto"
               >
                 Send Me a Message
               </motion.h2>
@@ -48,7 +48,7 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-2xl font-semibold mb-6 font-serif max-w-lg md:max-w-xl mx-auto"
+                className="text-2xl mb-6 mx-auto"
               >
                 Contact Information
               </motion.h2>

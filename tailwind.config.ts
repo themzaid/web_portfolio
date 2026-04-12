@@ -14,16 +14,22 @@ export default {
 		container: {
 			center: true,
 			padding: '2rem',
-			// 	'xs': '475px',
-			// 	'sm': '640px',
-			// 	'md': '768px',
-			// 	'lg': '1000px',
-			// 	'xl': '1280px',
-			// 	'2xl': '1536px',
 			screens: {
-				'xl': '1200px',
+				// 	'xs': '475px',
+				// 	'sm': '640px',
+				// 	'md': '768px',
+				// 	'lg': '1000px',
+				// 	'xl': '1280px',
+				// 	'2xl': '1536px',
+				'xl': '1120px',
 				'2xl': '1360px'
 			}
+		},
+		maxWidth: {
+			'compact': '700px',
+			'reading': '1100px',
+			'display': '1360px',
+			'wide': '1440px'
 		},
 		extend: {
 			colors: {

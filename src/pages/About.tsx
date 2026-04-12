@@ -75,7 +75,7 @@ const About = () => {
     <Layout>
       {/* Hero Section */}
       <section className="pt-6 pb-24 px-2">
-        <div className="container mx-auto max-w-8xl">
+        <div className="container mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-[4fr_3fr] md:grid-cols-[6fr_3fr] lg:grid-cols-[5fr_3fr] gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -85,17 +85,17 @@ const About = () => {
               <span className="px-4 py-1.5 text-xs font-medium font-mono rounded-full bg-primary/5 text-secondary-foreground inline-block mb-4">
                 ABOUT ME
               </span>
-              <h1 className="text-[28px] tracking-tight md:text-4xl lg:text-5xl font-bold mb-5 font-serif">
-                Hi, I'm Mohammed Zaid
+              <h1 className="text-[28px] tracking-tight md:text-4xl lg:text-5xl mb-4">
+                Hello,
               </h1>
               <p className="page-desciption mb-5">
-                I am a software engineer with over three years of experience building and validating products for clients across diverse domains. My work involves software development, test automation, and frontend implementation, with a strong focus on writing maintainable, production-quality code.
+                I'm a software engineer with over three years of experience building and validating products for clients across diverse domains. My work involves software development, test automation, and frontend implementation, with a strong focus on writing maintainable, production-quality code.
               </p>
               {/* <p className="page-desciption mb-5">
               With a background in QA, frontend development, and product design, I bring a system-level perspective to engineering, understanding not only how software functions, but how it is experienced by end users. This allows me to design automation and software systems that are both technically robust and aligned with real user behavior.
               </p> */}
-              <p  className="page-desciption mb-5">
-              Currently, I focus on building scalable test automation frameworks, applying software engineering principles to ensure reliability, extensibility, and long-term maintainability, while continuing to leverage my design and frontend foundations where they add the most value.
+              <p className="page-desciption mb-5">
+                Currently, I focus on building scalable test automation frameworks, applying software engineering principles to ensure reliability, extensibility, and long-term maintainability, while continuing to leverage my design and frontend foundations where they add the most value.
               </p>
               <div className="flex flex-wrap gap-4 mt-8">
                 <Button asChild>
@@ -136,7 +136,7 @@ const About = () => {
 
       {/* Services Section */}
       <section className="py-24 px-2 bg-secondary/50">
-        <div className="container mx-auto max-w-5xl">
+        <div className="container mx-auto max-w-reading">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -147,10 +147,10 @@ const About = () => {
             <span className="px-4 py-1.5 text-xs font-medium font-mono rounded-full bg-primary/5 text-secondary-foreground inline-block mb-4">
               SERVICES
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif tracking-tight">
+            <h2 className="text-3xl md:text-4xl mb-4 tracking-tight">
               What I Do
             </h2>
-            <p className="page-desciption max-w-2xl mx-auto">
+            <p className="page-desciption max-w-compact mx-auto">
               I design and develop test automation frameworks alongside frontend applications, focusing on clean architecture, reliability, and long-term maintainability.
             </p>
           </motion.div>
@@ -168,7 +168,7 @@ const About = () => {
                 <div className="p-3 border border-gray-200 bg-gray-100 inline-block rounded-[7px] mb-3">
                   <service.icon className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-medium font-sans mb-3">
+                <h3 className="text-xl mb-3">
                   {service.title}
                 </h3>
                 <p className="text-muted-foreground text-sm/[21px]">
@@ -182,7 +182,7 @@ const About = () => {
 
       {/* Experience Section */}
       <section className="py-24 px-2">
-        <div className="container mx-auto max-w-5xl">
+        <div className="container mx-auto max-w-reading">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -193,10 +193,10 @@ const About = () => {
             <span className="px-4 py-1.5 text-xs font-medium font-mono rounded-full bg-primary/5 text-secondary-foreground inline-block mb-4">
               EXPERIENCE
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif tracking-tight">
+            <h2 className="text-3xl md:text-4xl mb-4 tracking-tight">
               My Journey
             </h2>
-            <p className="page-description max-w-2xl mx-auto">
+            <p className="page-description max-w-compact mx-auto">
               A timeline of my professional experience in the industry.
             </p>
           </motion.div>
@@ -211,26 +211,26 @@ const About = () => {
                 viewport={{ once: true }}
                 className="flex flex-col md:flex-row gap-6 md:gap-10"
               >
-                <div className="md:w-1/4 flex items-start">
+                <div className="md:w-1/4 flex items-start mt-3">
                   <div className="flex items-center">
                     <div className="p-2 rounded-full border border-gray-200 bg-white flex-shrink-0">
-                      <CalendarMonthRounded className="h-4 w-4 text-primary" />
+                      <CalendarMonthRounded className="h-4 w-4 text-muted-foreground" />
                     </div>
                     <div className="ml-3">
-                      <span className="text-[13px] font-mono font-medium">
+                      <span className="text-[13px] text-muted-foreground font-sans tracking-wide font-medium">
                         {item.year}
                       </span>
                     </div>
                   </div>
                 </div>
-                <div className="md:w-3/4 bg-card border border-gray-200 rounded-[20px] px-6 py-5">
-                  <h3 className="text-lg font-sans font-medium mb-1">
+                <div className="md:w-3/4 bg-card border border-gray-200 rounded-[20px] px-6 py-5 text-primary">
+                  <h3 className="text-lg mb-1">
                     {item.role}
                   </h3>
-                  <p className="text-primary font-medium mb-1.5 text-sm">
+                  <p className="mb-1.5 text-sm font-medium">
                     {item.company}
                   </p>
-                  <p className="text-muted-foreground text-sm/[21px]">
+                  <p className="text-sm">
                     {item.description}
                   </p>
                 </div>
@@ -242,17 +242,17 @@ const About = () => {
 
       {/* CTA Section */}
       <section className="py-24 px-2 bg-primary text-primary-foreground">
-        <div className="container mx-auto max-w-4xl text-center">
+        <div className="container mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-normal mb-6 font-serif tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-normal mb-6 tracking-tight">
               Let's Work Together
             </h2>
-            <p className="mb-8 max-w-2xl mx-auto opacity-80">
+            <p className="mb-8 max-w-compact mx-auto opacity-80">
               I'm always interested in new opportunities and collaborations.
               Whether you have a project in mind or just want to connect, I'd
               love to hear from you.

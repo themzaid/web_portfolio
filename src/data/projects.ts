@@ -105,7 +105,7 @@ export const projectsData: Project[] = [
     },
     links: [
       { label: "Figma UI Kit", url: "https://www.figma.com/proto/fYuUTd4adyMGVJzQMZaZLd/Bitstrap?node-id=0-1&t=QIYsIRR9VCmeYMow-1", icon: "figma" },
-      { label: "Source Code", url: "https://github.com/themzaid/bitstrap", icon: "github" }
+      // { label: "Source Code", url: "https://github.com/themzaid/bitstrap", icon: "github" }
     ],
   },
   {
@@ -146,8 +146,8 @@ export const projectsData: Project[] = [
       ]
     },
     links: [
-      { label: "Live Landing Page", url: "https://project-xyz-show.web.app/scripts/landing.html", icon: "external" },
-      { label: "Frontend Template", url: "https://github.com/themzaid/project-xyz", icon: "github" }
+      { label: "Landing Page", url: "https://project-xyz-show.web.app/scripts/landing.html", icon: "external" },
+      // { label: "Frontend Template", url: "https://github.com/themzaid/project-xyz", icon: "github" }
     ],
   },
   {
@@ -186,8 +186,8 @@ export const projectsData: Project[] = [
       ]
     },
     links: [
-      { label: "Live Website", url: "https://swades.ae/", icon: "external" },
-      { label: "Figma File", url: "https://www.figma.com/proto/OixtdxChvTmXbbQ9f6JCWw/Swades?node-id=0-1&t=0iuCUgNfTPBporWT-1", icon: "figma" }
+      // { label: "Live Website", url: "https://swades.ae/", icon: "external" },
+      { label: "UI Design", url: "https://www.figma.com/proto/OixtdxChvTmXbbQ9f6JCWw/Swades?node-id=0-1&t=0iuCUgNfTPBporWT-1", icon: "figma" }
     ],
   },
   {
@@ -225,7 +225,7 @@ export const projectsData: Project[] = [
       ]
     },
     links: [
-      { label: "Brand Guidelines", url: "https://portfolio2021-4aa7c.web.app/assets/pdf/crepme.pdf", icon: "pdf" }
+      { label: "Logo Design", url: "https://portfolio2021-4aa7c.web.app/assets/pdf/crepme.pdf", icon: "pdf" }
     ],
   },
   {
@@ -263,8 +263,8 @@ export const projectsData: Project[] = [
       ]
     },
     links: [
-      { label: "Live Prototype", url: "https://portfolio2021-4aa7c.web.app/tangled_web/home.html", icon: "external" },
-      { label: "Source Code", url: "https://github.com/neeltron/tangled-web", icon: "github" }
+      { label: "Login Page", url: "https://portfolio2021-4aa7c.web.app/tangled_web/login.html", icon: "external" },
+      // { label: "Source Code", url: "https://github.com/neeltron/tangled-web", icon: "github" }
     ],
   }
 ];

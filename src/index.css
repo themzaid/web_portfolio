@@ -75,6 +75,7 @@
     @apply bg-background text-foreground font-sans;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+
   h1,
   h2,
   h3,
@@ -150,7 +151,7 @@
 }
 
 .font-serif {
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "Funnel Display", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 500;

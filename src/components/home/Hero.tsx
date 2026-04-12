@@ -14,7 +14,7 @@ const Hero = () => {
         <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl"></div>
       </div>
 
-      <div className="container mx-auto max-w-5xl">
+      <div className="container mx-auto">
         <div className="flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -23,7 +23,7 @@ const Hero = () => {
             className="mb-4"
           >
             <span className="section-tag px-4 py-1.5 inline-block">
-              Software Automation Engineer
+              Software Engineer
             </span>
           </motion.div>
 
@@ -31,7 +31,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-[32px]/tight sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-6 tracking-tight text-balance font-serif"
+            className="text-[32px]/tight sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-6 tracking-tight text-balance"
           >
             Building Scalable <br /> Automation Systems
           </motion.h1>
@@ -40,7 +40,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-md page-description max-w-2xl mb-10 text-balance"
+            className="text-md page-description max-w-compact mb-10 text-balance"
           >
             Software engineer with a background in Design, Frontend Development and QA, currently focused on building scalable Test Automation Frameworks engineered for long-term growth.
           </motion.p>

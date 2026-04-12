@@ -54,7 +54,7 @@ const ContactInfo = () => {
               </div>
             </div>
             <div>
-              <h3 className="text-base font-sans font-medium">{item.title}</h3>
+              <h3 className="text-base font-sans">{item.title}</h3>
               {item.link ? (
                 <a
                   href={item.link}

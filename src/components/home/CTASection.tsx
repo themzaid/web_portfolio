@@ -11,7 +11,7 @@ const CTASection = () => {
         <div className="absolute bottom-1/3 left-1/3 w-80 h-80 bg-primary/5 rounded-full filter blur-3xl"></div>
       </div>
 
-      <div className="container mx-auto max-w-4xl">
+      <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -22,10 +22,10 @@ const CTASection = () => {
           <span className="section-tag px-4 py-1.5 inline-block mb-4">
             LET'S COLLABORATE
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-serif text-balance tracking-tight">
-            Have a project in mind? Let's bring it to life
+          <h2 className="text-3xl md:text-4xl lg:text-5xl mb-6 text-balance tracking-tight  max-w-compact mx-auto">
+            Have a project in mind? Let's bring it to life!
           </h2>
-          <p className="page-description max-w-2xl mx-auto mb-10 text-balance">
+          <p className="page-description mx-auto mb-10 text-balance max-w-compact">
             I'm currently available for contract or full-time opportunities. If
             you're looking for a developer who is passionate about creating
             exceptional digital experiences, let's connect.

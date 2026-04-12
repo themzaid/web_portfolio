@@ -35,7 +35,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
     return (
       <>
         {project.miniBrowser.title && (
-          <div className="font-serif text-[16px] lg:text-[20px] mb-2 leading-tight" style={{ color: accent }}>
+          <div className="font-sans font-medium text-[16px] lg:text-[20px] mb-2 leading-tight" style={{ color: accent }}>
             {project.miniBrowser.title}
           </div>
         )}
@@ -67,6 +67,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         delay: index * 0.1,
         ease: [0.25, 0.46, 0.45, 0.94],
       }}
+      id={`project-${project.slug}`}
       className="grid grid-cols-1 sm:grid-cols-[42%_1fr] border-[1px] border-border rounded-3xl bg-card overflow-hidden transition-all duration-300 hover:-translate-y-1 min-h-[300px]"
     >
 
@@ -92,14 +93,9 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           />
         ))}
 
-        {/* Massive Background Text */}
-        <div className="absolute inset-0 flex items-center justify-center font-serif text-[44px] lg:text-[80px] text-white/5 tracking-tighter select-none">
-          {project.bgLabel}
-        </div>
-
         {/* Miniature Floating Browser Wrapper */}
         <div
-          className="absolute inset-x-5 md:inset-x-6 top-8 bottom-0 rounded-t-[14px] border-[1px] border-white/10 border-b-0 overflow-hidden shadow-[0_16px_48px_rgba(0,0,0,0.5)]"
+          className="absolute inset-x-6 md:inset-x-6 top-6 md:top-7 bottom-0 rounded-t-[14px] border-[1px] border-white/10 border-b-0 overflow-hidden shadow-[0_16px_48px_rgba(0,0,0,0.5)]"
           style={{ backgroundColor: project.miniBrowserBg ?? '#0f1218' }}
         >
           <div className="h-[34px] flex items-center gap-2 px-3.5 bg-[#f0f0f0] border-b-[1px] border-black/8">
@@ -114,41 +110,44 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       </div>
 
       {/* RIGHT: Content Body */}
-      <div className="flex flex-col justify-center p-5 ml-1 gap-3">
-        <span className="text-[11px] tracking-[0.18em] uppercase text-muted-foreground">
-          {project.category}
-        </span>
+      <div className="flex flex-col p-5 ml-1 h-full w-full">
+        <div className="flex flex-col justify-center flex-grow gap-3">
+          <span className="text-[11px] tracking-[0.18em] uppercase text-foreground/80">
+            {project.category}
+          </span>
 
-        <h3 className="font-serif -ml-0.5 text-[28px] lg:text-[34px] leading-none tracking-tight text-foreground">
-          {project.title}
-        </h3>
+          <h3 className="-ml-0.5 text-[28px] lg:text-[34px] leading-none tracking-tight text-foreground">
+            {project.title}
+          </h3>
 
-        <p className="text-[15px] leading-[1.7] text-muted-foreground">
-          {project.description}
-        </p>
+          <p className="text-[15px] leading-[1.7] text-foreground/80">
+            {project.description}
+          </p>
 
-        <div className="flex flex-wrap gap-2 mt-0 -ml-1">
-          {project.tags.map((tag, tagIndex) => (
-            <span
-              key={tagIndex}
-              className="text-[11px] tracking-widest text-muted-foreground uppercase border-[1px] border-gray-300 bg-white/5 px-2.5 py-0.5 rounded-full"
-            >
-              {tag}
-            </span>
-          ))}
+          <div className="flex flex-wrap gap-2 mt-0 -ml-1">
+            {project.tags.map((tag, tagIndex) => (
+              <span
+                key={tagIndex}
+                className="text-[11px] tracking-widest text-muted-foreground uppercase border-[1px] border-gray-300 bg-white/5 px-2.5 py-0.5 rounded-full"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
 
-        <div className="flex items-center justify-between pt-5 mt-2 border-t-[1px] border-border/80 w-full">
-          <span className="text-xs text-muted-foreground/60 tracking-wider">
+        <div className="flex items-center justify-between pt-5 mt-4 border-t-[1px] border-gray-300 w-full shrink-0">
+          <span className="text-xs text-foreground/60 tracking-wider">
             {project.year}
           </span>
-          <Button asChild className="rounded-full group text-xs tracking-widest font-semibold px-4">
+          <Button asChild className="rounded-xl group text-xs tracking-widest font-semibold px-4">
             <Link
               to={`/project/${project.slug}`}
               aria-label={`View Case Study for ${project.title}`}
+              onClick={() => sessionStorage.setItem('homeScrollPos', window.scrollY.toString())}
             >
               Case study
-              <ArrowUpRight className="ml-2 w-3.5 h-3.5 opacity-70 group-hover:opacity-100 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={2.5} />
+              <ArrowUpRight className="ml-0.5 w-3.5 h-3.5 opacity-70 group-hover:opacity-100 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={2.5} />
             </Link>
           </Button>
         </div>

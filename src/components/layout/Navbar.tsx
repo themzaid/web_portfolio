@@ -107,8 +107,8 @@ export const Navbar = () => {
             to="/"
             className="text-2xl font-normal tracking-normal relative z-20"
           >
-            <span className="font-serif hidden sm:block">Mohammed Zaid</span>
-            <span className="font-serif sm:hidden">MZ</span>
+            <span className="font-sans font-medium hidden sm:block">Mohammed Zaid</span>
+            <span className="font-sans font-medium sm:hidden">MZ</span>
           </NavLink>
 
           {/* Desktop Navigation */}
@@ -120,11 +120,11 @@ export const Navbar = () => {
                     to={item.path}
                     className={({ isActive }) =>
                       cn(
-                        "text-sm font-normal relative px-2 py-1.5 transition-colors font-serif tracking-wide",
+                        "text-sm font-normal relative px-2 py-1.5 transition-colors font-sans font-medium tracking-wide",
                         "after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-0 after:bg-[#222] after:transition-all after:duration-300",
                         isActive
-                          ? "after:w-full text-primary [text-shadow:0_0_10px_rgba(0,0,0,0.2)] dark:[text-shadow:0_0_10px_rgba(255,255,255,0.22)]"
-                          : "text-muted-foreground hover:text-primary hover:after:w-full hover:[text-shadow:0_0_10px_rgba(0,0,0,0.2)] dark:hover:[text-shadow:0_0_10px_rgba(255,255,255,0.22)]"
+                          ? "after:w-full text-primary"
+                          : "text-muted-foreground hover:text-primary hover:after:w-full"
                       )
                     }
                   >
@@ -209,10 +209,10 @@ export const Navbar = () => {
                     to={item.path}
                     className={({ isActive }) =>
                       cn(
-                        "text-3xl font-normal transition-colors font-serif",
+                        "text-3xl font-normal transition-colors font-sans font-medium",
                         isActive
-                          ? "text-primary [text-shadow:0_0_12px_rgba(0,0,0,0.24)] dark:[text-shadow:0_0_12px_rgba(255,255,255,0.24)]"
-                          : "text-muted-foreground hover:text-primary hover:[text-shadow:0_0_12px_rgba(0,0,0,0.24)] dark:hover:[text-shadow:0_0_12px_rgba(255,255,255,0.24)]"
+                          ? "text-primary"
+                          : "text-muted-foreground hover:text-primary"
                       )
                     }
                   >

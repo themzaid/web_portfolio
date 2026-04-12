@@ -23,13 +23,7 @@ const AnimatedRoutes = () => {
 };
 
 const App = () => {
-  // Smooth scroll behavior for the entire app
-  useEffect(() => {
-    document.documentElement.style.scrollBehavior = "smooth";
-    return () => {
-      document.documentElement.style.scrollBehavior = "";
-    };
-  }, []);
+  // Removed global smooth scroll to prevent route transition animation bugs
 
   return (
     <QueryClientProvider client={queryClient}>
