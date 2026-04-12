@@ -8,7 +8,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-[85vh] flex items-center justify-center px-2 relative">
+    <section className="min-h-[75vh] md:min-h-0 md:pt-40 md:pb-32 flex items-center justify-center px-2 relative">
       <div className="absolute inset-0 -z-10 opacity-30">
         <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-primary/5 rounded-full filter blur-3xl"></div>
         <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl"></div>
@@ -31,7 +31,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-normal mb-6 tracking-tight text-balance font-serif"
+            className="text-[32px]/tight sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-6 tracking-tight text-balance font-serif"
           >
             Building Scalable <br /> Automation Systems
           </motion.h1>

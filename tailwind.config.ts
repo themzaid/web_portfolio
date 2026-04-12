@@ -14,8 +14,15 @@ export default {
 		container: {
 			center: true,
 			padding: '2rem',
+			// 	'xs': '475px',
+			// 	'sm': '640px',
+			// 	'md': '768px',
+			// 	'lg': '1000px',
+			// 	'xl': '1280px',
+			// 	'2xl': '1536px',
 			screens: {
-				'2xl': '1400px'
+				'xl': '1200px',
+				'2xl': '1360px'
 			}
 		},
 		extend: {
