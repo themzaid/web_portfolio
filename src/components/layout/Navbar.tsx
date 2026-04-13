@@ -6,6 +6,13 @@ import { GitHub, LinkedIn } from "@mui/icons-material";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
+import StatusBadge, { AvailabilityStatus } from "../common/StatusBadge";
+
+// Update your status here
+const CURRENT_STATUS: { status: AvailabilityStatus; text?: string } = {
+  status: "available", // "available" (Green) | "busy" (Orange) | "working" (Red)
+  text: "Open to work",
+};
 
 const ICON_SIZE = 26;
 
@@ -92,7 +99,8 @@ export const Navbar = () => {
   ];
 
   return (
-    <header
+    <>
+      <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 px-2 py-4 transition-all duration-300 ease-in-out",
         scrolled
@@ -100,7 +108,7 @@ export const Navbar = () => {
           : "bg-transparent"
       )}
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto relative group/navbar">
         <nav className="flex items-center justify-between">
           {/* Logo/Brand */}
           <NavLink
@@ -120,7 +128,7 @@ export const Navbar = () => {
                     to={item.path}
                     className={({ isActive }) =>
                       cn(
-                        "text-sm font-normal relative px-2 py-1.5 transition-colors font-sans font-medium tracking-wide",
+                        "text-sm font-normal relative px-1 py-1.5 transition-colors font-sans font-medium tracking-wide",
                         "after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-0 after:bg-[#222] after:transition-all after:duration-300",
                         isActive
                           ? "after:w-full text-primary"
@@ -134,7 +142,8 @@ export const Navbar = () => {
               ))}
             </ul>
 
-            {/* Social Links */}
+            {/* Social Links commented out to fix alignment issues */}
+            {/* 
             <div className="hidden md:flex items-center space-x-4">
               {socialLinks.map((social) => (
                 <a
@@ -148,28 +157,31 @@ export const Navbar = () => {
                   {social.icon({})}
                 </a>
               ))}
-            </div>
+            </div> 
+            */}
           </div>
 
           {/* Mobile Menu Button with Custom 2-Line Animation */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="sm:hidden relative z-20 p-2 w-6 h-8 flex flex-col justify-center items-center"
-            aria-label={isOpen ? "Close menu" : "Open menu"}
-          >
-            <span
-              className={cn(
-                "block h-0.5 w-5 bg-primary transition-all duration-500 ease-in-out",
-                isOpen ? "rotate-45 translate-y-0.6" : "-translate-y-[3px]"
-              )}
-            />
-            <span
-              className={cn(
-                "block h-0.5 w-5 bg-primary transition-all duration-500 ease-in-out",
-                isOpen ? "-rotate-45 -translate-y-0.5" : "translate-y-[4px]"
-              )}
-            />
-          </button>
+          <div className="flex items-center gap-3 sm:hidden relative z-20">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 w-6 h-8 flex flex-col justify-center items-center"
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+            >
+              <span
+                className={cn(
+                  "block h-0.5 w-5 bg-primary transition-all duration-500 ease-in-out",
+                  isOpen ? "rotate-45 translate-y-0.6" : "-translate-y-[3px]"
+                )}
+              />
+              <span
+                className={cn(
+                  "block h-0.5 w-5 bg-primary transition-all duration-500 ease-in-out",
+                  isOpen ? "-rotate-45 -translate-y-0.5" : "translate-y-[4px]"
+                )}
+              />
+            </button>
+          </div>
         </nav>
       </div>
 
@@ -246,7 +258,19 @@ export const Navbar = () => {
         )}
       </AnimatePresence>
     </header>
-  );
+
+    {/* Global Status - Separate fixed container to avoid nested backdrop-filter issues */}
+    <div className="fixed top-20 left-0 right-0 z-[60] pointer-events-none">
+      <div className="container mx-auto flex justify-end px-4 md:px-0">
+        <StatusBadge
+          status={CURRENT_STATUS.status}
+          customText={CURRENT_STATUS.text}
+          className="pointer-events-auto shadow-md"
+        />
+      </div>
+    </div>
+  </>
+);
 };
 
 export default Navbar;

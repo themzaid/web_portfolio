@@ -14,7 +14,7 @@ const Hero = () => {
         <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl"></div>
       </div>
 
-      <div className="container mx-auto">
+      <div className="container mx-auto relative px-4">
         <div className="flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
