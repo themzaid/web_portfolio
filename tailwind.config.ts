@@ -21,8 +21,8 @@ export default {
 				// 	'lg': '1000px',
 				// 	'xl': '1280px',
 				// 	'2xl': '1536px',
-				'xl': '1120px',
-				'2xl': '1360px'
+				// 'xl': '1100px',
+				'2xl': '1260px'
 			}
 		},
 		maxWidth: {

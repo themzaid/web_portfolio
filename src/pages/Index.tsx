@@ -4,7 +4,6 @@ import { useLocation } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import Hero from "@/components/home/Hero";
 import ProjectsSection from "@/components/home/ProjectsSection";
-import AboutPreview from "@/components/home/AboutPreview";
 import CTASection from "@/components/home/CTASection";
 
 const Index = () => {
@@ -37,7 +36,6 @@ const Index = () => {
     <Layout>
       <Hero />
       <ProjectsSection />
-      <AboutPreview />
       <CTASection />
     </Layout>
   );

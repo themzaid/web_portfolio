@@ -27,7 +27,7 @@ const CaseStudy = () => {
       <div className="min-h-screen pb-32 px-2">
         <div className="container mx-auto">
 
-          <div className="flex items-center mt-8 mb-8">
+          <div className="flex items-center mt-4 mb-6">
             <Link
               to="/"
               className="group inline-flex items-center gap-2 text-xs tracking-[0.14em] uppercase text-foreground font-medium hover:text-muted-foreground transition-colors"
@@ -38,24 +38,24 @@ const CaseStudy = () => {
           </div>
 
           {/* Hero Top (Title & Lede) */}
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-8 md:gap-12 items-start pt-4">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-8 md:gap-12 items-start pt-0">
             <div>
-              <div className="flex items-center gap-4 mb-4">
+              {/* <div className="flex items-center gap-4 mb-4">
                 <div className="w-6 h-[1px] bg-foreground/70"></div>
                 <span className="text-[12px] font-medium md:text-[13px] tracking-[0.1em] uppercase text-foreground/90 overflow-hidden whitespace-nowrap block truncate">
                   Case Study / {project.title}
                 </span>
-              </div>
-              <h1 className="text-[40px] md:text-[72px] font-normal leading-[1.05] tracking-[-0.02em] text-foreground mb-6">
+              </div> */}
+              <h1 className="text-[40px] md:text-[72px] font-normal leading-[1.05] tracking-[-0.02em] text-foreground -mb-3">
                 {project.title}
               </h1>
-              <p className="text-[12px] font-medium md:text-[13px] tracking-[0.12em] text-foreground/90 uppercase font-sans">
+              {/* <p className="text-[12px] font-medium md:text-[13px] tracking-[0.12em] text-foreground/90 uppercase font-sans">
                 {project.role} &middot; {project.year}
-              </p>
+              </p> */}
             </div>
 
             <div className="md:pt-1.5 md:justify-self-end">
-              <p className="text-xl text-foreground/80 leading-[1.78] pb-2">
+              <p className="text-xl text-foreground leading-[1.78] pb-2">
                 {caseStudy.heroLede}
               </p>
             </div>
@@ -63,7 +63,7 @@ const CaseStudy = () => {
 
           {/* Hero Image / Custom Browser */}
           <div
-            className="mt-10 md:mt-12 rounded-t-[20px] border-[1px] border-border border-b-0 min-h-[380px] relative overflow-hidden flex flex-col"
+            className="mt-8 md:mt-8 rounded-t-[20px] border-[1px] border-border border-b-0 min-h-[380px] relative overflow-hidden flex flex-col"
             style={{ background: project.themeGradient }}
           >
             {project.glows.map((glow, i) => (
@@ -130,10 +130,10 @@ const CaseStudy = () => {
           </div>
 
           {/* Content Split: Sidebar + Stories */}
-          <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] lg:grid-cols-[240px_1fr] gap-8 md:gap-10 lg:gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-[220px_1fr] lg:grid-cols-[240px_1fr] gap-8 md:gap-10 lg:gap-10">
 
             {/* Sidebar (Sticky) */}
-            <aside className="md:sticky md:top-[88px] self-start space-y-6 w-full">
+            <aside className="sm:sticky sm:top-[88px] self-start space-y-6 w-full">
               <ul className="grid gap-[2px] mb-5">
                 {caseStudy.blocks.map((block, i) => (
                   <li key={i}>
@@ -155,7 +155,7 @@ const CaseStudy = () => {
                 <div className="text-[11px] tracking-[0.14em] uppercase text-muted-foreground mb-3">Stack</div>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map(t => (
-                    <span key={t} className="px-3 py-1.5 border-[1px] border-border bg-white/[0.02] text-muted-foreground text-[11px] tracking-[0.12em] uppercase rounded-full">
+                    <span key={t} className="portfolio-tag px-3 py-1.5 text-[11px] uppercase tracking-wider">
                       {t}
                     </span>
                   ))}
@@ -206,13 +206,13 @@ const CaseStudy = () => {
                   id={`block-${i}`}
                   className="p-7 md:p-9 border-[1px] rounded-[20px] transition-colors duration-300 bg-card border-border"
                 >
-                  <div className="text-[11px] tracking-[0.16em] mb-4 text-foreground/60">
+                  <div className="text-[12px] tracking-[0.16em] mb-3 text-foreground/80 font-medium">
                     0{i + 1} / {block.navLabel || block.title.split(' ')[0]}
                   </div>
-                  <h3 className="text-[22px] md:text-[32px] font-normal tracking-[-0.02em] leading-[1.2] mb-4 text-foreground">
+                  <h3 className="text-[22px] md:text-[32px] font-normal tracking-[-0.02em] leading-[1.2] mb-1 -ml-0.5 text-foreground">
                     {block.title}
                   </h3>
-                  <p className="text-[15px] md:text-[16px] text-muted-foreground leading-[1.85] max-w-[62ch]">
+                  <p className="text-[15px] md:text-[16px] text-foreground/90 leading-[1.85]">
                     {block.p}
                   </p>
 
@@ -230,7 +230,7 @@ const CaseStudy = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
                       {block.outcomes.map((outcome, index) => (
                         <div key={index} className="p-4 md:p-5 border-[1px] border-border rounded-[10px] bg-white/[0.02]">
-                          <strong className="block text-[28px] md:text-[32px] text-primary mb-1 leading-none">{outcome.value}</strong>
+                          <h2 className="block text-[24px] md:text-[32px] text-primary mb-1 leading-none">{outcome.value}</h2>
                           <span className="text-[12px] md:text-[13px] text-muted-foreground">{outcome.label}</span>
                         </div>
                       ))}

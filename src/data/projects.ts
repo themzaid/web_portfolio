@@ -67,7 +67,7 @@ export interface Project {
 
 export const projectsData: Project[] = [
   {
-    id: 5,
+    id: 1,
     slug: "bitstrap",
     title: "Bitstrap",
     category: "Frontend Development · Design System",
@@ -109,7 +109,7 @@ export const projectsData: Project[] = [
     ],
   },
   {
-    id: 1,
+    id: 2,
     slug: "skillscall",
     title: "Skillscall",
     category: "Frontend Development",
@@ -131,7 +131,7 @@ export const projectsData: Project[] = [
     miniBrowserBg: "#ffffff",
     miniBrowserAccent: "#7c3aed",
     caseStudy: {
-      heroLede: "A highly performant service platform landing experience for the UAE market — engineered without framework overhead and optimised for sub-second load times on mobile networks.",
+      heroLede: "A landing page for a UAE based platform connecting skilled professionals with opportunities.",
       focus: "Performance · Conversion",
       browserUrl: "skillscall.com",
       fakeNav: ["Home", "Services", "About", "Contact"],
@@ -139,10 +139,9 @@ export const projectsData: Project[] = [
       fakeP: "Connecting skilled professionals with the right opportunities across the UAE.",
       fakeBtn: "Get started →",
       blocks: [
-        { type: 'text', navLabel: 'Overview', title: "A service platform built for the UAE market", p: "Skillscall is a UAE-based platform connecting skilled professionals with opportunities. The product needed a strong landing page capable of handling high traffic, capturing leads quickly, and loading reliably on mobile networks — without the performance overhead of a heavy JavaScript framework." },
-        { type: 'list', navLabel: 'Challenge', title: "High traffic, fast networks, a conversion-first mandate", p: "The platform required a highly performant landing experience capable of handling high traffic spikes while maintaining rapid lead-capture conversion rates.", list: ["Must load sub-second on mobile networks common in the UAE", "No framework overhead — every kilobyte was a decision", "Conversion funnel needed to work on first visit, not after warm-up", "Stable performance under marketing campaign traffic spikes"] },
-        { type: 'list', navLabel: 'Solution', isAccent: true, title: "Vanilla JS, semantic HTML, aggressive asset optimisation", p: "I engineered a custom vanilla JavaScript solution free from heavy framework overhead. The entire build focused on semantic HTML and aggressive asset optimisation to ensure sub-second load times across mobile networks.", list: ["Semantic HTML structure for both accessibility and fast parse times", "Zero runtime framework dependencies — fully hand-authored JS", "Asset pipeline optimised for the smallest possible payload", "Lead capture form with instant feedback and minimal friction"] },
-        { type: 'outcome', navLabel: 'Outcome', title: "Fast, focused, built to convert", p: "The final product delivered a measurably fast experience for Skillscall's UAE audience. Sub-second load times translated directly into better user retention and higher form submission rates.", outcomes: [{ value: "<1s", label: "Load time on mobile" }, { value: "0", label: "Framework dependencies" }, { value: "↑", label: "User retention vs benchmark" }, { value: "↑", label: "Form submission rate" }] }
+        { type: 'text', navLabel: 'Overview', title: "A service platform built for the UAE market", p: "A landing page built for a UAE based client connecting professionals with opportunities. Kept it simple with plain HTML, CSS and vanilla JS, no framework needed." },
+        { type: 'list', navLabel: 'Challenge', title: "High traffic, fast networks, a conversion-first mandate", p: "Needed to build it without a framework since the page had to stay light and load fast on mobile. Every decision came down to keeping things as simple as possible." },
+        { type: 'list', navLabel: 'Solution', isAccent: true, title: "Vanilla JS, semantic HTML, aggressive asset optimisation", p: "Kept the structure semantic, the styles minimal and the form logic simple. No libraries, no unnecessary scripts, just what the page actually needed." }
       ]
     },
     links: [
@@ -171,7 +170,7 @@ export const projectsData: Project[] = [
     miniBrowserBg: "#ffffff",
     miniBrowserAccent: "#c2410c",
     caseStudy: {
-      heroLede: "Digital translation of a premium dining experience for a highly competitive hospitality market.",
+      heroLede: "A multi-page website for a restaurant group in Dubai, showcasing their dining experience across multiple branches.",
       focus: "Brand Identity · Interface",
       browserUrl: "swades.ae",
       fakeNav: ["Menu", "Locations", "Story"],
@@ -179,10 +178,9 @@ export const projectsData: Project[] = [
       fakeP: "A culinary journey.",
       fakeBtn: "Book Table",
       blocks: [
-        { type: 'text', navLabel: 'Overview', title: "Digital translation of taste", p: "Swades required an interface that authentically matched their fine-dining experience. The digital footprint needed to feel as warm and rich as the interior of the restaurant itself." },
-        { type: 'text', navLabel: 'Challenge', title: "Translating hospitality to a screen", p: "Standing out in Dubai's saturated premium restaurant sector. The digital experience had to immediately communicate quality and establish trust." },
-        { type: 'text', navLabel: 'Solution', isAccent: true, title: "Editorial typography and immersive imagery", p: "We crafted an editorial layout utilizing sweeping, full-bleed imagery and sophisticated serif typefaces to create a digital menu that feels like a luxury magazine." },
-        { type: 'outcome', navLabel: 'Outcome', title: "A new benchmark for dining", p: "The launch solidified the brand's premium positioning in the market, driving a significant increase in digital reservations.", outcomes: [{ value: "45%", label: "Increase in reservations" }, { value: "3x", label: "Longer session duration" }] }
+        { type: 'text', navLabel: 'Overview', title: "Bringing an Indian restaurant online", p: "Swades is an authentic Indian restaurant with multiple branches in Dubai. They wanted a proper web presence that felt true to their brand and made it easy for customers to explore the menu, find a branch and order online." },
+        { type: 'text', navLabel: 'Challenge', title: "Getting the vibe right", p: "The design needed to feel warm, premium and authentic across a multi-page site covering the menu, locations, events and gallery." },
+        { type: 'text', navLabel: 'Solution', isAccent: true, title: "Rich visuals, clear navigation", p: "The website is structured around how a customer naturally thinks. See the food, check the menu, find a branch, place an order. Each page follows that flow without making them think twice." },
       ]
     },
     links: [
@@ -210,7 +208,7 @@ export const projectsData: Project[] = [
     miniBrowserBg: "#ffffff",
     miniBrowserAccent: "#111111",
     caseStudy: {
-      heroLede: "A highly scalable and versatile wordmark capable of anchoring a massive e-commerce operation in the streetwear ecosystem.",
+      heroLede: "Logo design for a premium sneaker resale brand in the Middle East.",
       focus: "Identity · Scalability",
       browserUrl: "crep.me",
       fakeNav: ["Shop", "Drops", "About"],
@@ -218,10 +216,9 @@ export const projectsData: Project[] = [
       fakeP: "Premium goods.",
       fakeBtn: "Shop Collection",
       blocks: [
-        { type: 'text', navLabel: 'Overview', title: "Building a mark", p: "The logo needed to work everywhere — from a tiny 16px favicon on a phone screen to a massive billboard across Sheikh Zayed Road." },
-        { type: 'text', navLabel: 'Challenge', title: "Speed, authenticity, and hype", p: "The streetwear market moves fast. The brand required a mark that felt instantly recognizable and had the visual weight to stand next to giant global brands." },
-        { type: 'text', navLabel: 'Solution', isAccent: true, title: "The C-monogram system", p: "Designed a heavy, striking geometric 'C' mark paired with an unapologetically brutalist wordmark. Built out a strict grid system for infinite scaling." },
-        { type: 'outcome', navLabel: 'Outcome', title: "Ready for the streets", p: "The brand successfully launched its first collection with the new visual identity leading the charge across all digital touchpoints.", outcomes: [{ value: "10k+", label: "Day 1 visitors" }, { value: "100%", label: "Brand consistency" }] }
+        { type: 'text', navLabel: 'Overview', title: "Building a mark", p: "Crep Middle East is a premium footwear resale platform. They needed a logo that represented the brand confidently in the streetwear space." },
+        { type: 'text', navLabel: 'Challenge', title: "Speed, authenticity, and hype", p: "The streetwear market moves fast. The logo needed to feel instantly recognizable and hold its own next to established global brands." },
+        { type: 'text', navLabel: 'Solution', isAccent: true, title: "A bold wordmark built to scale", p: "Designed a clean geometric wordmark using custom letterforms that hold their weight across packaging, social media and storefronts." }
       ]
     },
     links: [
@@ -229,7 +226,7 @@ export const projectsData: Project[] = [
     ],
   },
   {
-    id: 2,
+    id: 5,
     slug: "tangled",
     title: "Tangled",
     category: "Frontend Development",

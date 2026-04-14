@@ -9,6 +9,7 @@ import {
   Monitor,
   Palette,
   Award,
+  FolderOpen,
 } from "lucide-react";
 import { CalendarMonthRounded } from "@mui/icons-material";
 
@@ -19,7 +20,7 @@ const About = () => {
       role: "QA Analyst",
       company: "Pleximus Inc - Mumbai",
       description:
-        "Manuala & Automated testing and Automation Framework development for web and mobile applications using Selenium and Appium.",
+        "Manual & Automated testing and Automation Framework development for web and mobile applications using Selenium and Appium.",
     },
     {
       year: "Apr 2020 - Jul 2021",
@@ -46,29 +47,58 @@ const About = () => {
 
   const services = [
     {
-      icon: Palette,
-      title: "UI/UX Design",
+      icon: Monitor,
+      title: "Test Automation",
       description:
-        "Designing interfaces that prioritize usability, accessibility, and seamless user interactions, with an emphasis on functional design.",
+        "I build test automation frameworks from scratch. Selenium, Appium, Pytest, POM architecture, CI/CD integration. The kind of setup your developers can actually maintain after I'm done.",
     },
     {
-      icon: Monitor,
-      title: "Interactive Experiences",
+      icon: Award,
+      title: "QA & Test Planning",
       description:
-        "Creating interactive experiences with thoughtful animations and micro‑interactions that make products engaging and intuitive.",
+        "Test plans, exploratory testing sessions, bug documentation, and coverage mapping. Everything you need, to improve your product's quality from the ground up.",
     },
     {
       icon: Code,
       title: "Frontend Development",
       description:
-        "Building clean, responsive, and accessible frontend applications with a strong focus on performance, maintainability, and user experience.",
+        "Clean, responsive web applications built to last. I've shipped websites and interfaces for clients in the UAE and India across various industries.",
     },
     {
-      icon: Award,
-      title: "QA & Validation",
+      icon: Palette,
+      title: "UI/UX Design",
       description:
-        "Designing scalable test automation frameworks and validating software functionality through structured testing, ensuring and long-term reliability.",
+        "I design functional interfaces that are easy to use and built to be implemented. Having written the frontend code myself, I know what's realistic to build and what isn't.",
     },
+  ];
+
+  const skills = [
+    // Frontend Development
+    "HTML5 / CSS3",
+    "JavaScript / TypeScript",
+    "React / Vanilla JS",
+    "Tailwind / Bootstrap",
+    "Responsive Design",
+    "CSS Animations",
+
+    // QA & Automation
+    "SDET / QA Engineering",
+    "Manual / Automated Testing",
+    "Selenium / Appium",
+    "Pytest / Test Frameworks",
+    "Test Planning",
+    "CI/CD Integration",
+
+    // Backend & Infrastructure
+    "Python",
+    "Node.js / PostgreSQL",
+    "Firebase / Vercel",
+
+    // Design
+    "Interface Design",
+    "Figma Specialist",
+    "Design Systems",
+    "Illustrator / Photoshop",
   ];
 
   return (
@@ -86,16 +116,13 @@ const About = () => {
                 ABOUT ME
               </span>
               <h1 className="text-[28px] tracking-tight md:text-4xl lg:text-5xl mb-4">
-                Hello,
+                Hi, I'm Mohammed Zaid.
               </h1>
-              <p className="page-desciption mb-5">
-                I'm a software engineer with over three years of experience building and validating products for clients across diverse domains. My work involves software development, test automation, and frontend implementation, with a strong focus on writing maintainable, production-quality code.
+              <p className="page-description mb-5">
+                I'm a software engineer based in Navi Mumbai, specialising in QA automation. I've spent the last few years working across design, frontend development, and quality engineering, and right now I'm focused on building test automation frameworks at Pleximus Inc.
               </p>
-              {/* <p className="page-desciption mb-5">
-              With a background in QA, frontend development, and product design, I bring a system-level perspective to engineering, understanding not only how software functions, but how it is experienced by end users. This allows me to design automation and software systems that are both technically robust and aligned with real user behavior.
-              </p> */}
-              <p className="page-desciption mb-5">
-                Currently, I focus on building scalable test automation frameworks, applying software engineering principles to ensure reliability, extensibility, and long-term maintainability, while continuing to leverage my design and frontend foundations where they add the most value.
+              <p className="page-description mb-5">
+                I started my career as a UI designer and frontend developer. That means when I write automation, I'm not guessing how users move through an app. I already know. That context makes the tests I write more meaningful and the bugs I find more relevant.
               </p>
               <div className="flex flex-wrap gap-4 mt-8">
                 <Button asChild>
@@ -135,14 +162,14 @@ const About = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 px-2 bg-secondary/50">
+      <section className="py-24 px-2 bg-secondary">
         <div className="container mx-auto max-w-reading">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <span className="px-4 py-1.5 text-xs font-medium font-mono rounded-full bg-primary/5 text-secondary-foreground inline-block mb-4">
               SERVICES
@@ -150,7 +177,7 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl mb-4 tracking-tight">
               What I Do
             </h2>
-            <p className="page-desciption max-w-compact mx-auto">
+            <p className="page-description max-w-compact mx-auto">
               I design and develop test automation frameworks alongside frontend applications, focusing on clean architecture, reliability, and long-term maintainability.
             </p>
           </motion.div>
@@ -188,7 +215,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <span className="px-4 py-1.5 text-xs font-medium font-mono rounded-full bg-primary/5 text-secondary-foreground inline-block mb-4">
               EXPERIENCE
@@ -201,47 +228,102 @@ const About = () => {
             </p>
           </motion.div>
 
-          <div className="space-y-8">
+          <div className="space-y-12 relative before:absolute before:left-0 md:before:left-[145px] before:top-[34px] before:bottom-4 before:w-px before:bg-gray-200 before:hidden md:before:block">
+            {/* Timeline Label - Right-aligned with the date column */}
+            <div className="absolute -top-10 left-0 md:w-[145px] text-right hidden md:block">
+              <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-muted-foreground/70 pr-6">
+                Timeline
+              </span>
+            </div>
+
             {timeline.map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="flex flex-col md:flex-row gap-6 md:gap-10"
+                className="flex flex-col md:flex-row gap-4 md:gap-14 relative"
               >
-                <div className="md:w-1/4 flex items-start mt-3">
-                  <div className="flex items-center">
-                    <div className="p-2 rounded-full border border-gray-200 bg-white flex-shrink-0">
-                      <CalendarMonthRounded className="h-4 w-4 text-muted-foreground" />
-                    </div>
-                    <div className="ml-3">
-                      <span className="text-[13px] text-muted-foreground font-sans tracking-wide font-medium">
-                        {item.year}
-                      </span>
-                    </div>
-                  </div>
+                {/* Years and Dot */}
+                <div className="md:w-[145px] flex-shrink-0 flex items-start justify-start md:justify-end relative pt-0 md:pt-[26px] pl-1 md:pl-0">
+                  <span className="text-[13px] font-serif tracking-wider text-foreground pr-0 md:pr-6 whitespace-nowrap text-left md:text-right">
+                    {item.year}
+                  </span>
+                  {/* Smaller Hollow Dot on the timeline - Centered with the year text */}
+                  <div className="absolute right-[-4.5px] top-[32px] w-2 h-2 rounded-full border-2 border-primary bg-background z-10 hidden md:block" />
                 </div>
-                <div className="md:w-3/4 bg-card border border-gray-200 rounded-[20px] px-6 py-5 text-primary">
-                  <h3 className="text-lg mb-1">
-                    {item.role}
-                  </h3>
-                  <p className="mb-1.5 text-sm font-medium">
-                    {item.company}
-                  </p>
-                  <p className="text-sm">
+
+                {/* Content Card */}
+                <div className="flex-1 bg-card border border-gray-200 rounded-[20px] px-7 py-6 text-primary shadow-sm hover:shadow-md transition-all duration-300">
+                  <div className="mb-2">
+                    <h3 className="text-xl font-medium mb-1 leading-tight">
+                      {item.role}
+                    </h3>
+                    <p className="text-[14px] font-medium text-foreground -mb-1 leading-relaxed">
+                      {item.company}
+                    </p>
+                  </div>
+                  <p className="text-[14px] leading-relaxed">
                     {item.description}
                   </p>
                 </div>
               </motion.div>
+            ))}
+
+            {/* Origin Marker (The Start) */}
+            <div className="flex flex-col md:flex-row gap-2 md:gap-14 relative mt-4">
+              <div className="md:w-[145px] flex-shrink-0 flex items-start justify-end relative">
+                {/* Final Dot to close the line */}
+                <div className="absolute right-[-4.5px] top-[10px] w-2 h-2 rounded-full border-2 border-primary/40 bg-background z-10 hidden md:block" />
+              </div>
+              <div className="flex-1 pt-1.5 hidden md:block">
+                <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-muted-foreground/70 ml-1">
+                  The Beginning
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section className="pt-20 pb-24 px-2 bg-secondary">
+        <div className="container mx-auto max-w-reading">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-center mb-8"
+          >
+            <h2 className="text-3xl md:text-4xl mb-4 tracking-tight">
+              Skills & Expertise
+            </h2>
+            <p className="page-description max-w-compact mx-auto">
+              A comprehensive list of technologies and tools I work with.
+            </p>
+          </motion.div>
+
+          <div className="flex flex-wrap gap-3 justify-center">
+            {skills.map((skill, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: index * 0.02 }}
+                viewport={{ once: true }}
+                className="portfolio-tag h-9 px-3.5"
+              >
+                {skill}
+              </motion.span>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-2 bg-primary text-primary-foreground">
+      <section className="py-24 px-2 bg-black text-primary-foreground">
         <div className="container mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -250,12 +332,10 @@ const About = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-normal mb-6 tracking-tight">
-              Let's Work Together
+              Let's Work Together!
             </h2>
             <p className="mb-8 max-w-compact mx-auto opacity-80">
-              I'm always interested in new opportunities and collaborations.
-              Whether you have a project in mind or just want to connect, I'd
-              love to hear from you.
+              If you need QA automation set up, a framework built from scratch, or just someone who understands both the product and the code, let's find the right solution for your project.
             </p>
             <Button
               asChild

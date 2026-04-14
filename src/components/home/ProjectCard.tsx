@@ -116,7 +116,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             {project.category}
           </span>
 
-          <h3 className="-ml-0.5 text-[28px] lg:text-[34px] leading-none tracking-tight text-foreground">
+          <h3 className="-ml-0.5 text-[28px] lg:text-[34px] leading-none tracking-tight">
             {project.title}
           </h3>
 
@@ -128,7 +128,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             {project.tags.map((tag, tagIndex) => (
               <span
                 key={tagIndex}
-                className="text-[11px] tracking-widest text-muted-foreground uppercase border-[1px] border-gray-300 bg-white/5 px-2.5 py-0.5 rounded-full"
+                className="portfolio-tag px-2.5 py-0.5 text-[11px] leading-tight"
               >
                 {tag}
               </span>

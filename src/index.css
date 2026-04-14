@@ -82,11 +82,33 @@
   h4,
   h5,
   h6 {
-    @apply font-serif;
+    @apply font-serif bg-clip-text text-transparent;
+    background-image: linear-gradient(180deg, hsl(var(--foreground) / 0.7) 0%, hsl(var(--foreground) / 0.85) 50%, hsl(var(--foreground)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  /* Automatic Monochrome flip for dark sections (About page CTA, Home CTA, etc) */
+  .bg-black h1,
+  .bg-black h2,
+  .bg-black h3,
+  .bg-zinc-950 h1,
+  .bg-zinc-950 h2,
+  .bg-zinc-950 h3,
+  .dark h1,
+  .dark h2,
+  .dark h3 {
+    background-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.7) 100%);
   }
 
   .section-tag {
     @apply font-mono text-xs font-medium tracking-wider rounded-full bg-primary/5 text-secondary-foreground;
+  }
+
+  .portfolio-tag {
+    @apply rounded-full border border-gray-300 bg-card text-[12px] tracking-wide font-medium text-foreground/80 whitespace-nowrap inline-flex items-center justify-center transition-colors;
   }
 
   .page-description {

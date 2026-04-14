@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
 import { ArrowDownIcon } from "lucide-react";
+import StatusBadge, { AvailabilityStatus } from "../common/StatusBadge";
 import { Button } from "@/components/ui/button";
+
+const CURRENT_STATUS: { status: AvailabilityStatus; text?: string } = {
+  status: "available",
+  text: "Open to work",
+};
 
 const Hero = () => {
   const scrollToProjects = () => {
@@ -9,6 +15,14 @@ const Hero = () => {
 
   return (
     <section className="min-h-[75vh] md:min-h-0 md:pt-40 md:pb-32 flex items-center justify-center px-2 relative">
+      {/* Absolutely positioned StatusBadge centered in the padding area */}
+      <div className="absolute top-24 left-1/2 -translate-x-1/2 z-20">
+        <StatusBadge
+          status={CURRENT_STATUS.status}
+          customText={CURRENT_STATUS.text}
+        />
+      </div>
+
       <div className="absolute inset-0 -z-10 opacity-30">
         <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-primary/5 rounded-full filter blur-3xl"></div>
         <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl"></div>
@@ -31,7 +45,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-[32px]/tight sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-6 tracking-tight text-balance"
+            className="text-[32px]/tight sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-6 tracking-tight text-balance pb-2"
           >
             Building Scalable <br /> Automation Systems
           </motion.h1>
@@ -42,7 +56,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-md page-description max-w-compact mb-10 text-balance"
           >
-            Software engineer with a background in Design, Frontend Development and QA, currently focused on building scalable Test Automation Frameworks engineered for long-term growth.
+            Software engineer with a background in UI Design, Frontend Development and QA, currently focused on building scalable Test Automation Frameworks engineered for long-term growth.
           </motion.p>
 
           <motion.div

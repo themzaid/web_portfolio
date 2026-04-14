@@ -38,14 +38,20 @@ const AboutPreview = () => {
               Passionate about creating beautiful digital experiences.
             </h2>
             <p className="page-description mb-6 text-balance">
-              Software engineer with over 3 years of
-              experience building products for clients around the world. I
-              specialize in creating exceptional, functional, and user-centered
-              digital experiences.
+              I'm a Software Automation Engineer based in Navi Mumbai with a
+              background in UI design, frontend development, and quality
+              engineering. I started my career building products which means I
+              understand how they're designed, how they're built, and exactly
+              how they break
             </p>
-            <p className="page-description mb-6 text-balance">
-              With a background in QA, frontend development and product design, I bring a system-level perspective to engineering, understanding not only how software functions, but how it is experienced by end users. This allows me to design automation and software systems that are both technically robust and aligned with real user behavior.
-            </p>
+            {/* <p className="page-description mb-6 text-balance">
+              With a background in QA, frontend development and product design,
+              I bring a system-level perspective to engineering, understanding
+              not only how software functions, but how it is experienced by end
+              users. This allows me to design automation and software systems
+              that are both technically robust and aligned with real user
+              behavior.
+            </p> */}
             <div className="mt-8">
               <Button
                 asChild
@@ -72,9 +78,7 @@ const AboutPreview = () => {
             <div className="bg-card border border-border-gray-100 rounded-[20px] p-8 shadow-sm relative overflow-hidden">
               <div className="absolute top-0 right-0 w-40 h-40 bg-secondary/30 rounded-full filter blur-3xl -translate-y-1/2 translate-x-1/4"></div>
 
-              <h3 className="text-xl mb-6 relative z-10">
-                Skills & Expertise
-              </h3>
+              <h3 className="text-xl mb-6 relative z-10">Skills & Expertise</h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-10">
                 {skills.map((skill, index) => (
