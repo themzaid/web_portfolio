@@ -86,8 +86,12 @@
     background-image: linear-gradient(180deg, hsl(var(--foreground) / 0.7) 0%, hsl(var(--foreground) / 0.85) 50%, hsl(var(--foreground)) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    padding-bottom: 0.2em;
-    margin-bottom: -0.2em;
+    padding-bottom: 0.1em;
+    margin-bottom: -0.1em;
+  }
+
+  h1 {
+    @apply mb-2 md:mb-4;
   }
 
   /* Automatic Monochrome flip for dark sections (About page CTA, Home CTA, etc) */

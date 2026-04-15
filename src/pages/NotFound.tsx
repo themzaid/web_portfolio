@@ -27,7 +27,7 @@ const NotFound = () => {
             <div className="text-8xl opacity-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-primary">
               404
             </div>
-            <h1 className="text-5xl mb-4 relative z-10">404</h1>
+            <h1 className="text-5xl relative z-10">404</h1>
           </div>
 
           <h2 className="text-2xl font-medium mb-4">Page Not Found</h2>

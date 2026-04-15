@@ -115,7 +115,7 @@ const About = () => {
               <span className="px-4 py-1.5 text-xs font-medium font-mono rounded-full bg-primary/5 text-secondary-foreground inline-block mb-4">
                 ABOUT ME
               </span>
-              <h1 className="text-[28px] tracking-tight md:text-4xl lg:text-5xl mb-4">
+              <h1 className="text-[28px] tracking-tight md:text-4xl lg:text-5xl">
                 Hi, I'm Mohammed Zaid.
               </h1>
               <p className="page-description mb-5">
@@ -228,7 +228,7 @@ const About = () => {
             </p>
           </motion.div>
 
-          <div className="space-y-12 relative before:absolute before:left-0 md:before:left-[145px] before:top-[34px] before:bottom-4 before:w-px before:bg-gray-200 before:hidden md:before:block">
+          <div className="space-y-12 relative before:absolute before:left-0 sm:before:left-[145px] before:top-[34px] before:bottom-4 before:w-px before:bg-gray-200 before:hidden sm:before:block">
             {/* Timeline Label - Right-aligned with the date column */}
             <div className="absolute -top-10 left-0 md:w-[145px] text-right hidden md:block">
               <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-muted-foreground/70 pr-6">
@@ -243,19 +243,19 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="flex flex-col md:flex-row gap-4 md:gap-14 relative"
+                className="flex flex-col sm:flex-row gap-4 md:gap-14 relative"
               >
                 {/* Years and Dot */}
-                <div className="md:w-[145px] flex-shrink-0 flex items-start justify-start md:justify-end relative pt-0 md:pt-[26px] pl-1 md:pl-0">
-                  <span className="text-[13px] font-serif tracking-wider text-foreground pr-0 md:pr-6 whitespace-nowrap text-left md:text-right">
+                <div className="sm:w-[145px] flex-shrink-0 flex items-start justify-start sm:justify-end relative pt-0 sm:pt-[26px] pl-1 sm:pl-0">
+                  <span className="text-[13px] font-serif tracking-wider text-foreground pr-0 sm:pr-6 whitespace-nowrap text-left md:text-right">
                     {item.year}
                   </span>
                   {/* Smaller Hollow Dot on the timeline - Centered with the year text */}
-                  <div className="absolute right-[-4.5px] top-[32px] w-2 h-2 rounded-full border-2 border-primary bg-background z-10 hidden md:block" />
+                  <div className="absolute right-[-4.5px] top-[32px] w-2 h-2 rounded-full border-2 border-primary bg-background z-10 hidden sm:block" />
                 </div>
 
                 {/* Content Card */}
-                <div className="flex-1 bg-card border border-gray-200 rounded-[20px] px-7 py-6 text-primary shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="flex-1 bg-card border border-gray-200 rounded-[20px] px-7 py-6 text-primary shadow-sm hover:shadow-sm transition-all duration-300">
                   <div className="mb-2">
                     <h3 className="text-xl font-medium mb-1 leading-tight">
                       {item.role}
@@ -272,10 +272,10 @@ const About = () => {
             ))}
 
             {/* Origin Marker (The Start) */}
-            <div className="flex flex-col md:flex-row gap-2 md:gap-14 relative mt-4">
-              <div className="md:w-[145px] flex-shrink-0 flex items-start justify-end relative">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-14 relative mt-4">
+              <div className="sm:w-[145px] flex-shrink-0 flex items-start justify-end relative">
                 {/* Final Dot to close the line */}
-                <div className="absolute right-[-4.5px] top-[10px] w-2 h-2 rounded-full border-2 border-primary/40 bg-background z-10 hidden md:block" />
+                <div className="absolute right-[-4.5px] top-[10px] w-2 h-2 rounded-full border-2 border-primary/40 bg-background z-10 hidden sm:block" />
               </div>
               <div className="flex-1 pt-1.5 hidden md:block">
                 <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-muted-foreground/70 ml-1">
