@@ -14,15 +14,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-[75vh] md:min-h-0 md:pt-40 md:pb-32 flex items-center justify-center px-2 relative">
-      {/* Absolutely positioned StatusBadge centered in the padding area */}
-      <div className="absolute top-24 left-1/2 -translate-x-1/2 z-20">
-        <StatusBadge
-          status={CURRENT_STATUS.status}
-          customText={CURRENT_STATUS.text}
-        />
-      </div>
-
+    <section className="min-h-[80vh] md:min-h-0 md:pt-40 md:pb-32 flex items-center justify-center px-2 relative">
       <div className="absolute inset-0 -z-10 opacity-30">
         <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-primary/5 rounded-full filter blur-3xl"></div>
         <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl"></div>
@@ -34,10 +26,14 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-4"
+            className="flex flex-col items-center gap-8"
           >
-            <span className="section-tag px-4 py-1.5 inline-block">
-              Software Engineer
+            <StatusBadge
+              status={CURRENT_STATUS.status}
+              customText={CURRENT_STATUS.text}
+            />
+            <span className="section-tag px-4 py-1.5 inline-block mb-4">
+              SOFTWARE ENGINEER
             </span>
           </motion.div>
 

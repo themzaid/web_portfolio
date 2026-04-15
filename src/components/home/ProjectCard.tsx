@@ -59,16 +59,15 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
+      viewport={{ once: true, margin: "0px" }}
       transition={{
-        duration: 0.5,
-        delay: index * 0.1,
-        ease: [0.25, 0.46, 0.45, 0.94],
+        duration: 0.6,
+        ease: [.1, .12, .2, 1],
       }}
       id={`project-${project.slug}`}
-      className="grid grid-cols-1 sm:grid-cols-[42%_1fr] border-[1px] border-border rounded-3xl bg-card overflow-hidden transition-all duration-300 hover:-translate-y-1 min-h-[300px]"
+      className="grid grid-cols-1 sm:grid-cols-[42%_1fr] border-[1px] border-border rounded-3xl bg-card overflow-hidden transition-all duration-100 hover:-translate-y-1 min-h-[300px]"
     >
 
       {/* LEFT: Custom Thumbnail Graphic */}
