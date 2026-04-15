@@ -41,7 +41,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-[32px]/tight sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight text-balance pb-2"
+            className="text-[32px]/tight sm:text-5xl md:text-6xl lg:text-7xl tracking-tight text-balance pb-2"
           >
             Building Scalable <br /> Automation Systems
           </motion.h1>
