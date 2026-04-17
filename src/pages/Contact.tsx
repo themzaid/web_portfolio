@@ -24,9 +24,8 @@ const Contact = () => {
               Get in Touch
             </h1>
             <p className="page-description max-w-compact mx-auto">
-              Have a project in mind or want to discuss potential opportunities?
-              I'd love to hear from you. Fill out the form below or reach out
-              directly.
+              Have a project in mind or an opportunity to discuss? Reach out through the form below or contact me directly.
+
             </p>
           </motion.div>
 

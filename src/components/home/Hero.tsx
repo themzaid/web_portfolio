@@ -14,7 +14,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-[80vh] md:min-h-0 md:pt-40 md:pb-32 flex items-center justify-center px-2 relative">
+    <section className="min-h-[80vh] md:min-h-0 md:pt-32 md:pb-32 flex items-center justify-center px-2 relative">
       <div className="absolute inset-0 -z-10 opacity-30">
         <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-primary/5 rounded-full filter blur-3xl"></div>
         <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl"></div>
@@ -43,7 +43,8 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-[32px]/tight sm:text-5xl md:text-6xl lg:text-7xl tracking-tight text-balance pb-2"
           >
-            Building Scalable <br /> Automation Systems
+            {/* Building Scalable <br /> Automation Systems */}
+            I design, build, test <br /> and ship products
           </motion.h1>
 
           <motion.p
@@ -52,7 +53,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-md page-description max-w-compact mb-10 text-balance"
           >
-            Software engineer with a background in UI Design, Frontend Development and QA, currently focused on building scalable Test Automation Frameworks engineered for long-term growth.
+            Software engineer with a background in software design, development and testing, focused on designing, building and testing features that hold up as products scale.
           </motion.p>
 
           <motion.div

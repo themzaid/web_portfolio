@@ -23,7 +23,7 @@ const About = () => {
         "Manual & Automated testing and Automation Framework development for web and mobile applications using Selenium and Appium.",
     },
     {
-      year: "Apr 2020 - Jul 2021",
+      year: "Dec 2019 - Feb 2022",
       role: "Web Designer & Developer",
       company: "Freelance - Remote",
       description:
@@ -50,25 +50,25 @@ const About = () => {
       icon: Monitor,
       title: "Test Automation",
       description:
-        "I build test automation frameworks from scratch. Selenium, Appium, Pytest, POM architecture, CI/CD integration. The kind of setup your developers can actually maintain after I'm done.",
+        "I build test automation frameworks that improve coverage, reduce manual effort and support more reliable, scalable releases.",
     },
     {
       icon: Award,
-      title: "QA & Test Planning",
+      title: "Quality Assurance",
       description:
-        "Test plans, exploratory testing sessions, bug documentation, and coverage mapping. Everything you need, to improve your product's quality from the ground up.",
+        "I improve product quality through structured testing, clear bug reporting and thoughtful coverage across the user journey.",
     },
     {
       icon: Code,
-      title: "Frontend Development",
+      title: "Development",
       description:
-        "Clean, responsive web applications built to last. I've shipped websites and interfaces for clients in the UAE and India across various industries.",
+        "I build websites, interfaces and product experiences with a focus on clean execution and practical implementation.",
     },
     {
       icon: Palette,
       title: "UI/UX Design",
       description:
-        "I design functional interfaces that are easy to use and built to be implemented. Having written the frontend code myself, I know what's realistic to build and what isn't.",
+        "I design functional interfaces that are easy to use, realistic to build and shaped by hands-on frontend experience.",
     },
   ];
 
@@ -119,10 +119,10 @@ const About = () => {
                 Hi, I'm Mohammed Zaid.
               </h1>
               <p className="page-description mb-5">
-                I'm a software engineer based in Navi Mumbai, specialising in QA automation. I've spent the last few years working across design, frontend development, and quality engineering, and right now I'm focused on building test automation frameworks at Pleximus Inc.
+                I'm a software engineer based in Navi Mumbai, with a background in design, development and testing. Over the years, I have worked across software design, development and quality engineering, building software with a focus on clarity, reliability and long term maintainability.
               </p>
               <p className="page-description mb-5">
-                I started my career as a UI designer and frontend developer. That means when I write automation, I'm not guessing how users move through an app. I already know. That context makes the tests I write more meaningful and the bugs I find more relevant.
+                I started my career as a UI designer and frontend developer. That background shapes how I approach software today, helping me think through user flows, edge cases and implementation details with more context from the start.
               </p>
               <div className="flex flex-wrap gap-4 mt-8">
                 <Button asChild>
@@ -178,7 +178,7 @@ const About = () => {
               What I Do
             </h2>
             <p className="page-description max-w-compact mx-auto">
-              I design and develop test automation frameworks alongside frontend applications, focusing on clean architecture, reliability, and long-term maintainability.
+              I work across software design, development and testing, building thoughtful user experiences and reliable systems that are made to scale with the product.
             </p>
           </motion.div>
 
@@ -192,10 +192,10 @@ const About = () => {
                 viewport={{ once: true }}
                 className="bg-card border border-gray-200 rounded-[20px] p-6"
               >
-                <div className="p-3 border border-gray-200 bg-gray-100 inline-block rounded-[7px] mb-3">
+                <div className="p-3 border border-gray-200 bg-gray-100 inline-block rounded-[7px] mb-2">
                   <service.icon className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl mb-3">
+                <h3 className="text-xl mb-1">
                   {service.title}
                 </h3>
                 <p className="text-muted-foreground text-sm/[21px]">
@@ -335,7 +335,7 @@ const About = () => {
               Let's Work Together!
             </h2>
             <p className="mb-8 max-w-compact mx-auto opacity-80">
-              If you need QA automation set up, a framework built from scratch, or just someone who understands both the product and the code, let's find the right solution for your project.
+              If you need support across software design, development or testing, or simply want someone who understands both the product and the code, let's find the right solution for your project.
             </p>
             <Button
               asChild

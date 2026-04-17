@@ -59,7 +59,7 @@ const StatusBadge = ({ status, customText, className }: StatusBadgeProps) => {
           className={cn("absolute w-2 h-2 rounded-full", config.color)}
         />
       </div>
-      <span className="text-[11px] font-sans font-medium uppercase tracking-widest text-primary/80">
+      <span className="text-[12px] font-sans font-medium tracking-wider text-primary/80">
         {config.text}
       </span>
     </motion.div>

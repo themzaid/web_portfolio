@@ -89,7 +89,7 @@ const ContactForm = () => {
     >
       <div className="mb-7">
         <h2 className="text-2xl font-serif pb-4 border-b border-gray-300 tracking-tight">Send Me a Message</h2>
-        <p className="text-sm font-medium text-muted-foreground mt-6">Fill out the form below and I'll get back to you shortly.</p>
+        <p className="text-sm font-medium text-muted-foreground mt-6">Share a few details and I will get back to you shortly.</p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">

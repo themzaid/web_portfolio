@@ -15,11 +15,6 @@ const variants = {
 const PageTransition = ({ children }: PageTransitionProps) => {
   const { pathname } = useLocation();
 
-  // Reset scroll position when the route changes
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
   return (
     <motion.main
       variants={variants}

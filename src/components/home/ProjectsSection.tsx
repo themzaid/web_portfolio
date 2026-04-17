@@ -13,7 +13,7 @@ const ProjectsSection = () => {
             Featured Projects
           </h2>
           <p className="page-description max-w-compact mx-auto text-balance">
-            A selection of my work in the past, showcasing my skills in design and frontend development.
+            A selection of my work, showcasing my skills in software design and development.
           </p>
         </div>
         <div className="flex flex-col gap-8 md:gap-10 mt-8 md:mt-12 mx-auto">

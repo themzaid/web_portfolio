@@ -23,10 +23,10 @@ const CTASection = () => {
             LET'S COLLABORATE
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl mb-6 text-balance tracking-tight  max-w-compact mx-auto">
-            Need test coverage without a full-time hire?
+            Need help building better software?
           </h2>
           <p className="page-description mx-auto mb-10 text-balance max-w-compact">
-            I'm available for freelance automation projects and framework setup. If your team is shipping without safety nets and you need someone to fix that fast, let's talk.
+            I work across software design, development and testing, helping teams ship features that are thoughtful, reliable and scalable.
           </p>
           <Button asChild size="lg" className="rounded-full group">
             <Link to="/contact">

@@ -6,6 +6,23 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 
+// Scroll restoration that ignores HMR reloads
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  
+  useEffect(() => {
+    // Only scroll to top if this isn't a dev-server HMR refresh
+    // We check if the pathname truly changed from its last value
+    const lastPath = window.sessionStorage.getItem('lastPath');
+    if (lastPath !== pathname) {
+      window.scrollTo(0, 0);
+      window.sessionStorage.setItem('lastPath', pathname);
+    }
+  }, [pathname]);
+
+  return null;
+};
+
 // Pages
 import Index from "./pages/Index";
 import About from "./pages/About";
@@ -31,6 +48,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <AnimatePresence mode="wait">
             <Routes>
               <Route path="/" element={<Index />} />

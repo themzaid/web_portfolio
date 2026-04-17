@@ -40,7 +40,7 @@ const ContactInfo = () => {
     >
       <div className="mb-7">
         <h2 className="text-2xl font-serif pb-4 border-b border-gray-300 tracking-tight">Contact Information</h2>
-        <p className="text-sm text-muted-foreground mt-6 font-medium">Find me where the design meets the code.</p>
+        <p className="text-sm text-muted-foreground mt-6 font-medium">You can also reach me directly through the details below.</p>
       </div>
 
       <div className="space-y-6">
