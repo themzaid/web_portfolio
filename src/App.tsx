@@ -3,8 +3,22 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
+
+// Pages
+const Index = lazy(() => import("./pages/Index"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const CaseStudy = lazy(() => import("./pages/CaseStudy"));
+
+// Premium Loading Fallback
+const PageLoader = () => (
+  <div className="fixed inset-0 flex items-center justify-center bg-background z-[100]">
+    <div className="w-8 h-8 border-2 border-primary/20 border-t-primary rounded-full animate-spin" />
+  </div>
+);
 
 // Scroll restoration that ignores HMR reloads
 const ScrollToTop = () => {
@@ -23,12 +37,6 @@ const ScrollToTop = () => {
   return null;
 };
 
-// Pages
-import Index from "./pages/Index";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
-import CaseStudy from "./pages/CaseStudy";
 
 const queryClient = new QueryClient();
 
@@ -49,15 +57,17 @@ const App = () => {
         <Sonner />
         <HashRouter>
           <ScrollToTop />
-          <AnimatePresence mode="wait">
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/project/:slug" element={<CaseStudy />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </AnimatePresence>
+          <Suspense fallback={<PageLoader />}>
+            <AnimatePresence mode="wait">
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/project/:slug" element={<CaseStudy />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </AnimatePresence>
+          </Suspense>
         </HashRouter>
       </TooltipProvider>
     </QueryClientProvider>
