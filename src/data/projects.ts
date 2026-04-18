@@ -165,6 +165,7 @@ export const projectsData: Project[] = [
     miniBrowserAccent: "#7c3aed",
     caseStudy: {
       heroLede: "Designed and developed a landing page for a UAE based platform connecting skilled professionals with opportunities, focused on fast loading, clarity and smooth user interaction.",
+      focus: "Performance",
       browserUrl: "skillscall.com",
       fakeNav: ["Home", "Services", "About", "Contact"],
       fakeH1: "Scale your skills. Find your calling.",
