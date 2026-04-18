@@ -100,7 +100,7 @@ export const projectsData: Project[] = [
       ]
     },
     links: [
-      { label: "Landing Page", url: "https://advance-01-eyhybasus-advanceglobal.vercel.app/", icon: "external" },
+      { label: "Landing Page", url: "https://advance-global.vercel.app/", icon: "external" },
     ],
     screenshot: "advance.png",
   },
