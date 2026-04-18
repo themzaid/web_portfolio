@@ -225,7 +225,7 @@ export const projectsData: Project[] = [
     title: "Bitstrap",
     category: "UI Design · Frontend Development",
     description: "Designed and built a custom CSS library for UI components, created to be modular, lightweight and easy to scale across products.",
-    tags: ["HTML", "CSS", "JavaScript"],
+    tags: ["Figma", "HTML", "CSS", "JavaScript"],
     year: "2020",
     role: "UI Designer · Frontend Engineer",
     themeGradient: "linear-gradient(135deg,#1e2535,#0f1724,#162035)",
