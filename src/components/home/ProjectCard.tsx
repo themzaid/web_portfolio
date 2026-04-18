@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Project } from "../../data/projects";
+import MacBookFrame from "@/components/common/MacBookFrame";
 
 interface ProjectCardProps {
   project: Project;
@@ -11,86 +12,31 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
-  const liveUrl = project.links?.find(l =>
-    l.label.toLowerCase().includes("landing") ||
-    l.label.toLowerCase().includes("live") ||
-    l.icon === 'external'
-  )?.url;
 
-  const renderMiniBrowserContent = () => {
-    const accent = project.miniBrowserAccent ?? '#111111';
-
-    if (project.screenshot) {
-      return (
-        <div className="w-full h-full overflow-hidden bg-[#111215] aspect-[16/9] flex items-center justify-center">
-          <img
-            src={`/src/assets/${project.screenshot}`}
-            alt={`${project.title} Preview`}
-            className="w-full h-full object-cover object-top"
-          />
-        </div>
-      );
-    }
-
-    if (liveUrl) {
-      return (
-        <div className="w-full relative bg-[#111215] overflow-hidden aspect-[16/9]">
-          <iframe
-            src={liveUrl}
-            className="absolute inset-0 w-[166.7%] h-[166.7%] border-none origin-top-left scale-[0.6] pointer-events-none"
-            title={project.title}
-            loading="lazy"
-          />
-        </div>
-      );
-    }
-
-    const brandImages = ['bitstrap', 'crep-middle-east', 'skillscall', 'swades', 'tangled'];
-
-    if (brandImages.includes(project.slug) && (!liveUrl || project.slug === 'crep-middle-east' || project.slug === 'bitstrap')) {
-      const fileName = project.slug === 'crep-middle-east' ? 'crepme' : project.slug;
-      return (
-        <div className="flex items-center justify-center w-full h-full bg-[#111215]">
-          <img
-            src={`/${fileName}.svg`}
-            alt={`${project.title} Preview`}
-            className="w-full h-full object-cover object-center opacity-95"
-          />
-        </div>
-      );
-    }
-    // Default fallback if no live URL is found
-    return (
-      <div className="flex items-center justify-center h-full bg-[#111215] text-white/20 text-[10px] uppercase tracking-widest">
-        Preview Not Available
-      </div>
-    );
-  };
 
   return (
     <motion.article
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -4 }}
       viewport={{ once: true, margin: "0px" }}
       transition={{
         duration: 0.6,
         ease: [.1, .12, .2, 1],
       }}
       id={`project-${project.slug}`}
-      className="grid grid-cols-1 sm:grid-cols-[50%_1fr] md:grid-cols-[42%_1fr] border-[1px] border-border rounded-[20px] bg-card overflow-hidden min-h-[auto]"
+      className="grid grid-cols-1 sm:grid-cols-[clamp(42%,45vw,50%)_1fr] border-[1px] border-border rounded-[25px] bg-card overflow-hidden min-h-[auto]"
     >
 
       {/* LEFT: Custom Thumbnail Graphic */}
       <div
-        className="relative overflow-hidden min-h-[220px]"
+        className="relative overflow-hidden min-h-[clamp(250px,30vw,320px)]"
         style={{ background: project.themeGradient }}
       >
         {/* Glows */}
         {project.glows.map((glow, i) => (
           <div
             key={i}
-            className="absolute rounded-full blur-[22px] md:blur-[28px]"
+            className="absolute rounded-full blur-[clamp(22px,3vw,35px)]"
             style={{
               width: glow.width,
               height: glow.height,
@@ -103,40 +49,12 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           />
         ))}
 
-        {/* MacBook Frame — single connected unit based on original design */}
-        <div className="absolute inset-x-5 md:inset-x-6 top-1/2 -translate-y-1/2 md:top-7 md:translate-y-0 flex flex-col drop-shadow-2xl">
-
-          {/* Lid (Original Design restored) */}
-          <div className="bg-[#0a0a0c] p-[6px] pb-3 md:p-[8px] md:pb-4 rounded-t-[15px] border-[1.5px] border-[#d2d3d6] border-b-0 relative">
-            {/* Inner Screen */}
-            <div className="w-full rounded-t-[9px] overflow-hidden border-[1px] border-white/5 bg-[#111215] flex flex-col">
-              {/* Dark Header */}
-              <div className="h-[34px] flex items-center gap-1.5 px-3 bg-[#0e1012] border-b-[1px] border-white/5 shrink-0">
-                <div className="w-2 h-2 rounded-full bg-[#ff5f56]" />
-                <div className="w-2 h-2 rounded-full bg-[#ffbd2e]" />
-                <div className="w-2 h-2 rounded-full bg-[#27c93f]" />
-                <div className="ml-2 bg-white/10 rounded-md h-4 flex-1 max-w-[83%] flex items-center px-2 text-[8.5px] text-white/50 font-mono truncate">
-                  {project.caseStudy.browserUrl}
-                </div>
-              </div>
-
-              <div className="flex-1 min-h-0 bg-[#111215]">
-                {renderMiniBrowserContent()}
-              </div>
-            </div>
-
-            {/* Subtle MacBook Chin Reflector */}
-            <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-t from-white/5 to-transparent rounded-full mx-8" />
-          </div>
-
-          {/* New Attached Base */}
-          <div className="h-[12px] md:h-[16px] -mx-4 md:-mx-6 bg-gradient-to-b from-[#e8e8ea] to-[#babbbe] rounded-b-[8px] border border-t-0 border-[#a2a3a7] shadow-lg relative flex justify-center">
-            {/* Hinge Line */}
-            <div className="absolute top-0 inset-x-5 md:inset-x-7 h-[1px] bg-gradient-to-r from-transparent via-white/80 to-transparent" />
-            {/* Lift notch */}
-            <div className="absolute top-0 w-12 md:w-16 h-[3px] bg-[#0a0a0c] rounded-b-[4px] shadow-[inset_0_-1px_1px_rgba(255,255,255,0.4)]" />
-          </div>
-
+        {/* MacBook Frame */}
+        <div
+          className="absolute inset-x-[clamp(16px,4vw,24px)]"
+          style={{ top: 'clamp(20px, 8vw, 32px)' }}
+        >
+          <MacBookFrame project={project} variant="card" />
         </div>
       </div>
 

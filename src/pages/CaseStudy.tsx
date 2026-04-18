@@ -4,6 +4,7 @@ import Layout from "@/components/layout/Layout";
 import { projectsData } from "@/data/projects";
 import { useState, useEffect, useLayoutEffect } from "react";
 import { Button } from "@/components/ui/button";
+import MacBookFrame from "@/components/common/MacBookFrame";
 
 const CaseStudy = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -73,7 +74,7 @@ const CaseStudy = () => {
               {project.glows.map((glow, i) => (
                 <div
                   key={i}
-                  className="absolute rounded-full blur-[40px] md:blur-[60px] opacity-60"
+                  className="absolute rounded-full blur-[clamp(40px,6vw,80px)] opacity-60"
                   style={{
                     width: glow.width,
                     height: glow.height,
@@ -87,75 +88,9 @@ const CaseStudy = () => {
               ))}
             </div>
 
-            {/* Scaled-down MacBook wrapper so it fits in viewport securely */}
-            <div className="w-[85%] md:w-[80%] lg:w-[70%] max-w-5xl pt-12 md:pt-16 pb-0 relative z-10 flex flex-col drop-shadow-2xl">
-
-              {/* Lid (Original Design restored) */}
-              <div className="bg-[#0a0a0c] p-[6px] pb-3 md:p-[8px] md:pb-4 rounded-t-[15px] border-[1.5px] border-[#d2d3d6] border-b-0 relative">
-                {/* Inner Screen */}
-                <div className="w-full rounded-t-[9px] overflow-hidden border-[1px] border-white/5 bg-[#111215] flex flex-col">
-                  {/* Dark Header */}
-                  <div className="h-[34px] flex items-center gap-1.5 px-3 bg-[#0e1012] border-b-[1px] border-white/5 shrink-0">
-                    <div className="w-2 h-2 rounded-full bg-[#ff5f56]" />
-                    <div className="w-2 h-2 rounded-full bg-[#ffbd2e]" />
-                    <div className="w-2 h-2 rounded-full bg-[#27c93f]" />
-                    <div className="ml-2 bg-white/10 rounded-md h-4 flex-1 max-w-[83%] flex items-center px-2 text-[8.5px] text-white/50 font-mono truncate">
-                      {caseStudy.browserUrl}
-                    </div>
-                  </div>
-
-                  {/* Browser Viewport */}
-                  <div className="w-full relative bg-[#111215] overflow-hidden aspect-[16/9] flex items-center justify-center">
-                    {project.screenshot ? (
-                      <img
-                        src={`/src/assets/${project.screenshot}`}
-                        alt={`${project.title} Preview`}
-                        className={project.screenshot.endsWith('.svg') ? "w-full h-full object-contain p-8 md:p-14 opacity-95" : "w-full h-full object-cover object-top"}
-                      />
-                    ) : liveUrl ? (
-                      <iframe
-                        src={liveUrl}
-                        className="absolute inset-0 w-[125%] h-[125%] border-none origin-top-left scale-[0.8]"
-                        title={project.title}
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div className="absolute inset-0 px-6 py-7 md:p-8 flex flex-col items-start h-full relative z-10 bg-[#111215]">
-                        {caseStudy.fakeNav && (
-                          <div className="flex gap-4 md:gap-5 mb-5 md:mb-6">
-                            {caseStudy.fakeNav.map(item => (
-                              <span key={item} className="text-[11.5px] md:text-xs text-white/40">{item}</span>
-                            ))}
-                          </div>
-                        )}
-                        <h2 className="text-[24px] md:text-[36px] leading-none text-white max-w-[10ch] mb-3 md:mb-4">
-                          {project.miniBrowser.title}
-                        </h2>
-                        <p className="text-[12.5px] md:text-[13px] text-white/60 max-w-[30ch] leading-[1.65]">
-                          {caseStudy.fakeP}
-                        </p>
-                        {caseStudy.fakeBtn && (
-                          <div className="mt-4 md:mt-5 px-5 py-2.5 bg-white/10 rounded-full text-xs text-white inline-block">
-                            {caseStudy.fakeBtn}
-                          </div>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                {/* Subtle MacBook Chin Reflector */}
-                <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-t from-white/5 to-transparent rounded-full mx-8" />
-              </div>
-
-              {/* Attached Base */}
-              <div className="h-[12px] md:h-[16px] -mx-4 md:-mx-6 bg-gradient-to-b from-[#e8e8ea] to-[#babbbe] rounded-b-[8px] md:rounded-b-[12px] border border-t-0 border-[#a2a3a7] shadow-lg relative flex justify-center">
-                {/* Hinge Line */}
-                <div className="absolute top-0 inset-x-5 md:inset-x-7 h-[1px] bg-gradient-to-r from-transparent via-white/80 to-transparent" />
-                {/* Lift notch */}
-                <div className="absolute top-0 w-12 md:w-16 h-[3px] bg-[#0a0a0c] rounded-b-[4px] shadow-[inset_0_-1px_1px_rgba(255,255,255,0.4)]" />
-              </div>
-
+            {/* Scaled-down MacBook wrapper */}
+            <div className="w-[clamp(70%,80vw,85%)] max-w-5xl pt-[clamp(32px,8vw,64px)] pb-0 relative z-10">
+              <MacBookFrame project={project} variant="case-study" />
             </div>
           </div>
 

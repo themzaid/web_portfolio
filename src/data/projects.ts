@@ -96,11 +96,11 @@ export const projectsData: Project[] = [
       blocks: [
         { type: 'text', navLabel: 'Overview', title: "A Digital Front for a Growing Services Business", p: "Advance is a software services company built for small and mid-sized businesses that need more than just a developer — they need a long-term digital partner. The goal was to build a landing page that reflected that positioning clearly and gave potential clients a reason to reach out." },
         { type: 'text', navLabel: 'Challenge', title: "A Complex Offer with No Clear Voice", p: "Software services are difficult to sell without the right framing. Advance’s value wasn’t a simple product, it was a philosophy built around structure, clarity, and long-term ownership. Without a focused digital presence, that message wasn’t reaching the right audience, and the business had no way to stand out in a crowded space." },
-        { type: 'text', navLabel: 'advance', isAccent: true, title: "A Landing Page That Leads with Thinking", p: "A conversion focused landing page that opens with a sharp positioning statement and walks visitors through the company’s philosophy and process that clearly communicates who they are, what they do, and who they do it for." }
+        { type: 'text', navLabel: 'Solution', isAccent: true, title: "A Landing Page That Leads with Thinking", p: "A conversion focused landing page that opens with a sharp positioning statement and walks visitors through the company’s philosophy and process that clearly communicates who they are, what they do, and who they do it for." }
       ]
     },
     links: [
-      { label: "Landing Page", url: "https://advance-global.vercel.app/", icon: "external" },
+      { label: "Landing Page", url: "https://advance-01-eyhybasus-advanceglobal.vercel.app/", icon: "external" },
     ],
     screenshot: "advance.png",
   },
@@ -217,7 +217,7 @@ export const projectsData: Project[] = [
     links: [
       { label: "Logo Design", url: "https://portfolio2021-4aa7c.web.app/assets/pdf/crepme.pdf", icon: "pdf" }
     ],
-    screenshot: "crepme.svg",
+    screenshot: "crepme.png",
   },
   {
     id: 1,
@@ -258,6 +258,6 @@ export const projectsData: Project[] = [
       { label: "Figma UI Kit", url: "https://www.figma.com/proto/fYuUTd4adyMGVJzQMZaZLd/Bitstrap?node-id=0-1&t=QIYsIRR9VCmeYMow-1", icon: "figma" },
       // { label: "Source Code", url: "https://github.com/themzaid/bitstrap", icon: "github" }
     ],
-    screenshot: "bitstrap.svg",
+    screenshot: "bitstrap.png",
   }
 ];

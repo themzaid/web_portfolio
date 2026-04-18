@@ -120,15 +120,10 @@
   }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
 
-  .text-edge-cap {
-    text-edge: cap alphabetic;
-  }
-}
+
+
+
 
 /* Custom Scrollbar */
 /* ::-webkit-scrollbar {
