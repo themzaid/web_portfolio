@@ -32,7 +32,7 @@ const MacBookFrame = ({ project, variant = "card" }: MacBookFrameProps) => {
       return (
         <div className="w-full h-full overflow-hidden bg-[#111215] aspect-[16/9] flex items-center justify-center">
           <img
-            src={`/${project.screenshot}`}
+            src={`${import.meta.env.BASE_URL}${project.screenshot}`}
             alt={`${project.title} Preview`}
             className={imgClass}
           />
@@ -61,7 +61,7 @@ const MacBookFrame = ({ project, variant = "card" }: MacBookFrameProps) => {
       return (
         <div className="flex items-center justify-center w-full h-full bg-[#111215] aspect-[16/9]">
           <img
-            src={`/${fileName}.svg`}
+            src={`${import.meta.env.BASE_URL}${fileName}.svg`}
             alt={`${project.title} Preview`}
             className="w-full h-full object-cover object-center opacity-95"
           />

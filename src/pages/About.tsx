@@ -150,7 +150,7 @@ const About = () => {
             >
               <div className="aspect-square overflow-hidden rounded-[20px] border border-gray-200 shadow-sm">
                 <img
-                  src="zaid.jpg"
+                  src={`${import.meta.env.BASE_URL}zaid.jpg`}
                   alt="Mohammed Zaid - Frontend Developer and Designer"
                   className="w-full h-full object-cover"
                 />
