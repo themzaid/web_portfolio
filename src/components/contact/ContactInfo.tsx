@@ -36,7 +36,7 @@ const ContactInfo = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-card border border-gray-200 rounded-[20px] pt-7 pb-10 px-8 md:pt-8 md:pb-12 md:px-10 shadow-sm h-full"
+      className="bg-card border border-gray-200 rounded-[20px] pt-7 pb-10 px-8 md:pt-8 md:pb-12 md:px-10 shadow-sm h-full flex flex-col"
     >
       <div className="mb-7">
         <h2 className="text-2xl font-serif pb-4 border-b border-gray-300 tracking-tight">Contact Information</h2>
@@ -76,7 +76,7 @@ const ContactInfo = () => {
         ))}
       </div>
 
-      <div className="mt-12">
+      <div className="mt-auto pt-12">
         <h3 className="text-xl font-serif pb-4 border-b border-gray-300 tracking-tight mb-6">Connect with me</h3>
         <div className="flex space-x-4">
           {socials.map((social) => (

@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { Project } from "../../data/projects";
 import MacBookFrame from "@/components/common/MacBookFrame";
 
@@ -24,13 +23,13 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         ease: [.1, .12, .2, 1],
       }}
       id={`project-${project.slug}`}
-      className="grid grid-cols-1 sm:grid-cols-[clamp(42%,45vw,50%)_1fr] border-[1px] border-border rounded-[25px] bg-card overflow-hidden min-h-[auto]"
+      className="flex flex-col border-[1px] border-border rounded-[20px] bg-card overflow-hidden h-full transform-gpu [-webkit-mask-image:-webkit-radial-gradient(white,black)]"
     >
 
-      {/* LEFT: Custom Thumbnail Graphic */}
+      {/* TOP: Custom Thumbnail Graphic */}
       <div
-        className="relative overflow-hidden min-h-[clamp(250px,30vw,320px)]"
-        style={{ background: project.themeGradient }}
+        className="relative overflow-hidden aspect-[4/3] transform-gpu [-webkit-mask-image:-webkit-radial-gradient(white,black)]"
+        style={{ background: project.themeGradient, containerType: 'inline-size' }}
       >
         {/* Glows */}
         {project.glows.map((glow, i) => (
@@ -51,23 +50,22 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
         {/* MacBook Frame */}
         <div
-          className="absolute inset-x-[clamp(16px,4vw,24px)]"
-          style={{ top: 'clamp(20px, 8vw, 32px)' }}
+          className="absolute inset-x-[clamp(16px,5%,32px)] top-1/2 -translate-y-1/2"
         >
           <MacBookFrame project={project} variant="card" />
         </div>
       </div>
 
-      {/* RIGHT: Content Body */}
-      <div className="flex flex-col p-6 ml-1 h-full w-full">
-        <div className="flex flex-col flex-grow h-full">
+      {/* BOTTOM: Content Body */}
+      <div className="flex flex-col flex-1 p-6 pb-5 w-full">
+        <div className="flex flex-col flex-grow">
           {/* Top Content Group */}
           <div className="flex flex-col gap-3">
-            <span className="text-[11px] tracking-[0.18em] uppercase text-foreground/80">
+            <span className="text-[11px] font-medium tracking-[0.18em] uppercase text-foreground/60 mb-[-2px]">
               {project.category}
             </span>
 
-            <h3 className="-ml-0.5 text-[28px] lg:text-[34px] leading-none tracking-tight">
+            <h3 className="text-[28px] leading-none tracking-tight ml-[-1px]">
               {project.title}
             </h3>
 
@@ -76,8 +74,8 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             </p>
           </div>
 
-          {/* Bottom Tags Group - Pinned using mt-auto */}
-          <div className="flex flex-wrap gap-2 mt-3 mb-5 -ml-1">
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2 mt-4">
             {project.tags.map((tag, tagIndex) => (
               <span
                 key={tagIndex}
@@ -89,20 +87,16 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           </div>
         </div>
 
-        <div className="flex items-center justify-between border-t-[1px] border-gray-300 w-full shrink-0 pt-5">
-          <span className="text-xs text-foreground/60 tracking-wider">
-            {project.year}
-          </span>
-          <Button asChild className="rounded-xl group text-xs tracking-widest font-semibold px-4">
-            <Link
-              to={`/project/${project.slug}`}
-              aria-label={`View Case Study for ${project.title}`}
-              onClick={() => sessionStorage.setItem('homeScrollPos', window.scrollY.toString())}
-            >
-              Case study
-              <ArrowUpRight className="ml-0.5 w-3.5 h-3.5 opacity-70 group-hover:opacity-100 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={2.5} />
-            </Link>
-          </Button>
+        <div className="flex items-center justify-end w-full shrink-0 mt-6">
+          <Link
+            to={`/project/${project.slug}`}
+            aria-label={`View Case Study for ${project.title}`}
+            onClick={() => sessionStorage.setItem('homeScrollPos', window.scrollY.toString())}
+            className="group inline-flex items-center gap-2 text-xs tracking-[0.14em] uppercase text-foreground font-medium hover:text-muted-foreground transition-colors"
+          >
+            Case study
+            <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          </Link>
         </div>
       </div>
 

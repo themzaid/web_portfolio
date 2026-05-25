@@ -108,15 +108,15 @@ const MacBookFrame = ({ project, variant = "card" }: MacBookFrameProps) => {
   return (
     <div className="flex flex-col drop-shadow-[0_25px_25px_rgba(0,0,0,0.25)] relative w-full z-10 transition-all duration-300">
       {/* Lid */}
-      <div className="bg-[#0a0a0c] p-[clamp(4px,0.8vw,10px)] pb-[clamp(6px,1vw,12px)] rounded-t-[clamp(10px,2vw,18px)] border-[1.5px] border-[#d2d3d6] border-b-0 relative">
+      <div className="bg-[#0a0a0c] p-[clamp(4px,0.8cqw,10px)] pb-[clamp(6px,1cqw,12px)] rounded-t-[clamp(10px,2cqw,18px)] border-[1.5px] border-[#d2d3d6] border-b-0 relative">
         {/* Inner Screen */}
-        <div className="w-full rounded-t-[clamp(6px,1.2vw,12px)] overflow-hidden border-[1px] border-white/5 bg-[#111215] flex flex-col">
+        <div className="w-full rounded-t-[clamp(6px,1.2cqw,12px)] overflow-hidden border-[1px] border-white/5 bg-[#111215] flex flex-col">
           {/* Browser Header (Traffic Lights + URL Bar) */}
-          <div className="h-[clamp(20px,3vw,40px)] flex items-center gap-[clamp(3px,0.5vw,6px)] px-[clamp(8px,1.2vw,16px)] bg-[#0e1012] border-b-[1px] border-white/5 shrink-0">
-            <div className="w-[clamp(5px,0.8vw,10px)] h-[clamp(5px,0.8vw,10px)] rounded-full bg-[#ff5f56]" />
-            <div className="w-[clamp(5px,0.8vw,10px)] h-[clamp(5px,0.8vw,10px)] rounded-full bg-[#ffbd2e]" />
-            <div className="w-[clamp(5px,0.8vw,10px)] h-[clamp(5px,0.8vw,10px)] rounded-full bg-[#27c93f]" />
-            <div className="ml-[clamp(4px,0.6vw,10px)] bg-white/10 rounded-[clamp(4px,0.5vw,8px)] h-[clamp(12px,1.6vw,20px)] flex-1 max-w-[83%] flex items-center px-[clamp(4px,0.6vw,10px)] text-[clamp(6px,0.8vw,10px)] text-white/50 font-mono truncate overflow-hidden whitespace-nowrap text-ellipsis">
+          <div className="h-[clamp(20px,3cqw,40px)] flex items-center gap-[clamp(3px,0.5cqw,6px)] px-[clamp(8px,1.2cqw,16px)] bg-[#0e1012] border-b-[1px] border-white/5 shrink-0">
+            <div className="w-[clamp(5px,0.8cqw,10px)] h-[clamp(5px,0.8cqw,10px)] rounded-full bg-[#ff5f56]" />
+            <div className="w-[clamp(5px,0.8cqw,10px)] h-[clamp(5px,0.8cqw,10px)] rounded-full bg-[#ffbd2e]" />
+            <div className="w-[clamp(5px,0.8cqw,10px)] h-[clamp(5px,0.8cqw,10px)] rounded-full bg-[#27c93f]" />
+            <div className="ml-[clamp(4px,0.6cqw,10px)] bg-white/10 rounded-[clamp(4px,0.5cqw,8px)] h-[clamp(12px,1.6cqw,20px)] flex-1 max-w-[83%] flex items-center px-[clamp(4px,0.6cqw,10px)] text-[clamp(6px,0.8cqw,10px)] text-white/50 font-mono truncate overflow-hidden whitespace-nowrap text-ellipsis">
               {caseStudy.browserUrl}
             </div>
           </div>
@@ -128,15 +128,15 @@ const MacBookFrame = ({ project, variant = "card" }: MacBookFrameProps) => {
         </div>
 
         {/* Chin Reflector */}
-        <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-t from-white/5 to-transparent rounded-full mx-[clamp(16px,3vw,40px)]" />
+        <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-t from-white/5 to-transparent rounded-full mx-[clamp(16px,3cqw,40px)]" />
       </div>
 
       {/* Attached Base */}
-      <div className="h-[clamp(10px,2vw,30px)] -mx-[clamp(8px,2vw,50px)] bg-gradient-to-b from-[#e8e8ea] to-[#babbbe] rounded-b-[clamp(4px,1vw,10px)] rounded-t-[clamp(0.5px,0.2vw,2px)] border border-t-0 border-[#a2a3a7] shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)] relative flex justify-center">
+      <div className="h-[clamp(10px,2cqw,30px)] -mx-[clamp(8px,2cqw,50px)] bg-gradient-to-b from-[#e8e8ea] to-[#babbbe] rounded-b-[clamp(4px,1cqw,10px)] rounded-t-[clamp(0.5px,0.2cqw,2px)] border border-t-0 border-[#a2a3a7] shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)] relative flex justify-center">
         {/* Hinge Line */}
-        <div className="absolute top-0 left-[clamp(12px,2vw,32px)] right-[clamp(12px,2vw,32px)] h-[1px] bg-gradient-to-r from-transparent via-white/80 to-transparent" />
+        <div className="absolute top-0 left-[clamp(12px,2cqw,32px)] right-[clamp(12px,2cqw,32px)] h-[1px] bg-gradient-to-r from-transparent via-white/80 to-transparent" />
         {/* Lift Notch */}
-        <div className="absolute top-0 w-[clamp(32px,6vw,92px)] h-[3px] bg-[#0a0a0c] rounded-b-[4px] shadow-[inset_0_-1px_1px_rgba(255,255,255,0.4)]" />
+        <div className="absolute top-0 w-[clamp(32px,6cqw,92px)] h-[3px] bg-[#0a0a0c] rounded-b-[4px] shadow-[inset_0_-1px_1px_rgba(255,255,255,0.4)]" />
       </div>
     </div>
   );

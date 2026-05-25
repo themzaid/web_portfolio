@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, animate } from "framer-motion";
 import { ArrowDownIcon } from "lucide-react";
 import StatusBadge, { AvailabilityStatus } from "../common/StatusBadge";
 import { Button } from "@/components/ui/button";
@@ -10,11 +10,19 @@ const CURRENT_STATUS: { status: AvailabilityStatus; text?: string } = {
 
 const Hero = () => {
   const scrollToProjects = () => {
-    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+    const projectsSection = document.getElementById("projects");
+    if (projectsSection) {
+      const y = projectsSection.getBoundingClientRect().top + window.scrollY;
+      animate(window.scrollY, y, {
+        duration: 0.8,
+        ease: [0.26, 1, 0.3, 1],
+        onUpdate: (latest) => window.scrollTo(0, latest),
+      });
+    }
   };
 
   return (
-    <section className="min-h-[80vh] md:min-h-0 md:pt-32 md:pb-32 flex items-center justify-center px-2 relative">
+    <section className="py-24 [@media(pointer:coarse)]:py-0 flex items-center justify-center px-2 relative [@media(pointer:coarse)]:min-h-[75vh]">
       <div className="absolute inset-0 -z-10 opacity-30">
         <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-primary/5 rounded-full filter blur-3xl"></div>
         <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl"></div>
@@ -28,12 +36,12 @@ const Hero = () => {
             transition={{ duration: 0.6 }}
             className="flex flex-col items-center gap-8"
           >
-            <StatusBadge
+            {/* <StatusBadge
               status={CURRENT_STATUS.status}
               customText={CURRENT_STATUS.text}
-            />
+            /> */}
             <span className="section-tag px-4 py-1.5 inline-block mb-4">
-              SOFTWARE ENGINEER
+              SOFTWARE DESIGNER & ENGINEER
             </span>
           </motion.div>
 
@@ -41,10 +49,10 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-[32px]/tight sm:text-5xl md:text-6xl lg:text-7xl tracking-tight text-balance pb-2"
+            className="text-4xl md:text-5xl lg:text-6xl tracking-tight text-balance py-2"
           >
-            {/* Building Scalable <br /> Automation Systems */}
             I design, build, test <br /> and ship products
+
           </motion.h1>
 
           <motion.p
@@ -53,7 +61,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-md page-description max-w-compact mb-10 text-balance"
           >
-            Software engineer with a background in software design, development and testing, focused on designing, building and testing features that hold up as products scale.
+            With a background in design & engineering and a strong focus on frontend development, I build features that stay clear and reliable as products scale.
           </motion.p>
 
           <motion.div

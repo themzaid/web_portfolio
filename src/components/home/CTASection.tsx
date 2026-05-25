@@ -22,7 +22,7 @@ const CTASection = () => {
           <span className="section-tag px-4 py-1.5 inline-block mb-4">
             LET'S COLLABORATE
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl mb-6 text-balance tracking-tight  max-w-compact mx-auto">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl mb-2 lg:mb-4  text-balance tracking-tight  max-w-compact mx-auto">
             Need help building better software?
           </h2>
           <p className="page-description mx-auto mb-10 text-balance max-w-compact">

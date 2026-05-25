@@ -13,7 +13,6 @@ export default {
 	theme: {
 		container: {
 			center: true,
-			padding: '2rem',
 			screens: {
 				// 	'xs': '475px',
 				// 	'sm': '640px',
@@ -22,7 +21,7 @@ export default {
 				// 	'xl': '1280px',
 				// 	'2xl': '1536px',
 				// 'xl': '1100px',
-				'2xl': '1260px'
+				'2xl': '1300px'
 			}
 		},
 		maxWidth: {

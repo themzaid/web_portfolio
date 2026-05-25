@@ -99,7 +99,7 @@ const CaseStudy = () => {
             {[
               { label: "Year", value: project.year },
               { label: "Role", value: project.role },
-              { label: "Stack", value: project.tags.join(" · ") },
+              { label: "Type", value: project.tags.join(" · ") },
               { label: "Focus", value: caseStudy.focus }
             ].map((meta, i) => (
               <div key={i} className="px-5 py-5 md:px-6 md:py-6 bg-card h-full flex flex-col justify-start">

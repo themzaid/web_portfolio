@@ -98,7 +98,7 @@ const ContactForm = () => {
             <PersonOutline className="absolute left-3 top-2 text-muted-foreground/90" />
             <Input
               placeholder="Your Name"
-              className="pl-10 text-sm font-medium rounded-lg"
+              className="pl-10 text-sm font-medium rounded-full"
               name="name"
               value={formData.name}
               onChange={handleChange}
@@ -113,7 +113,7 @@ const ContactForm = () => {
             <Input
               type="email"
               placeholder="Your Email"
-              className="pl-10 text-sm font-medium rounded-lg"
+              className="pl-10 text-sm font-medium rounded-full"
               name="email"
               value={formData.email}
               onChange={handleChange}
@@ -130,7 +130,7 @@ const ContactForm = () => {
             />
             <Input
               placeholder="Subject"
-              className="pl-10 text-sm font-medium rounded-lg"
+              className="pl-10 text-sm font-medium rounded-full"
               name="subject"
               value={formData.subject}
               onChange={handleChange}
@@ -142,7 +142,7 @@ const ContactForm = () => {
         <div className="space-y-2">
           <Textarea
             placeholder="Your Message"
-            className="min-h-[100px] resize-none text-sm font-medium rounded-xl"
+            className="min-h-[100px] resize-none text-sm font-medium rounded-2xl"
             name="message"
             value={formData.message}
             onChange={handleChange}
@@ -153,7 +153,7 @@ const ContactForm = () => {
         <Button
           type="submit"
           className={cn(
-            "w-full transition-all duration-300 rounded-lg",
+            "w-full transition-all duration-300 rounded-full",
             isSubmitting && "opacity-80"
           )}
           disabled={isSubmitting}

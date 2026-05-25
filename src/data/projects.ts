@@ -67,13 +67,89 @@ export interface Project {
 
 export const projectsData: Project[] = [
   {
+    id: 7,
+    slug: "hisaab-app",
+    title: "Hisaab App",
+    category: "Full-Stack Development",
+    description: "Built a sharia compliant portfolio tracker for Muslim investors with compliance checks, dividends, purification, and real P&L insights.",
+    tags: ["Fintech", "Web App", "Dashboard", "Islamic Finance"],
+    year: "2026",
+    role: "Full-Stack Developer",
+    themeGradient: "linear-gradient(135deg,#0a192f,#020c1b,#112240)",
+    glows: [
+      { width: 220, height: 220, top: -30, right: -30, background: "rgba(100,255,218,0.15)" }
+    ],
+    miniBrowser: {
+      title: "Hisaab Dashboard",
+      desc: "Portfolio tracking and compliance."
+    },
+    miniBrowserBg: "#ffffff",
+    miniBrowserAccent: "#0f766e",
+    caseStudy: {
+      heroLede: "Built a sharia compliant portfolio tracker for Muslim investors with compliance checks, dividends, purification, and real P&L insights.",
+      focus: "Product Architecture",
+      browserUrl: "app.hisaab.one",
+      fakeNav: ["Dashboard", "Portfolio", "Settings"],
+      fakeH1: "Hisaab",
+      fakeP: "A Portfolio Tracker Built Around Principles.",
+      fakeBtn: "Open App",
+      blocks: [
+        { type: 'text', navLabel: 'Overview', title: "A Portfolio Tracker Built Around Principles", p: "Hisaab is a full-stack web app for Indian Muslim investors to track their stock portfolio with Sharia compliance built into the core experience. It brings portfolio monitoring, compliance screening, dividend tracking, purification support, and profit/loss calculation into one focused system instead of forcing users to rely on scattered spreadsheets and manual checks." },
+        { type: 'text', navLabel: 'Challenge', title: "Existing Portfolio Tools Ignore a Critical Investor Need", p: "Most investing platforms are built for price tracking and execution, not for faith-based decision making. Muslim investors still have to verify whether a stock is compliant, track impure income, estimate purification, and calculate actual returns manually, which creates friction and makes the whole workflow harder than it should be." },
+        { type: 'text', navLabel: 'Solution', isAccent: true, title: "A Full-Stack System That Makes Compliance Practical", p: "I built Hisaab as a full-stack product that combines portfolio data, compliance logic, dividend tracking, and return calculations in one clean interface. The app was designed to reduce manual effort, surface the right information at the right time, and make Sharia-compliant investing feel operational instead of theoretical." }
+      ]
+    },
+    links: [
+      { label: "WEB APP", url: "https://app.hisaab.one", icon: "external" }
+    ],
+    screenshot: "hisaab-app.png",
+  },
+  {
+    id: 6,
+    slug: "hisaab-landing-page",
+    title: "Hisaab Landing Page",
+    category: "Full-Stack Development",
+    description: "Built a conversion focused landing page for Hisaab, translating Sharia compliant investing into a clear, credible product story.",
+    tags: ["Fintech", "Landing Page", "SaaS", "Islamic Finance"],
+    year: "2026",
+    role: "Full-Stack Developer",
+    themeGradient: "linear-gradient(135deg,#052e16,#022c22,#064e3b)",
+    glows: [
+      { width: 220, height: 220, top: -30, right: -30, background: "rgba(16,185,129,0.15)" }
+    ],
+    miniBrowser: {
+      title: "Clear Entry Point Into Sharia Compliant Investing",
+      desc: "Hisaab: Sharia compliant portfolio tracker."
+    },
+    miniBrowserBg: "#ffffff",
+    miniBrowserAccent: "#059669",
+    caseStudy: {
+      heroLede: "Built a conversion focused landing page for Hisaab, translating Sharia-compliant investing into a clear, credible product story.",
+      focus: "Positioning & Conversion",
+      browserUrl: "hisaab.one",
+      fakeNav: ["Features", "Pricing", "About"],
+      fakeH1: "Hisaab",
+      fakeP: "A Clear Entry Point Into Sharia-Compliant Investing.",
+      fakeBtn: "Sign Up",
+      blocks: [
+        { type: 'text', navLabel: 'Overview', title: "A Clear Entry Point Into Sharia-Compliant Investing", p: "Hisaab is a portfolio tracker built for Muslim investors in India who want to manage their investments without compromising on Sharia compliance. The landing page was designed to introduce that value simply and credibly, helping visitors quickly understand what the product does, who it serves, and why it is different from generic portfolio tools." },
+        { type: 'text', navLabel: 'Challenge', title: "Explaining a Niche Product Without Losing Clarity", p: "The challenge was not just visual design, but communication. Hisaab sits at the intersection of investing, compliance screening, dividend tracking, and Islamic finance, so the landing page had to explain a layered product without sounding too technical, too generic, or too niche for first-time visitors." },
+        { type: 'text', navLabel: 'Solution', isAccent: true, title: "A Focused Page Built Around Trust and Product Clarity", p: "I built a landing page that leads with a sharp positioning statement and then breaks the product into clear, understandable sections. The experience was structured to establish trust early, highlight the compliance-first value of the platform, and move visitors toward signup with a clean and credible flow." }
+      ]
+    },
+    links: [
+      { label: "LANDING PAGE", url: "https://hisaab.one", icon: "external" }
+    ],
+    screenshot: "hisaab-landing.png",
+  },
+  {
     id: 5,
     slug: "advance",
     title: "Advance",
-    category: "Web Development",
+    category: "Frontend Development",
     description: "Designed and developed a custom landing page for a software services company, focused on clear messaging, structured content and a polished experience for growing businesses.",
-    tags: ["HTML", "Tailwind CSS", "TypeScript", "Next.js", "React"],
-    year: "2022",
+    tags: ["Agency", "Landing Page", "Services", "Startup"],
+    year: "2026",
     role: "Frontend Developer",
     themeGradient: "linear-gradient(135deg,#0f1e26,#09151e,#0e1d28)",
     glows: [
@@ -108,10 +184,10 @@ export const projectsData: Project[] = [
     id: 4,
     slug: "optcare",
     title: "Optcare",
-    category: "UI Design · Frontend Development",
+    category: "Frontend Development",
     description: "Designed and developed a landing page for an eye care clinic, focused on clear service communication, trust and a calm visual identity.",
-    tags: ["HTML", "SCSS", "Bootstrap"],
-    year: "2022",
+    tags: ["Healthcare", "Clinic", "Landing Page", "Local Business"],
+    year: "2025",
     role: "UI Designer · Frontend Developer",
     themeGradient: "linear-gradient(135deg,#271811,#1e0f09,#2a1910)",
     glows: [
@@ -148,7 +224,7 @@ export const projectsData: Project[] = [
     title: "Skillscall",
     category: "Frontend Development",
     description: "Designed and developed a custom website for a service based platform in the UAE, optimised for fast loading, clarity and smooth user interaction.",
-    tags: ["HTML", "CSS", "JavaScript"],
+    tags: ["Marketplace", "Services", "Platform"],
     year: "2021",
     role: "Frontend Developer",
     themeGradient: "linear-gradient(135deg,#1e1525,#180f24,#1a1230)",
@@ -188,8 +264,8 @@ export const projectsData: Project[] = [
     slug: "crep-middle-east",
     title: "Crep Middle East",
     category: "Logo Design",
-    description: "Designed a scalable logo identity for a streetwear ecommerce startup in Dubai, built to stay clear and recognizable across digital and physical touchpoints..",
-    tags: ["Adobe Illustrator"],
+    description: "Designed a scalable logo identity for a streetwear ecommerce startup in Dubai, built to stay clear and recognizable across digital and physical touchpoints.",
+    tags: ["Branding", "Ecommerce", "Startup", "Logo Design"],
     year: "2021",
     role: "Brand Identity Designer",
     themeGradient: "linear-gradient(135deg,#1a1a1a,#111111,#1c1c1c)",
@@ -226,7 +302,7 @@ export const projectsData: Project[] = [
     title: "Bitstrap",
     category: "UI Design · Frontend Development",
     description: "Designed and built a custom CSS library for UI components, created to be modular, lightweight and easy to scale across products.",
-    tags: ["Figma", "HTML", "CSS", "JavaScript"],
+    tags: ["UI Library", "Design System"],
     year: "2020",
     role: "UI Designer · Frontend Engineer",
     themeGradient: "linear-gradient(135deg,#1e2535,#0f1724,#162035)",

@@ -115,7 +115,7 @@ const About = () => {
               <span className="px-4 py-1.5 text-xs font-medium font-mono rounded-full bg-primary/5 text-secondary-foreground inline-block mb-4">
                 ABOUT ME
               </span>
-              <h1 className="text-[28px] tracking-tight md:text-4xl lg:text-5xl">
+              <h1 className="text-[28px] tracking-tight md:text-4xl lg:text-5xl mb-2 md:mb-4">
                 Hi, I'm Mohammed Zaid.
               </h1>
               <p className="page-description mb-5">
@@ -163,7 +163,7 @@ const About = () => {
 
       {/* Services Section */}
       <section className="py-24 px-2 bg-secondary">
-        <div className="container mx-auto max-w-reading">
+        <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -174,7 +174,7 @@ const About = () => {
             <span className="px-4 py-1.5 text-xs font-medium font-mono rounded-full bg-primary/5 text-secondary-foreground inline-block mb-4">
               SERVICES
             </span>
-            <h2 className="text-3xl md:text-4xl mb-4 tracking-tight">
+            <h2 className="text-3xl md:text-4xl mb-2 tracking-tight">
               What I Do
             </h2>
             <p className="page-description max-w-compact mx-auto">
@@ -220,7 +220,7 @@ const About = () => {
             <span className="px-4 py-1.5 text-xs font-medium font-mono rounded-full bg-primary/5 text-secondary-foreground inline-block mb-4">
               EXPERIENCE
             </span>
-            <h2 className="text-3xl md:text-4xl mb-4 tracking-tight">
+            <h2 className="text-3xl md:text-4xl mb-2 tracking-tight">
               My Journey
             </h2>
             <p className="page-description max-w-compact mx-auto">
@@ -297,7 +297,7 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center mb-8"
           >
-            <h2 className="text-3xl md:text-4xl mb-4 tracking-tight">
+            <h2 className="text-3xl md:text-4xl mb-3 tracking-tight">
               Skills & Expertise
             </h2>
             <p className="page-description max-w-compact mx-auto">
