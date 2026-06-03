@@ -75,7 +75,3 @@ To deploy the app to Firebase (assuming you have the Firebase CLI installed and 
 ```bash
 firebase deploy
 ```
-
-## 📄 License
-
-This project is open-source and available under the [MIT License](LICENSE).
