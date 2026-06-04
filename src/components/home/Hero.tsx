@@ -41,7 +41,7 @@ const Hero = () => {
               customText={CURRENT_STATUS.text}
             /> */}
             <span className="section-tag px-4 py-1.5 inline-block mb-4">
-              SOFTWARE DESIGNER & ENGINEER
+              FRONTEND ENGINEER
             </span>
           </motion.div>
 
@@ -51,7 +51,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-4xl md:text-5xl lg:text-6xl tracking-tight text-balance py-2"
           >
-            I design, build, test <br /> and ship products
+            Building modern web applications with React, Next.js and TypeScript.
 
           </motion.h1>
 
@@ -61,7 +61,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-md page-description max-w-compact mb-10 text-balance"
           >
-            With a background in design & engineering and a strong focus on frontend development, I build features that stay clear and reliable as products scale.
+            With a background in Design, Frontend Development and Automation, I build web applications that are fast, reliable, and easy to use.
           </motion.p>
 
           <motion.div

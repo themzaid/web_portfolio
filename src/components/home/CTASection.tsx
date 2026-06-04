@@ -23,10 +23,10 @@ const CTASection = () => {
             LET'S COLLABORATE
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl mb-2 lg:mb-4  text-balance tracking-tight  max-w-compact mx-auto">
-            Need help building better software?
+            Interested in working together?
           </h2>
           <p className="page-description mx-auto mb-10 text-balance max-w-compact">
-            I work across software design, development and testing, helping teams ship features that are thoughtful, reliable and scalable.
+            I build web applications, dashboards, and internal tools using React, Next.js, and TypeScript. Available for freelance work, collaborations, and full-time opportunities.
           </p>
           <Button asChild size="lg" className="rounded-full group">
             <Link to="/contact">

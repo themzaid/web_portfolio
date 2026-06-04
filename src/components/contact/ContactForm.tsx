@@ -5,12 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 // import { Mail, Send, User, FileText } from "lucide-react";
-import {
-  EmailOutlined,
-  PersonOutline,
-  Send,
-  Subject,
-} from "@mui/icons-material";
+import { Send } from "@mui/icons-material";
 import { cn } from "@/lib/utils";
 import emailjs from "@emailjs/browser";
 
@@ -85,64 +80,52 @@ const ContactForm = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-card border border-gray-200 rounded-[20px] pt-7 pb-10 px-8 md:pt-8 md:pb-12 md:px-10 shadow-sm h-full"
+      className="flex flex-col bg-card border border-gray-200 rounded-[20px] pt-7 pb-10 px-8 md:pt-8 md:pb-12 md:px-10 shadow-sm h-full"
     >
-      <div className="mb-7">
+      <div className="mb-7 shrink-0">
         <h2 className="text-2xl font-serif pb-4 border-b border-gray-300 tracking-tight">Send Me a Message</h2>
-        <p className="text-sm font-medium text-muted-foreground mt-6">Share a few details and I will get back to you shortly.</p>
+        <p className="text-sm font-medium text-muted-foreground mt-6">Usually replies within 24–48 hours.</p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="flex flex-col flex-1 gap-6">
         <div className="space-y-2">
-          <div className="relative">
-            <PersonOutline className="absolute left-3 top-2 text-muted-foreground/90" />
-            <Input
-              placeholder="Your Name"
-              className="pl-10 text-sm font-medium rounded-full"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </div>
+          <Input
+            placeholder="Your Name"
+            className="px-4 text-sm font-medium rounded-full"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
         </div>
 
         <div className="space-y-2">
-          <div className="relative">
-            <EmailOutlined className="absolute left-3 top-2 text-muted-foreground/90" />
-            <Input
-              type="email"
-              placeholder="Your Email"
-              className="pl-10 text-sm font-medium rounded-full"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
+          <Input
+            type="email"
+            placeholder="Your Email"
+            className="px-4 text-sm font-medium rounded-full"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
         </div>
 
-        <div className="space-y-2">
-          <div className="relative">
-            <Subject
-              sx={{ fontSize: 20 }}
-              className="absolute left-3 top-2.5 text-muted-foreground/90"
-            />
-            <Input
-              placeholder="Subject"
-              className="pl-10 text-sm font-medium rounded-full"
-              name="subject"
-              value={formData.subject}
-              onChange={handleChange}
-              required
-            />
-          </div>
-        </div>
+        {/* <div className="space-y-2">
+          <Input
+            placeholder="Subject"
+            className="px-4 text-sm font-medium rounded-full"
+            name="subject"
+            value={formData.subject}
+            onChange={handleChange}
+            required
+          />
+        </div> */}
 
-        <div className="space-y-2">
+        <div className="flex-1 flex flex-col">
           <Textarea
             placeholder="Your Message"
-            className="min-h-[100px] resize-none text-sm font-medium rounded-2xl"
+            className="flex-1 min-h-[100px] resize-none text-sm font-medium rounded-[18px]"
             name="message"
             value={formData.message}
             onChange={handleChange}
@@ -153,7 +136,7 @@ const ContactForm = () => {
         <Button
           type="submit"
           className={cn(
-            "w-full transition-all duration-300 rounded-full",
+            "w-full transition-all duration-300 rounded-full shrink-0",
             isSubmitting && "opacity-80"
           )}
           disabled={isSubmitting}

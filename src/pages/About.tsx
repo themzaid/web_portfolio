@@ -20,21 +20,21 @@ const About = () => {
       role: "QA Analyst",
       company: "Pleximus Inc - Mumbai",
       description:
-        "Manual & Automated testing and Automation Framework development for web and mobile applications using Selenium and Appium.",
+        "Built automation frameworks, internal tools, and reporting platforms integrated with CI/CD pipelines for web and mobile applications while collaborating closely with engineering teams on product quality.",
     },
     {
       year: "Dec 2019 - Feb 2022",
       role: "Web Designer & Developer",
       company: "Freelance - Remote",
       description:
-        "Designed and created websites and logos based on client requirements.",
+        "Designed and developed websites, landing pages, and digital experiences for clients, combining UI/UX design with frontend development.",
     },
     {
       year: "Jan 2020 - Apr 2020",
       role: "Web Development Intern",
       company: "Blue LLC - Dubai",
       description:
-        "Led the ux/ui design for employee management system as the sole designer and frontend developer. I designed and built a custom User Interface for Data Visualisation, CMS, Dashboard and UI Components.",
+        "Researched and built prototypes across WebVR, computer vision, game development, and desktop applications, while delivering hands-on technical workshops and demonstrations.",
     },
     {
       year: "Nov 2018 - April 2019",
@@ -47,10 +47,16 @@ const About = () => {
 
   const services = [
     {
-      icon: Monitor,
-      title: "Test Automation",
+      icon: Palette,
+      title: "UI/UX Design",
       description:
-        "I build test automation frameworks that improve coverage, reduce manual effort and support more reliable, scalable releases.",
+        "I design functional interfaces that are easy to use, realistic to build and shaped by hands-on frontend experience.",
+    },
+    {
+      icon: Code,
+      title: "Software Development",
+      description:
+        "I build websites, interfaces and product experiences with a focus on clean execution and practical implementation.",
     },
     {
       icon: Award,
@@ -59,16 +65,10 @@ const About = () => {
         "I improve product quality through structured testing, clear bug reporting and thoughtful coverage across the user journey.",
     },
     {
-      icon: Code,
-      title: "Development",
+      icon: Monitor,
+      title: "Automation & CI/CD",
       description:
-        "I build websites, interfaces and product experiences with a focus on clean execution and practical implementation.",
-    },
-    {
-      icon: Palette,
-      title: "UI/UX Design",
-      description:
-        "I design functional interfaces that are easy to use, realistic to build and shaped by hands-on frontend experience.",
+        "I build test automation frameworks that improve coverage, reduce manual effort and support more reliable, scalable releases.",
     },
   ];
 
@@ -76,7 +76,7 @@ const About = () => {
     // Frontend Development
     "HTML5 / CSS3",
     "JavaScript / TypeScript",
-    "React / Vanilla JS",
+    "React / Next.js",
     "Tailwind / Bootstrap",
     "Responsive Design",
     "CSS Animations",
@@ -96,7 +96,7 @@ const About = () => {
 
     // Design
     "Interface Design",
-    "Figma Specialist",
+    "Figma / Prototyping",
     "Design Systems",
     "Illustrator / Photoshop",
   ];
@@ -119,10 +119,10 @@ const About = () => {
                 Hi, I'm Mohammed Zaid.
               </h1>
               <p className="page-description mb-5">
-                I'm a software engineer based in Navi Mumbai, with a background in design, development and testing. Over the years, I have worked across software design, development and quality engineering, building software with a focus on clarity, reliability and long term maintainability.
+                I'm a software engineer based in Navi Mumbai, with a background in UI/UX design, software development and testing. Over the years, I've worked across frontend development, automation and quality engineering, building software with a focus on clarity, reliability and long-term maintainability.
               </p>
               <p className="page-description mb-5">
-                I started my career as a UI designer and frontend developer. That background shapes how I approach software today, helping me think through user flows, edge cases and implementation details with more context from the start.
+                I started my career as a UI/UX designer and frontend developer. That background shapes how I approach software today, helping me think through user flows, edge cases and implementation details early in the development process.
               </p>
               <div className="flex flex-wrap gap-4 mt-8">
                 <Button asChild>
@@ -175,10 +175,10 @@ const About = () => {
               SERVICES
             </span>
             <h2 className="text-3xl md:text-4xl mb-2 tracking-tight">
-              What I Do
+              How I Can Help
             </h2>
             <p className="page-description max-w-compact mx-auto">
-              I work across software design, development and testing, building thoughtful user experiences and reliable systems that are made to scale with the product.
+              I help teams design, build, and improve software through UI/UX design, development, quality engineering, and automation.
             </p>
           </motion.div>
 

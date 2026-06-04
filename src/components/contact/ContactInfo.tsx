@@ -26,9 +26,8 @@ const ContactInfo = () => {
   ];
 
   const socials = [
-    { icon: GitHub, url: "https://github.com/themzaid", label: "GitHub" },
-    { icon: Codepen, url: "https://codepen.io/themzaid", label: "CodePen" },
-    { icon: LinkedIn, url: "https://linkedin.com/in/themzaid", label: "LinkedIn" },
+    { icon: GitHub, url: "https://github.com/themzaid", label: "GitHub", iconClass: "text-[#181717] dark:text-white" },
+    { icon: LinkedIn, url: "https://linkedin.com/in/themzaid", label: "LinkedIn", iconClass: "text-[#0A66C2]" },
   ];
 
   return (
@@ -40,7 +39,7 @@ const ContactInfo = () => {
     >
       <div className="mb-7">
         <h2 className="text-2xl font-serif pb-4 border-b border-gray-300 tracking-tight">Contact Information</h2>
-        <p className="text-sm text-muted-foreground mt-6 font-medium">You can also reach me directly through the details below.</p>
+        <p className="text-sm text-muted-foreground mt-6 font-medium">Available globally for remote work.</p>
       </div>
 
       <div className="space-y-6">
@@ -78,14 +77,13 @@ const ContactInfo = () => {
 
       <div className="mt-auto pt-12">
         <h3 className="text-xl font-serif pb-4 border-b border-gray-300 tracking-tight mb-6">Connect with me</h3>
-        <div className="flex space-x-4">
+        <div className="flex flex-wrap gap-4">
           {socials.map((social) => (
             <Button
               key={social.label}
               variant="secondary"
-              size="icon"
               asChild
-              className="h-11 w-11 rounded-full bg-gray-50/50 border border-gray-100 hover:bg-primary/5 hover:border-primary/20 transition-all [&_svg]:size-5"
+              className="h-11 px-5 rounded-full bg-gray-50/50 border border-gray-100 hover:bg-primary/5 hover:border-primary/20 transition-all gap-2 [&_svg]:size-5"
             >
               <a
                 href={social.url}
@@ -93,7 +91,8 @@ const ContactInfo = () => {
                 rel="noopener noreferrer"
                 aria-label={social.label}
               >
-                <social.icon className="text-primary/70" />
+                <social.icon className={social.iconClass || "text-primary/70"} />
+                <span className="font-medium font-sans tracking-wide">{social.label}</span>
               </a>
             </Button>
           ))}
