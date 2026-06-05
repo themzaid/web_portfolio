@@ -132,7 +132,7 @@ const About = () => {
                 </Button>
                 <Button variant="outline" asChild>
                   <a
-                    href="https://docs.google.com/document/d/10DcDhUz6Wi7df9FXJq_Od4m6KQH0Aru2fE9-oIjgSNY/edit?usp=sharing"
+                    href="https://docs.google.com/document/d/1MhJNcjpLenudXwson0uyAusZ9rTr2W44/edit?usp=sharing&ouid=106017222112198478728&rtpof=true&sd=true"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
