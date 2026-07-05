@@ -34,7 +34,7 @@ const About = () => {
       role: "Web Development Intern",
       company: "Blue LLC - Dubai",
       description:
-        "Researched and built prototypes across WebVR, computer vision, game development, and desktop applications, while delivering hands-on technical workshops and demonstrations.",
+        "Designed and built the UI/UX for an employee management system including a custom dashboard with data visualisation and content management features.",
     },
     {
       year: "Nov 2018 - April 2019",
