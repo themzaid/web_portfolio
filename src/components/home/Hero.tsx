@@ -13,11 +13,7 @@ const Hero = () => {
     const projectsSection = document.getElementById("projects");
     if (projectsSection) {
       const y = projectsSection.getBoundingClientRect().top + window.scrollY;
-      animate(window.scrollY, y, {
-        duration: 0.8,
-        ease: [0.26, 1, 0.3, 1],
-        onUpdate: (latest) => window.scrollTo(0, latest),
-      });
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 

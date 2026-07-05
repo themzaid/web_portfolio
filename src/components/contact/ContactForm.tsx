@@ -84,7 +84,7 @@ const ContactForm = () => {
     >
       <div className="mb-7 shrink-0">
         <h2 className="text-2xl font-serif pb-4 border-b border-gray-300 tracking-tight">Send Me a Message</h2>
-        <p className="text-sm font-medium text-muted-foreground mt-6">Usually replies within 24–48 hours.</p>
+        <p className="text-sm font-medium text-muted-foreground mt-6">Usually replies within 24 hours.</p>
       </div>
 
       <form onSubmit={handleSubmit} className="flex flex-col flex-1 gap-6">

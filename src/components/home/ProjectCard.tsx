@@ -16,19 +16,21 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
   return (
     <motion.article
       initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      animate={index < 3 ? { opacity: 1, y: 0 } : undefined}
+      whileInView={index >= 3 ? { opacity: 1, y: 0 } : undefined}
       viewport={{ once: true, margin: "0px" }}
       transition={{
         duration: 0.6,
         ease: [.1, .12, .2, 1],
+        delay: index < 3 ? 0.2 + (index * 0.1) : 0,
       }}
       id={`project-${project.slug}`}
-      className="flex flex-col border-[1px] border-border rounded-[20px] bg-card overflow-hidden h-full transform-gpu [-webkit-mask-image:-webkit-radial-gradient(white,black)]"
+      className="flex flex-col border-[1px] border-border rounded-[20px] bg-card overflow-hidden h-full"
     >
 
       {/* TOP: Custom Thumbnail Graphic */}
       <div
-        className="relative overflow-hidden aspect-[4/3] transform-gpu [-webkit-mask-image:-webkit-radial-gradient(white,black)]"
+        className="relative overflow-hidden aspect-[4/3]"
         style={{ background: project.themeGradient, containerType: 'inline-size' }}
       >
         {/* Glows */}
