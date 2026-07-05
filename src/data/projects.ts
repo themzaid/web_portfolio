@@ -100,7 +100,7 @@ export const projectsData: Project[] = [
       ]
     },
     links: [
-      { label: "WEB APP", url: "https://app.hisaab.one", icon: "external" }
+      { label: "WEB APP", url: "https://app.hisaab.one/demo", icon: "external" }
     ],
     screenshot: "hisaab-app.png",
   },
