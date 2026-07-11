@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRightIcon } from "@/components/ui/custom-icons";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -31,20 +31,17 @@ const AboutPreview = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            <span className="section-tag px-4 py-1.5 inline-block mb-4">
-              ABOUT ME
-            </span>
             <h2 className="text-3xl md:text-4xl mb-6">
               Passionate about creating beautiful digital experiences.
             </h2>
-            <p className="page-description mb-6 text-balance">
+            <p className="text mb-6 text-balance">
               I'm a Software Automation Engineer based in Navi Mumbai with a
               background in UI design, frontend development, and quality
               engineering. I started my career building products which means I
               understand how they're designed, how they're built, and exactly
               how they break
             </p>
-            {/* <p className="page-description mb-6 text-balance">
+            {/* <p className="text mb-6 text-balance">
               With a background in QA, frontend development and product design,
               I bring a system-level perspective to engineering, understanding
               not only how software functions, but how it is experienced by end
@@ -60,7 +57,7 @@ const AboutPreview = () => {
               >
                 <Link to="/about">
                   More about me
-                  <ArrowRight
+                  <ArrowRightIcon
                     size={16}
                     className="ml-2 group-hover:translate-x-1 transition-transform"
                   />

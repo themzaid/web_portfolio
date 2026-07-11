@@ -80,11 +80,11 @@ const ContactForm = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col bg-card border border-gray-200 rounded-[20px] pt-7 pb-10 px-8 md:pt-8 md:pb-12 md:px-10 shadow-sm h-full"
+      className="flex flex-col bg-card border border-gray-200 rounded-[20px] pt-7 pb-8 px-7 md:pt-8 md:pb-12 md:px-10 shadow-sm h-full"
     >
       <div className="mb-7 shrink-0">
         <h2 className="text-2xl font-serif pb-4 border-b border-gray-300 tracking-tight">Send Me a Message</h2>
-        <p className="text-sm font-medium text-muted-foreground mt-6">Usually replies within 24 hours.</p>
+        <p className="description mt-4">Usually replies within 24 hours.</p>
       </div>
 
       <form onSubmit={handleSubmit} className="flex flex-col flex-1 gap-6">
@@ -125,7 +125,7 @@ const ContactForm = () => {
         <div className="flex-1 flex flex-col">
           <Textarea
             placeholder="Your Message"
-            className="flex-1 min-h-[100px] resize-none text-sm font-medium rounded-[18px]"
+            className="px-4 flex-1 min-h-[100px] resize-none text-sm font-medium rounded-[18px]"
             name="message"
             value={formData.message}
             onChange={handleChange}
@@ -147,7 +147,7 @@ const ContactForm = () => {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                className="ml-2"
+                className="ml-4"
               >
                 <Send sx={{ fontSize: 16 }} />
               </motion.div>
@@ -155,7 +155,7 @@ const ContactForm = () => {
           ) : (
             <span className="flex items-center">
               Send Message
-              <Send sx={{ fontSize: 16 }} className="ml-2" />
+              <Send sx={{ fontSize: 16 }} className="ml-4" />
             </span>
           )}
         </Button>

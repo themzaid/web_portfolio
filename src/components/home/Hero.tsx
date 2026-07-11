@@ -1,14 +1,15 @@
-import { motion, animate } from "framer-motion";
-import { ArrowDownIcon } from "lucide-react";
-import StatusBadge, { AvailabilityStatus } from "../common/StatusBadge";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect } from "react";
+import { ArrowDownIcon } from "@/components/ui/custom-icons";
 import { Button } from "@/components/ui/button";
-
-const CURRENT_STATUS: { status: AvailabilityStatus; text?: string } = {
-  status: "available",
-  text: "Open to work",
-};
+import Iridescence from "@/components/ui/Iridescence";
 
 const Hero = () => {
+  const { scrollY } = useScroll();
+  const contentY = useTransform(scrollY, [0, 800], [0, 250]);
+
+
+
   const scrollToProjects = () => {
     const projectsSection = document.getElementById("projects");
     if (projectsSection) {
@@ -18,64 +19,77 @@ const Hero = () => {
   };
 
   return (
-    <section className="py-24 [@media(pointer:coarse)]:py-0 flex items-center justify-center px-2 relative [@media(pointer:coarse)]:min-h-[75vh]">
-      <div className="absolute inset-0 -z-10 opacity-30">
-        <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-primary/5 rounded-full filter blur-3xl"></div>
-        <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl"></div>
-      </div>
+    <section
+      className="relative w-full px-2 mb-4"
+      style={{ height: "calc(var(--real-vh, 100svh) - 80px)" }}
+    >
+      {/* Background Container with Corner Radius & Masking */}
+      <div className="absolute inset-x-3 bottom-0 top-0 md:inset-x-6 md:bottom-0 md:top-0 rounded-3xl overflow-hidden bg-background">
+        <Iridescence
+          color={[0.3, 0.5, 0.9]}
+          mouseReact={false}
+          amplitude={0.1}
+          speed={1.0}
+        />
 
-      <div className="container mx-auto relative px-4">
-        <div className="flex flex-col items-center text-center">
+        {/* Main Content Container */}
+        <div className="absolute inset-0 flex items-center justify-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col items-center gap-8"
+            style={{ y: contentY, willChange: "transform" }}
+            className="container mx-auto px-4 text-white z-10"
           >
-            {/* <StatusBadge
-              status={CURRENT_STATUS.status}
-              customText={CURRENT_STATUS.text}
-            /> */}
-            <span className="section-tag px-4 py-1.5 inline-block mb-4">
-              FRONTEND ENGINEER
-            </span>
-          </motion.div>
+            <div className="flex flex-col items-center text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="flex flex-col items-center gap-8"
+              >
+                {/* <StatusBadge
+                  status={CURRENT_STATUS.status}
+                  customText={CURRENT_STATUS.text}
+                /> */}
+              </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-4xl md:text-5xl lg:text-6xl tracking-tight text-balance py-2"
-          >
-            Building modern web applications with React, Next.js and TypeScript.
+              <div className="dark w-full">
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="text-4xl md:text-5xl lg:text-6xl tracking-tight text-balance py-2"
+                >
+                  Building modern web applications with React, Next.js and TypeScript.
+                </motion.h1>
+              </div>
 
-          </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="text max-w-compact mb-10 text-balance !text-white opacity-90"
+              >
+                With a background in Design, Engineering and Automation, I build web applications that are fast, reliable, and easy to use.
+              </motion.p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-md page-description max-w-compact mb-10 text-balance"
-          >
-            With a background in Design, Frontend Development and Automation, I build web applications that are fast, reliable, and easy to use.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <Button
-              onClick={scrollToProjects}
-              size="lg"
-              className="rounded-full group"
-            >
-              View my work
-              <ArrowDownIcon
-                size={16}
-                className="ml-2 group-hover:translate-y-1 transition-transform"
-              />
-            </Button>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <Button
+                  onClick={scrollToProjects}
+                  size="lg"
+                  variant="secondary"
+                  className="rounded-full group px-8"
+                >
+                  View my work
+                  <ArrowDownIcon
+                    size={16}
+                    className="ml-2 transition-transform [@media(hover:hover)]:group-hover:translate-y-1 group-active:translate-y-1"
+                  />
+                </Button>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>

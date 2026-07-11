@@ -1,19 +1,25 @@
 import { motion } from "framer-motion";
-import { ReactNode, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { ReactNode } from "react";
 
 interface PageTransitionProps {
   children: ReactNode;
 }
 
 const variants = {
-  hidden: { opacity: 0, y: 20 },
-  enter: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -20 },
+  hidden: { opacity: 0, y: 8 },
+  enter: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { type: "tween", ease: [0.25, 0.1, 0.25, 1], duration: 0.5 } 
+  },
+  exit: { 
+    opacity: 0, 
+    y: -8, 
+    transition: { type: "tween", ease: [0.25, 0.1, 0.25, 1], duration: 0.3 } 
+  },
 };
 
 const PageTransition = ({ children }: PageTransitionProps) => {
-  const { pathname } = useLocation();
 
   return (
     <motion.main
@@ -21,8 +27,7 @@ const PageTransition = ({ children }: PageTransitionProps) => {
       initial="hidden"
       animate="enter"
       exit="exit"
-      transition={{ type: "tween", ease: "easeInOut", duration: 0.4 }}
-      className="flex-1"
+      className="flex-1 w-full"
     >
       {children}
     </motion.main>

@@ -1,10 +1,13 @@
 import { useParams, Link, Navigate } from "react-router-dom";
-import { ArrowLeft, ArrowUpRight, Github, Globe, Figma, FileText } from "lucide-react";
+import { motion } from "framer-motion";
+import { Github, Globe, Figma, FileText } from "lucide-react";
+import { ArrowLeftIcon, ArrowUpRightIcon } from "@/components/ui/custom-icons";
 import Layout from "@/components/layout/Layout";
 import { projectsData } from "@/data/projects";
 import { useState, useEffect, useLayoutEffect } from "react";
 import { Button } from "@/components/ui/button";
 import MacBookFrame from "@/components/common/MacBookFrame";
+import SideRays from "@/components/ui/SideRays";
 
 const CaseStudy = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -27,46 +30,50 @@ const CaseStudy = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen pb-32 px-2">
+      <div className="min-h-screen pb-1 lg:pb-6 px-2">
         <div className="container mx-auto">
 
-          <div className="flex items-center mt-4 mb-6">
+          <div className="flex items-center mt-4 mb-5">
             <Link
               to="/"
-              className="group inline-flex items-center gap-2 text-xs tracking-[0.14em] uppercase text-foreground font-medium hover:text-muted-foreground transition-colors"
+              data-restore-scroll="true"
+              className="group inline-flex items-center gap-2 text-[13px] tracking-[0.14em] uppercase text-accent-blue dark:text-accent-blue-c font-bold hover:opacity-80 transition-opacity [-webkit-tap-highlight-color:transparent]"
             >
-              <ArrowLeft className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" />
-              Back to projects
+              <ArrowLeftIcon className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1 transform-gpu" />
+              <span className="translate-y-[0.5px]">Back to projects</span>
             </Link>
           </div>
 
           {/* Hero Top (Title & Lede) */}
           <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-8 md:gap-12 items-start pt-0">
-            <div>
-              {/* <div className="flex items-center gap-4 mb-4">
-                <div className="w-6 h-[1px] bg-foreground/70"></div>
-                <span className="text-[12px] font-medium md:text-[13px] tracking-[0.1em] uppercase text-foreground/90 overflow-hidden whitespace-nowrap block truncate">
-                  Case Study / {project.title}
-                </span>
-              </div> */}
-              <h1 className="text-[40px] md:text-[72px] font-normal leading-[1.05] tracking-[-0.02em] text-foreground -mb-3">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <h1 className="text-[40px] lg:text-[52px] font-normal leading-[1.05] tracking-[-0.02em] text-accent-blue opacity-95 dark:text-accent-blue-c -mb-3">
                 {project.title}
               </h1>
-              {/* <p className="text-[12px] font-medium md:text-[13px] tracking-[0.12em] text-foreground/90 uppercase font-sans">
-                {project.role} &middot; {project.year}
-              </p> */}
-            </div>
+            </motion.div>
 
-            <div className="md:pt-1.5 md:justify-self-end">
-              <p className="text-lg text-foreground leading-relaxed tracking-[-0.1px] pb-2">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="md:pt-1.5 md:justify-self-end"
+            >
+              <p className="text tracking-[-0.1px] pb-2">
                 {caseStudy.heroLede}
               </p>
-            </div>
+            </motion.div>
           </div>
 
           {/* Hero Visual Container */}
-          <div
-            className="mt-8 md:mt-12 rounded-t-[24px] border border-border border-b-0 overflow-hidden relative flex justify-center items-end"
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+            className="mt-8 md:mt-6 rounded-t-[24px] border border-border border-b-0 overflow-hidden relative flex justify-center items-end"
             style={{ background: project.themeGradient }}
           >
             {/* Background Glows (inside frame) */}
@@ -88,14 +95,36 @@ const CaseStudy = () => {
               ))}
             </div>
 
+            <div className="absolute inset-0 opacity-50">
+              <SideRays
+                speed={2.5}
+                rayColor1="#ffffff"
+                rayColor2="#ffffff"
+                intensity={2}
+                spread={2}
+                origin="top-right"
+                tilt={0}
+                saturation={0}
+                blend={0.75}
+                falloff={1.6}
+                opacity={1.0}
+              />
+            </div>
+
+
             {/* Scaled-down MacBook wrapper */}
-            <div className="w-[clamp(70%,80vw,85%)] max-w-5xl pt-[clamp(32px,8vw,64px)] pb-0 relative z-10">
+            <div className="@container w-[clamp(70%,80vw,85%)] lg:w-[clamp(70%,80vw,75%)] max-w-5xl pt-[clamp(32px,2vw,64px)] pb-0 relative z-10">
               <MacBookFrame project={project} variant="case-study" />
             </div>
-          </div>
+          </motion.div>
 
           {/* Meta Bar */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-border border-[1px] border-border border-t-0 rounded-b-[20px] overflow-hidden mb-10 shadow-sm">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-border border-[1px] border-border border-t-0 rounded-b-[20px] overflow-hidden mb-10 shadow-sm"
+          >
             {[
               { label: "Year", value: project.year },
               { label: "Role", value: project.role },
@@ -107,7 +136,7 @@ const CaseStudy = () => {
                 <div className="text-[14px] md:text-[16px] leading-[1.4] text-foreground font-medium">{meta.value}</div>
               </div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Content Split: Sidebar + Stories */}
           <div className="grid grid-cols-1 sm:grid-cols-[220px_1fr] lg:grid-cols-[240px_1fr] gap-8 md:gap-10 lg:gap-10">
@@ -158,7 +187,7 @@ const CaseStudy = () => {
                             <Icon className="w-3.5 h-3.5" />
                             {link.label}
                           </div>
-                          <ArrowUpRight className="w-3.5 h-3.5" />
+                          <ArrowUpRightIcon className="w-3.5 h-3.5" />
                         </a>
                       </Button>
                     );
@@ -170,18 +199,22 @@ const CaseStudy = () => {
             {/* Story Blocks */}
             <div className="grid gap-6">
               {caseStudy.blocks.map((block, i) => (
-                <div
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-10%" }}
+                  transition={{ duration: 0.5 }}
                   key={i}
                   id={`block-${i}`}
                   className="p-7 md:p-9 border-[1px] rounded-[20px] transition-colors duration-300 bg-card border-border"
                 >
-                  <div className="text-[12px] tracking-[0.16em] mb-3 text-foreground/80 font-medium">
+                  <div className="text-[12px] tracking-[0.16em] mb-2 text-foreground/50 font-bold">
                     0{i + 1} / {block.navLabel || block.title.split(' ')[0]}
                   </div>
-                  <h3 className="text-[22px] md:text-[32px] font-normal tracking-[-0.02em] leading-[1.2] mb-1 -ml-0.5 text-foreground">
+                  <h3 className="text-[25px] md:text-[32px] tracking-[-0.02em] leading-[1.2] mb-1 -ml-0.3 text-accent-blue opacity-90 font-[450]">
                     {block.title}
                   </h3>
-                  <p className="text-[15px] md:text-[16px] text-foreground/90 leading-[1.85]">
+                  <p className="text">
                     {block.p}
                   </p>
 
@@ -205,7 +238,7 @@ const CaseStudy = () => {
                       ))}
                     </div>
                   )}
-                </div>
+                </motion.div>
               ))}
 
             </div>

@@ -39,7 +39,7 @@ const ContactInfo = () => {
     >
       <div className="mb-7">
         <h2 className="text-2xl font-serif pb-4 border-b border-gray-300 tracking-tight">Contact Information</h2>
-        <p className="text-sm text-muted-foreground mt-6 font-medium">Available globally for remote work.</p>
+        <p className="description mt-6">Available globally for remote work.</p>
       </div>
 
       <div className="space-y-6">
@@ -81,9 +81,9 @@ const ContactInfo = () => {
           {socials.map((social) => (
             <Button
               key={social.label}
-              variant="secondary"
+              variant="outline"
               asChild
-              className="h-11 px-5 rounded-full bg-gray-50/50 border border-gray-100 hover:bg-primary/5 hover:border-primary/20 transition-all gap-2 [&_svg]:size-5"
+              className="h-11 px-[10px] rounded-full border-2 border-primary/15 transition-all gap-2 [&_svg]:size-6"
             >
               <a
                 href={social.url}

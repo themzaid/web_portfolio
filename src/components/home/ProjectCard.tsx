@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRightIcon } from "@/components/ui/custom-icons";
 import { Link } from "react-router-dom";
 import { Project } from "../../data/projects";
 import MacBookFrame from "@/components/common/MacBookFrame";
-
+import SideRays from "@/components/ui/SideRays";
 interface ProjectCardProps {
   project: Project;
   index: number;
@@ -11,18 +11,14 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
-
-
   return (
     <motion.article
-      initial={{ opacity: 0, y: 30 }}
-      animate={index < 3 ? { opacity: 1, y: 0 } : undefined}
-      whileInView={index >= 3 ? { opacity: 1, y: 0 } : undefined}
-      viewport={{ once: true, margin: "0px" }}
-      transition={{
-        duration: 0.6,
-        ease: [.1, .12, .2, 1],
-        delay: index < 3 ? 0.2 + (index * 0.1) : 0,
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-10px" }}
+      transition={{ 
+        y: { duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: (index % 3) * 0.15 },
+        opacity: { duration: 0.7, ease: "linear", delay: (index % 3) * 0.15 }
       }}
       id={`project-${project.slug}`}
       className="flex flex-col border-[1px] border-border rounded-[20px] bg-card overflow-hidden h-full"
@@ -30,26 +26,24 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
       {/* TOP: Custom Thumbnail Graphic */}
       <div
-        className="relative overflow-hidden aspect-[4/3]"
-        style={{ background: project.themeGradient, containerType: 'inline-size' }}
+        className="relative overflow-hidden aspect-[4/3] [container-type:inline-size]"
+        style={{ background: project.themeGradient }}
       >
-        {/* Glows */}
-        {project.glows.map((glow, i) => (
-          <div
-            key={i}
-            className="absolute rounded-full blur-[clamp(22px,3vw,35px)]"
-            style={{
-              width: glow.width,
-              height: glow.height,
-              top: glow.top,
-              bottom: glow.bottom,
-              left: glow.left,
-              right: glow.right,
-              background: glow.background
-            }}
+        <div className="absolute inset-0 opacity-40">
+          <SideRays 
+            speed={2.5}
+            rayColor1="#ffffff"
+            rayColor2="#ffffff"
+            intensity={2}
+            spread={2}
+            origin="top-right"
+            tilt={0}
+            saturation={0}
+            blend={0.75}
+            falloff={1.6}
+            opacity={1.0}
           />
-        ))}
-
+        </div>
         {/* MacBook Frame */}
         <div
           className="absolute inset-x-[clamp(16px,5%,32px)] top-1/2 -translate-y-1/2"
@@ -63,7 +57,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         <div className="flex flex-col flex-grow">
           {/* Top Content Group */}
           <div className="flex flex-col gap-3">
-            <span className="text-[11px] font-medium tracking-[0.18em] uppercase text-foreground/60 mb-[-2px]">
+            <span className="text-[11px] font-bold tracking-[0.16em] uppercase text-muted-foreground mb-[-2px] ml-[1px]">
               {project.category}
             </span>
 
@@ -71,7 +65,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
               {project.title}
             </h3>
 
-            <p className="text-[15px] leading-[1.7] text-foreground/80">
+            <p className="description">
               {project.description}
             </p>
           </div>
@@ -81,7 +75,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             {project.tags.map((tag, tagIndex) => (
               <span
                 key={tagIndex}
-                className="portfolio-tag px-3 py-1 text-[11px] leading-tight"
+                className="portfolio-tag px-3 py-1 text-[11px] leading-tight text-primary/80"
               >
                 {tag}
               </span>
@@ -93,11 +87,10 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           <Link
             to={`/project/${project.slug}`}
             aria-label={`View Case Study for ${project.title}`}
-            onClick={() => sessionStorage.setItem('homeScrollPos', window.scrollY.toString())}
-            className="group inline-flex items-center gap-2 text-xs tracking-[0.14em] uppercase text-foreground font-medium hover:text-muted-foreground transition-colors"
+            className="group inline-flex items-center gap-2 text-sm tracking-[0.12em] uppercase text-accent-blue font-extrabold transition-opacity hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:ring-offset-2 focus-visible:rounded-sm active:opacity-50"
           >
             Case study
-            <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            <ArrowUpRightIcon className="w-4 h-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </Link>
         </div>
       </div>

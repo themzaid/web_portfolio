@@ -96,10 +96,8 @@ export const Navbar = () => {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 px-2 py-4 transition-all duration-300 ease-in-out",
-          scrolled
-            ? "bg-background/90 backdrop-blur-md shadow-sm"
-            : "bg-transparent"
+          "fixed top-0 left-0 right-0 z-50 px-2 py-4 bg-background/85 backdrop-blur-sm transition-shadow duration-300",
+          scrolled ? "shadow-sm" : ""
         )}
       >
         <div className="container mx-auto relative group/navbar">
@@ -107,10 +105,16 @@ export const Navbar = () => {
             {/* Logo/Brand */}
             <NavLink
               to="/"
-              className="text-2xl font-normal tracking-normal relative z-20"
+              onClick={(e) => {
+                if (location.pathname === "/") {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+              }}
+              className="text-2xl font-normal tracking-normal relative z-20 text-accent-blue"
             >
-              <span className="font-sans font-medium hidden sm:block">Mohammed Zaid</span>
-              <span className="font-sans font-medium sm:hidden">MZ</span>
+              <span className="font-sans font-medium tracking-[0.02em] hidden sm:block">Mohammed Zaid</span>
+              <span className="font-sans font-medium tracking-[0.05em] sm:hidden">MZ</span>
             </NavLink>
 
             {/* Desktop Navigation */}
@@ -120,13 +124,18 @@ export const Navbar = () => {
                   <li key={item.path}>
                     <NavLink
                       to={item.path}
+                      onClick={(e) => {
+                        if (location.pathname === item.path) {
+                          e.preventDefault();
+                          window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }
+                      }}
                       className={({ isActive }) =>
                         cn(
-                          "text-sm font-normal relative px-1 py-1.5 transition-colors font-sans font-medium tracking-wide",
-                          "after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-0 after:bg-[#222] after:transition-all after:duration-300",
+                          "text-md font-medium px-1 py-1.5 transition-colors font-sans tracking-wide",
                           isActive
-                            ? "after:w-full text-primary"
-                            : "text-muted-foreground hover:text-primary hover:after:w-full"
+                            ? "text-accent-blue"
+                            : "text-muted-foreground hover:text-foreground/60"
                         )
                       }
                     >
@@ -135,43 +144,25 @@ export const Navbar = () => {
                   </li>
                 ))}
               </ul>
-
-              {/* Social Links commented out to fix alignment issues */}
-              {/* 
-            <div className="hidden md:flex items-center space-x-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.label}
-                  className="text-muted-foreground hover:text-primary transition-colors duration-200"
-                >
-                  {social.icon({})}
-                </a>
-              ))}
-            </div> 
-            */}
             </div>
 
             {/* Mobile Menu Button with Custom 2-Line Animation */}
             <div className="flex items-center gap-3 sm:hidden relative z-20">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-2 w-6 h-8 flex flex-col justify-center items-center"
+                className="p-2 w-8 h-8 relative"
                 aria-label={isOpen ? "Close menu" : "Open menu"}
               >
                 <span
                   className={cn(
-                    "block h-0.5 w-5 bg-primary transition-all duration-500 ease-in-out",
-                    isOpen ? "rotate-45 translate-y-0.6" : "-translate-y-[3px]"
+                    "absolute top-1/2 left-1/2 h-[2.5px] w-6 bg-accent-blue transition-all duration-300 ease-in-out",
+                    isOpen ? "-translate-x-1/2 -translate-y-1/2 rotate-45" : "-translate-x-1/2 -translate-y-[6px]"
                   )}
                 />
                 <span
                   className={cn(
-                    "block h-0.5 w-5 bg-primary transition-all duration-500 ease-in-out",
-                    isOpen ? "-rotate-45 -translate-y-0.5" : "translate-y-[4px]"
+                    "absolute top-1/2 left-1/2 h-[2.5px] w-6 bg-accent-blue transition-all duration-300 ease-in-out",
+                    isOpen ? "-translate-x-1/2 -translate-y-1/2 -rotate-45" : "-translate-x-1/2 translate-y-[4px]"
                   )}
                 />
               </button>
@@ -213,12 +204,20 @@ export const Navbar = () => {
                   >
                     <NavLink
                       to={item.path}
+                      onClick={(e) => {
+                        if (location.pathname === item.path) {
+                          e.preventDefault();
+                          window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }
+                        document.body.style.overflow = "";
+                        setIsOpen(false);
+                      }}
                       className={({ isActive }) =>
                         cn(
                           "text-3xl font-normal transition-colors font-sans font-medium",
                           isActive
-                            ? "text-primary"
-                            : "text-muted-foreground hover:text-primary"
+                            ? "text-accent-blue"
+                            : "text-muted-foreground hover:text-accent-blue"
                         )
                       }
                     >

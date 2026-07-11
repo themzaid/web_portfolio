@@ -3,15 +3,17 @@ import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
-  ArrowRight,
   Calendar,
   Code,
   Monitor,
   Palette,
   Award,
   FolderOpen,
+  Mail,
 } from "lucide-react";
+import { ArrowRightIcon } from "@/components/ui/custom-icons";
 import { CalendarMonthRounded } from "@mui/icons-material";
+import Beams from "@/components/ui/Beams";
 
 const About = () => {
   const timeline = [
@@ -104,30 +106,27 @@ const About = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-6 pb-24 px-2">
+      <section className="pt-6 pb-24 md:pt-10 px-2 overflow-x-hidden">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-[4fr_3fr] md:grid-cols-[6fr_3fr] lg:grid-cols-[5fr_3fr] gap-12 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="px-4 py-1.5 text-xs font-medium font-mono rounded-full bg-primary/5 text-secondary-foreground inline-block mb-4">
-                ABOUT ME
-              </span>
               <h1 className="text-[28px] tracking-tight md:text-4xl lg:text-5xl mb-2 md:mb-4">
                 Hi, I'm Mohammed Zaid.
               </h1>
-              <p className="page-description mb-5">
-                I'm a software engineer based in Navi Mumbai, with a background in UI/UX design, software development and testing. Over the years, I've worked across frontend development, automation and quality engineering, building software with a focus on clarity, reliability and long-term maintainability.
+              <p className="text mb-5">
+                I'm a software engineer based in Navi Mumbai. Over the years, I've worked across Design, Development and Quality Assurance, building software with a focus on reliability and simplicity.
               </p>
-              <p className="page-description mb-5">
+              <p className="text mb-5">
                 I started my career as a UI/UX designer and frontend developer. That background shapes how I approach software today, helping me think through user flows, edge cases and implementation details early in the development process.
               </p>
               <div className="flex flex-wrap gap-4 mt-8">
                 <Button asChild>
                   <Link to="/contact" className="flex items-center">
-                    Contact me <ArrowRight size={16} className="ml-2" />
+                    Contact me <ArrowRightIcon size={16} className="ml-1" />
                   </Link>
                 </Button>
                 <Button variant="outline" asChild>
@@ -143,8 +142,8 @@ const About = () => {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className="relative"
             >
@@ -155,7 +154,7 @@ const About = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-5 -right-5 -z-10 h-full w-full rounded-[28px] border border-gray-200 bg-background"></div>
+              <div className="absolute -bottom-5 -right-5 -z-10 h-full w-full rounded-[28px] border border-gray-200 bg-background hidden sm:block"></div>
             </motion.div>
           </div>
         </div>
@@ -171,13 +170,10 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center mb-10"
           >
-            <span className="px-4 py-1.5 text-xs font-medium font-mono rounded-full bg-primary/5 text-secondary-foreground inline-block mb-4">
-              SERVICES
-            </span>
             <h2 className="text-3xl md:text-4xl mb-2 tracking-tight">
               How I Can Help
             </h2>
-            <p className="page-description max-w-compact mx-auto">
+            <p className="text max-w-compact mx-auto">
               I help teams design, build, and improve software through UI/UX design, development, quality engineering, and automation.
             </p>
           </motion.div>
@@ -192,13 +188,13 @@ const About = () => {
                 viewport={{ once: true }}
                 className="bg-card border border-gray-200 rounded-[20px] p-6"
               >
-                <div className="p-3 border border-gray-200 bg-gray-100 inline-block rounded-[7px] mb-2">
-                  <service.icon className="h-6 w-6 text-primary" />
+                <div className="p-3 border border-blue-200 bg-blue-50 inline-block rounded-[7px] mb-2">
+                  <service.icon className="h-6 w-6 text-accent-blue" />
                 </div>
                 <h3 className="text-xl mb-1">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground text-sm/[21px]">
+                <p className="description">
                   {service.description}
                 </p>
               </motion.div>
@@ -217,13 +213,10 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center mb-10"
           >
-            <span className="px-4 py-1.5 text-xs font-medium font-mono rounded-full bg-primary/5 text-secondary-foreground inline-block mb-4">
-              EXPERIENCE
-            </span>
             <h2 className="text-3xl md:text-4xl mb-2 tracking-tight">
               My Journey
             </h2>
-            <p className="page-description max-w-compact mx-auto">
+            <p className="text max-w-compact mx-auto">
               A timeline of my professional experience in the industry.
             </p>
           </motion.div>
@@ -231,7 +224,7 @@ const About = () => {
           <div className="space-y-12 relative before:absolute before:left-0 sm:before:left-[145px] before:top-[34px] before:bottom-4 before:w-px before:bg-gray-200 before:hidden sm:before:block">
             {/* Timeline Label - Right-aligned with the date column */}
             <div className="absolute -top-10 left-0 md:w-[145px] text-right hidden md:block">
-              <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-muted-foreground/70 pr-6">
+              <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-muted-foreground pr-6">
                 Timeline
               </span>
             </div>
@@ -247,11 +240,11 @@ const About = () => {
               >
                 {/* Years and Dot */}
                 <div className="sm:w-[145px] flex-shrink-0 flex items-start justify-start sm:justify-end relative pt-0 sm:pt-[26px] pl-1 sm:pl-0">
-                  <span className="text-[13px] font-serif tracking-wider text-foreground pr-0 sm:pr-6 whitespace-nowrap text-left md:text-right">
+                  <span className="text-[13px] font-serif tracking-wider text-muted-foreground pr-0 sm:pr-6 whitespace-nowrap text-left md:text-right">
                     {item.year}
                   </span>
                   {/* Smaller Hollow Dot on the timeline - Centered with the year text */}
-                  <div className="absolute right-[-4.5px] top-[32px] w-2 h-2 rounded-full border-2 border-primary bg-background z-10 hidden sm:block" />
+                  <div className="absolute right-[-4.5px] top-[32px] w-2 h-2 rounded-full border-2 border-accent-blue-c bg-background z-10 hidden sm:block" />
                 </div>
 
                 {/* Content Card */}
@@ -260,11 +253,11 @@ const About = () => {
                     <h3 className="text-xl font-medium mb-1 leading-tight">
                       {item.role}
                     </h3>
-                    <p className="text-[14px] font-medium text-foreground -mb-1 leading-relaxed">
+                    <p className="text font-medium -mb-2">
                       {item.company}
                     </p>
                   </div>
-                  <p className="text-[14px] leading-relaxed">
+                  <p className="description">
                     {item.description}
                   </p>
                 </div>
@@ -275,7 +268,7 @@ const About = () => {
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-14 relative mt-4">
               <div className="sm:w-[145px] flex-shrink-0 flex items-start justify-end relative">
                 {/* Final Dot to close the line */}
-                <div className="absolute right-[-4.5px] top-[10px] w-2 h-2 rounded-full border-2 border-primary/40 bg-background z-10 hidden sm:block" />
+                <div className="absolute right-[-4.5px] top-[10px] w-2 h-2 rounded-full border-2 border-accent-blue/40 bg-background z-10 hidden sm:block" />
               </div>
               <div className="flex-1 pt-1.5 hidden md:block">
                 <span className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-muted-foreground/70 ml-1">
@@ -300,7 +293,7 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl mb-3 tracking-tight">
               Skills & Expertise
             </h2>
-            <p className="page-description max-w-compact mx-auto">
+            <p className="text max-w-compact mx-auto">
               A comprehensive list of technologies and tools I work with.
             </p>
           </motion.div>
@@ -323,27 +316,47 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-2 bg-black text-primary-foreground">
-        <div className="container mx-auto text-center">
+      <section className="py-24 px-2 relative overflow-hidden bg-black text-white">
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <Beams
+            beamWidth={2.5}
+            beamHeight={15}
+            beamNumber={12}
+            lightColor="#8b5cf6"
+            speed={2}
+            noiseIntensity={1.75}
+            scale={0.2}
+            rotation={-35}
+            color="#000000"
+          />
+        </div>
+
+        <div className="container mx-auto relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-normal mb-6 tracking-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl mb-7 text-balance tracking-tight max-w-compact mx-auto">
               Let's Work Together!
             </h2>
-            <p className="mb-8 max-w-compact mx-auto opacity-80">
-              If you need support across software design, development or testing, or simply want someone who understands both the product and the code, let's find the right solution for your project.
+            <p className="text-gray-300 mx-auto mb-10 text-balance max-w-compact">
+              If you need support across design and engineering, or simply want someone who understands both the product and the technology that powers it, let's find the right solution for you!
             </p>
             <Button
               asChild
               variant="secondary"
               size="lg"
-              className="rounded-full"
+              className="rounded-full group"
             >
-              <Link to="/contact">Get in Touch</Link>
+              <Link to="/contact">
+                Get in Touch
+                <ArrowRightIcon
+                  size={16}
+                  className="ml-1 transition-transform [@media(hover:hover)]:group-hover:translate-x-1 group-active:translate-x-1"
+                />
+              </Link>
             </Button>
           </motion.div>
         </div>

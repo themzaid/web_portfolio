@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -14,13 +13,6 @@ export default {
 		container: {
 			center: true,
 			screens: {
-				// 	'xs': '475px',
-				// 	'sm': '640px',
-				// 	'md': '768px',
-				// 	'lg': '1000px',
-				// 	'xl': '1280px',
-				// 	'2xl': '1536px',
-				// 'xl': '1100px',
 				'2xl': '1300px'
 			}
 		},
@@ -31,6 +23,9 @@ export default {
 			'wide': '1440px'
 		},
 		extend: {
+			backgroundImage: {
+				'primary-gradient': 'var(--primary-gradient)',
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -41,6 +36,8 @@ export default {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
 				},
+				'accent-blue': 'hsl(var(--accent-blue))',
+				'accent-blue-c': 'hsl(var(--accent-blue-c))',
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))'
@@ -75,6 +72,9 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			borderColor: {
+				accent: 'hsl(var(--border-accent))',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

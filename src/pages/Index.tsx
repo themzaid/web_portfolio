@@ -10,19 +10,7 @@ const Index = () => {
   const { hash } = useLocation();
 
   useLayoutEffect(() => {
-    const savedPos = sessionStorage.getItem('homeScrollPos');
-    
-    // Primary: Pixel-perfect strict scroll restoration
-    if (savedPos) {
-      const pos = parseInt(savedPos, 10);
-      requestAnimationFrame(() => {
-        window.scrollTo({ top: pos, behavior: 'auto' });
-        // Safety net: Some SPA DOMs take a split second to calculate full maximum height
-        setTimeout(() => window.scrollTo({ top: pos, behavior: 'auto' }), 50);
-      });
-      sessionStorage.removeItem('homeScrollPos');
-      return;
-    }
+
 
     // Fallback: Hash-based anchor targeting
     if (!hash) return;

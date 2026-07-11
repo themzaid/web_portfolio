@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeftIcon } from "@/components/ui/custom-icons";
 
 const NotFound = () => {
   const location = useLocation();
@@ -31,13 +31,13 @@ const NotFound = () => {
           </div>
 
           <h2 className="text-2xl font-medium mb-4">Page Not Found</h2>
-          <p className="text-muted-foreground mb-8">
+          <p className="text mb-8">
             The page you're looking for doesn't exist or has been moved.
           </p>
 
           <Button asChild className="rounded-full">
             <Link to="/" className="flex items-center">
-              <ArrowLeft size={16} className="mr-2" />
+              <ArrowLeftIcon size={16} className="mr-2" />
               Return to Home
             </Link>
           </Button>

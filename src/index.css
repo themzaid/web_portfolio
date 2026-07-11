@@ -26,7 +26,7 @@
 @layer base {
   :root {
     --background: 0 0% 98%;
-    --foreground: 240 10% 3.9%;
+    --foreground: 220 15% 14%;
 
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
@@ -34,14 +34,17 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
 
-    --primary: 240 5.9% 10%;
+    --primary: 240 3.3% 11.8%;
+    --accent-blue: 209 100% 29%;
+    --accent-blue-c: 209 100% 49%;
     --primary-foreground: 0 0% 98%;
+    --primary-gradient: linear-gradient(0deg, hsla(209, 100%, 29%, 1) 45%, hsla(196, 75%, 48%) 90%);
 
-    --secondary: 240 4.8% 95.9%;
+    --secondary: 214 30% 93%;
     --secondary-foreground: 240 5.9% 10%;
 
     --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+    --muted-foreground: 240 3.8% 55%;
 
     --accent: 240 4.8% 95.9%;
     --accent-foreground: 240 5.9% 10%;
@@ -49,9 +52,10 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 5.9% 90%;
+    --border: 210 50% 90%;
+    --border-accent: 209 75% 75%;
     --input: 240 5.9% 90%;
-    --ring: 240 10% 3.9%;
+    --ring: 209 100% 39%;
 
     --radius: 0.5rem;
   }
@@ -66,7 +70,7 @@
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 0 0% 98%;
+    --primary: 208 65% 46%;
     --primary-foreground: 240 5.9% 10%;
 
     --secondary: 240 3.7% 15.9%;
@@ -82,8 +86,9 @@
     --destructive-foreground: 0 0% 98%;
 
     --border: 240 3.7% 15.9%;
+    --border-accent: 209 100% 49%;
     --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --ring: 209 100% 49%;
   }
 }
 
@@ -92,29 +97,42 @@
     @apply border-border;
   }
 
+  *:focus-visible {
+    outline-color: hsl(var(--ring));
+  }
+
   body {
     @apply bg-background text-foreground font-sans;
     font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
   }
 
-  h1,
+  h1 {
+    @apply font-serif bg-primary-gradient bg-clip-text text-transparent font-semibold tracking-tight;
+    padding-bottom: 0.1em;
+    margin-bottom: -0.1em;
+  }
+
   h2,
   h3,
   h4,
   h5,
   h6 {
-    @apply font-serif bg-clip-text text-transparent;
-    background-image: linear-gradient(180deg, hsl(var(--foreground) / 0.7) 0%, hsl(var(--foreground) / 0.85) 50%, hsl(var(--foreground)) 100%);
-    /* background-image: linear-gradient(0deg, #004C94 45%, #297BC4 90%); */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    @apply font-serif bg-primary-gradient bg-clip-text text-transparent font-semibold tracking-tight;
     padding-bottom: 0.1em;
     margin-bottom: -0.1em;
   }
 
   h1 {
     @apply mb-2 md:mb-4;
+  }
 
+  p.text {
+    @apply text-[16px] md:text-[17px] leading-[1.7] text-foreground/90 font-normal;
+  }
+
+  p.description {
+    @apply text-[15px] md:text-[16px] leading-[1.6] text-foreground/75 tracking-normal font-normal;
   }
 
   /* Automatic Monochrome flip for dark sections (About page CTA, Home CTA, etc) */
@@ -127,7 +145,7 @@
   .dark h1,
   .dark h2,
   .dark h3 {
-    background-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.7) 100%);
+    background-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.85) 70%, rgba(255, 255, 255, 0.7) 100%);
   }
 
   .section-tag {
@@ -138,33 +156,18 @@
     @apply rounded-full border border-gray-300 bg-card text-[12px] tracking-wide font-medium text-foreground/80 whitespace-nowrap inline-flex items-center justify-center transition-colors;
   }
 
-  .page-description {
-    @apply text-foreground tracking-normal;
-  }
+
 }
 
-
-
-
-
-
-/* Custom Scrollbar */
-/* ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-} */
-
-::-webkit-scrollbar-track {
-  background: hsl(var(--background));
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
 }
 
-::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted-foreground) / 0.3);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--muted-foreground) / 0.5);
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 /* Page Transitions */
@@ -202,7 +205,7 @@
 }
 
 .font-sans {
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "Host Grotesk", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
