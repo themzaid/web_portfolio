@@ -81,6 +81,31 @@ const ScrollRestorer = () => {
 const AppRoutes = () => {
   const location = useLocation();
 
+  const isInitialLoad = useRef(true);
+
+  // Sync dark mode globally so modals, toasts, and portals receive the .dark class
+  useEffect(() => {
+    const toggleDarkMode = () => {
+      if (location.pathname === "/contact") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    };
+
+    if (isInitialLoad.current) {
+      toggleDarkMode();
+      isInitialLoad.current = false;
+    } else {
+      // Wait for framer-motion exit animation (300ms) before toggling
+      // so the old page doesn't snap to light/dark while fading out
+      const timer = setTimeout(() => {
+        toggleDarkMode();
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [location.pathname]);
+
   // Global interceptor for link clicks to bypass HashRouter navigation type bugs
   useEffect(() => {
     const handleLinkClick = (e: MouseEvent) => {

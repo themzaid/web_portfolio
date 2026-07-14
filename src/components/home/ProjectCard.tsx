@@ -16,12 +16,12 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-10px" }}
-      transition={{ 
+      transition={{
         y: { duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: (index % 3) * 0.15 },
         opacity: { duration: 0.7, ease: "linear", delay: (index % 3) * 0.15 }
       }}
       id={`project-${project.slug}`}
-      className="flex flex-col border-[1px] border-border rounded-[20px] bg-card overflow-hidden h-full"
+      className="flex flex-col border-[1px] border-card-border rounded-[20px] bg-card overflow-hidden h-full"
     >
 
       {/* TOP: Custom Thumbnail Graphic */}
@@ -30,7 +30,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         style={{ background: project.themeGradient }}
       >
         <div className="absolute inset-0 opacity-40">
-          <SideRays 
+          <SideRays
             speed={2.5}
             rayColor1="#ffffff"
             rayColor2="#ffffff"

@@ -25,17 +25,10 @@ export const Navbar = () => {
   useEffect(() => {
     const handleResize = () => {
       setViewportHeight(window.innerHeight);
-      if (mobileMenuRef.current && isOpen) {
-        mobileMenuRef.current.style.height = `${window.innerHeight}px`;
-      }
     };
 
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
-      // Update height on scroll as well to catch address bar hiding/showing
-      if (isMobile && mobileMenuRef.current && isOpen) {
-        mobileMenuRef.current.style.height = `${window.innerHeight}px`;
-      }
     };
 
     window.addEventListener("resize", handleResize);
@@ -96,26 +89,65 @@ export const Navbar = () => {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 px-2 py-4 bg-background/85 backdrop-blur-sm transition-shadow duration-300",
-          scrolled ? "shadow-sm" : ""
+          "fixed top-0 left-0 right-0 z-50 px-2 py-4 transition-all duration-300",
+          scrolled && location.pathname !== "/contact" && !isOpen ? "shadow-sm" : "",
+          location.pathname === "/contact" && !isOpen ? "border-b border-border" : ""
         )}
       >
+        <motion.div 
+          initial={false}
+          animate={{ height: isOpen ? '100dvh' : '64px' }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute top-0 left-0 right-0 bg-background/80 dark:bg-background/50 backdrop-blur-md pointer-events-none origin-top"
+        />
         <div className="container mx-auto relative group/navbar">
           <nav className="flex items-center justify-between">
             {/* Logo/Brand */}
-            <NavLink
-              to="/"
-              onClick={(e) => {
-                if (location.pathname === "/") {
-                  e.preventDefault();
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-              }}
-              className="text-2xl font-normal tracking-normal relative z-20 text-accent-blue"
-            >
-              <span className="font-sans font-medium tracking-[0.02em] hidden sm:block">Mohammed Zaid</span>
-              <span className="font-sans font-medium tracking-[0.05em] sm:hidden">MZ</span>
-            </NavLink>
+            <motion.div whileTap="tap">
+              <NavLink
+                to="/"
+                onClick={(e) => {
+                  if (location.pathname === "/") {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }
+                }}
+                className="text-2xl font-normal tracking-normal relative z-20 text-accent-blue dark:text-text-primary block"
+              >
+                <span className="font-sans font-medium tracking-[0.02em] hidden sm:flex items-center gap-[0.25em]">
+                  <motion.span 
+                    variants={{ tap: { scale: 0.9, x: -2 } }}
+                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                    className="inline-block"
+                  >
+                    Mohammed
+                  </motion.span>
+                  <motion.span 
+                    variants={{ tap: { scale: 0.9, x: 2 } }}
+                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                    className="inline-block"
+                  >
+                    Zaid
+                  </motion.span>
+                </span>
+                <span className="font-sans font-medium tracking-[0.05em] flex sm:hidden items-center">
+                  <motion.span 
+                    variants={{ tap: { scale: 0.85, x: -2, rotate: -6 } }}
+                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                    className="inline-block"
+                  >
+                    M
+                  </motion.span>
+                  <motion.span 
+                    variants={{ tap: { scale: 0.85, x: 2, rotate: 6 } }}
+                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                    className="inline-block"
+                  >
+                    Z
+                  </motion.span>
+                </span>
+              </NavLink>
+            </motion.div>
 
             {/* Desktop Navigation */}
             <div className="hidden sm:flex items-center space-x-8">
@@ -134,8 +166,8 @@ export const Navbar = () => {
                         cn(
                           "text-md font-medium px-1 py-1.5 transition-colors font-sans tracking-wide",
                           isActive
-                            ? "text-accent-blue"
-                            : "text-muted-foreground hover:text-foreground/60"
+                            ? "text-accent-blue dark:text-text-primary"
+                            : "text-text-primary/60 hover:text-foreground/60"
                         )
                       }
                     >
@@ -153,17 +185,25 @@ export const Navbar = () => {
                 className="p-2 w-8 h-8 relative"
                 aria-label={isOpen ? "Close menu" : "Open menu"}
               >
-                <span
-                  className={cn(
-                    "absolute top-1/2 left-1/2 h-[2.5px] w-6 bg-accent-blue transition-all duration-300 ease-in-out",
-                    isOpen ? "-translate-x-1/2 -translate-y-1/2 rotate-45" : "-translate-x-1/2 -translate-y-[6px]"
-                  )}
+                <motion.span
+                  initial={false}
+                  animate={{
+                    x: "-50%",
+                    y: isOpen ? "-50%" : "-6px",
+                    rotate: isOpen ? 45 : 0
+                  }}
+                  transition={{ type: "spring", stiffness: 280, damping: 20 }}
+                  className="absolute top-1/2 left-1/2 h-[2.5px] w-6 bg-accent-blue dark:bg-text-primary"
                 />
-                <span
-                  className={cn(
-                    "absolute top-1/2 left-1/2 h-[2.5px] w-6 bg-accent-blue transition-all duration-300 ease-in-out",
-                    isOpen ? "-translate-x-1/2 -translate-y-1/2 -rotate-45" : "-translate-x-1/2 translate-y-[4px]"
-                  )}
+                <motion.span
+                  initial={false}
+                  animate={{
+                    x: "-50%",
+                    y: isOpen ? "-50%" : "4px",
+                    rotate: isOpen ? -45 : 0
+                  }}
+                  transition={{ type: "spring", stiffness: 280, damping: 20 }}
+                  className="absolute top-1/2 left-1/2 h-[2.5px] w-6 bg-accent-blue dark:bg-text-primary"
                 />
               </button>
             </div>
@@ -178,80 +218,81 @@ export const Navbar = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-background/100 backdrop-blur-md flex flex-col pt-20 px-6 overflow-auto"
+              transition={{ 
+                y: { type: "spring", stiffness: 300, damping: 24 },
+                opacity: { duration: 0.3, ease: "linear" }
+              }}
+              className="fixed left-0 right-0 flex flex-col px-6 overflow-auto"
               style={{
-                position: "fixed",
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                zIndex: 10,
-                display: "flex",
-                flexDirection: "column",
-                height: `${viewportHeight}px`,
-                overflow: "auto",
-                paddingTop: "5rem",
+                top: "64px",
+                zIndex: 40,
+                height: "calc(100dvh - 64px)",
+                paddingTop: "2rem",
               }}
             >
-              <ul className="flex flex-col space-y-7 items-center mt-auto">
-                {navItems.map((item) => (
-                  <motion.li
-                    key={item.path}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 * navItems.indexOf(item) }}
-                  >
-                    <NavLink
-                      to={item.path}
-                      onClick={(e) => {
-                        if (location.pathname === item.path) {
-                          e.preventDefault();
-                          window.scrollTo({ top: 0, behavior: 'smooth' });
-                        }
-                        document.body.style.overflow = "";
-                        setIsOpen(false);
-                      }}
-                      className={({ isActive }) =>
-                        cn(
-                          "text-3xl font-normal transition-colors font-sans font-medium",
-                          isActive
-                            ? "text-accent-blue"
-                            : "text-muted-foreground hover:text-accent-blue"
-                        )
+            <ul className="flex flex-col space-y-7 items-center mt-auto">
+              {navItems.map((item) => (
+                <motion.li
+                  key={item.path}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ 
+                    y: { type: "spring", stiffness: 280, damping: 20, delay: 0.1 * navItems.indexOf(item) },
+                    opacity: { duration: 0.4, ease: "linear", delay: 0.1 * navItems.indexOf(item) }
+                  }}
+                >
+                  <NavLink
+                    to={item.path}
+                    onClick={(e) => {
+                      if (location.pathname === item.path) {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
                       }
-                    >
-                      {item.title}
-                    </NavLink>
-                  </motion.li>
-                ))}
-              </ul>
-
-              {/* Mobile Social Links */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
-                className="mt-auto mb-10 flex justify-center space-x-5"
-              >
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={social.label}
-                    className="text-muted-foreground hover:text-primary transition-colors p-2"
+                      document.body.style.overflow = "";
+                      setIsOpen(false);
+                    }}
+                    className={({ isActive }) =>
+                      cn(
+                        "text-3xl font-normal transition-colors font-sans font-medium",
+                        isActive
+                          ? "text-accent-blue dark:text-text-primary"
+                          : "text-text-primary/50 hover:text-accent-blue"
+                      )
+                    }
                   >
-                    {social.icon({})}
-                  </a>
-                ))}
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </header>
+                    {item.title}
+                  </NavLink>
+                </motion.li>
+              ))}
+            </ul>
 
+            {/* Mobile Social Links */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ 
+                y: { type: "spring", stiffness: 280, damping: 20, delay: 0.3 },
+                opacity: { duration: 0.4, ease: "linear", delay: 0.3 }
+              }}
+              className="mt-auto mb-10 flex justify-center space-x-5"
+            >
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="text-muted-foreground hover:text-primary transition-colors p-2"
+                >
+                  {social.icon({})}
+                </a>
+              ))}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      </header>
     </>
   );
 };

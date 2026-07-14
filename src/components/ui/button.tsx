@@ -1,8 +1,9 @@
 import * as React from "react";
-import { Slot } from "@radix-ui/react-slot";
+import { Slot, Slottable } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
+import "@/components/ui/StarBorder.css";
 
 const PRIMARY_BUTTON_GLOW = "before:bg-[radial-gradient(circle_100px_at_var(--spotlight-x,50%)_var(--spotlight-y,50%),rgba(255,255,255,0.4),transparent_80%)]";
 const SECONDARY_BUTTON_GLOW = "before:bg-[radial-gradient(circle_100px_at_var(--spotlight-x,50%)_var(--spotlight-y,50%),hsl(var(--accent-blue)/0.15),transparent_80%)]";
@@ -14,13 +15,13 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          `relative isolate overflow-hidden border-2 border-white/20 bg-accent-blue/95 text-primary-foreground hover:bg-accent-blue hover:hover:border-accent-blue/80 shadow-none before:pointer-events-none before:absolute before:inset-0 before:z-[1] before:rounded-[inherit] before:opacity-0 before:transition-opacity before:duration-200 before:ease-out ${PRIMARY_BUTTON_GLOW} data-[spotlight-active=true]:before:opacity-100 dark:shadow-none`,
+          `relative isolate overflow-hidden border-2 border-accent-blue bg-accent-blue/95 text-primary-foreground hover:bg-accent-blue hover:border-accent-blue/80 shadow-none before:pointer-events-none before:absolute before:inset-0 before:z-[1] before:rounded-[inherit] before:opacity-0 before:transition-opacity before:duration-200 before:ease-out ${PRIMARY_BUTTON_GLOW} data-[spotlight-active=true]:before:opacity-100 dark:bg-accent-blue/45 dark:text-white dark:hover:bg-accent-blue/60 dark:border-accent-blue/20 dark:hover:border-accent-blue/10 dark:shadow-none`,
         destructive:
           "relative isolate overflow-hidden border-0 bg-destructive text-destructive-foreground shadow-[inset_0_1px_0_0_rgba(255,255,255,0.32),inset_0_-1px_0_0_rgba(0,0,0,0.1)] before:pointer-events-none before:absolute before:inset-0 before:z-[1] before:rounded-[inherit] before:opacity-0 before:transition-opacity before:duration-200 before:ease-out before:bg-[radial-gradient(circle_140px_at_var(--spotlight-x,50%)_var(--spotlight-y,50%),rgba(255,255,255,0.32),transparent_58%)] data-[spotlight-active=true]:before:opacity-100",
         outline:
-          `relative isolate overflow-hidden border-2 border-accent-blue/80 bg-background text-accent-blue/90 before:pointer-events-none before:absolute before:inset-0 before:z-[1] before:rounded-[inherit] before:opacity-0 before:transition-opacity before:duration-200 before:ease-out ${SECONDARY_BUTTON_GLOW} data-[spotlight-active=true]:before:opacity-100 dark:bg-background`,
+          `relative isolate overflow-hidden border-2 border-accent-blue/80 bg-background text-accent-blue/90 before:pointer-events-none before:absolute before:inset-0 before:z-[1] before:rounded-[inherit] before:opacity-0 before:transition-opacity before:duration-200 before:ease-out ${SECONDARY_BUTTON_GLOW} data-[spotlight-active=true]:before:opacity-100 dark:border-white/20 dark:text-white dark:bg-transparent dark:hover:bg-white/10`,
         secondary:
-          `relative isolate overflow-hidden border-2 border-white/50 bg-white/80 text-black hover:bg-white/70 hover:border-transparent before:pointer-events-none before:absolute before:inset-0 before:z-[1] before:rounded-[inherit] before:opacity-0 before:transition-opacity before:duration-200 before:ease-out ${SECONDARY_VARIANT_GLOW} data-[spotlight-active=true]:before:opacity-100 dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.14),inset_0_-1px_0_0_rgba(0,0,0,0.30)]`,
+          `relative isolate overflow-visible border-2 border-white/50 bg-white/80 text-black hover:bg-white/70 hover:border-transparent before:pointer-events-none before:absolute before:inset-0 before:z-[1] before:rounded-[inherit] before:opacity-0 before:transition-opacity before:duration-200 before:ease-out ${SECONDARY_VARIANT_GLOW} data-[spotlight-active=true]:before:opacity-100 dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.14),inset_0_-1px_0_0_rgba(0,0,0,0.30)]`,
         ghost:
           "border-0 bg-transparent shadow-none backdrop-blur-none hover:bg-background/45 hover:text-accent-foreground",
         link:
@@ -29,7 +30,7 @@ const buttonVariants = cva(
       size: {
         default: "h-12 px-6 py-2",
         sm: "h-10 rounded-md px-3",
-        lg: "h-12 rounded-md px-8",
+        lg: "h-12 rounded-md px-7",
         icon: "h-10 w-10",
       },
     },
@@ -44,6 +45,7 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
   VariantProps<typeof buttonVariants> {
   asChild?: boolean;
+  glowColor?: string;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -53,6 +55,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       variant,
       size,
       asChild = false,
+      glowColor = "#0ea5e9",
       style,
       onPointerMove,
       onPointerEnter,
@@ -115,7 +118,15 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             }
             : onPointerLeave
         }
-      />
+      >
+        <Slottable>{props.children}</Slottable>
+        {variant === "secondary" && (
+          <div className="star-border-overlay !absolute" style={{ inset: "-2px", borderRadius: "inherit" }}>
+            <div className="border-gradient-bottom" style={{ background: `radial-gradient(circle, ${glowColor}, transparent 10%)`, animationDuration: '6s' }}></div>
+            <div className="border-gradient-top" style={{ background: `radial-gradient(circle, ${glowColor}, transparent 10%)`, animationDuration: '6s' }}></div>
+          </div>
+        )}
+      </Comp>
     );
   }
 );

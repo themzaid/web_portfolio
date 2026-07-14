@@ -3,22 +3,19 @@ import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
-  Calendar,
   Code,
   Monitor,
   Palette,
   Award,
-  FolderOpen,
-  Mail,
 } from "lucide-react";
 import { ArrowRightIcon } from "@/components/ui/custom-icons";
-import { CalendarMonthRounded } from "@mui/icons-material";
 import Beams from "@/components/ui/Beams";
+import PixelCard from "@/components/ui/PixelCard";
 
 const About = () => {
   const timeline = [
     {
-      year: "Mar 2025 - Present",
+      year: "Mar 2025 - Jul 2026",
       role: "QA Analyst",
       company: "Pleximus Inc - Mumbai",
       description:
@@ -27,7 +24,7 @@ const About = () => {
     {
       year: "Dec 2019 - Feb 2022",
       role: "Web Designer & Developer",
-      company: "Freelance - Remote",
+      company: "Freelance - Dubai",
       description:
         "Designed and developed websites, landing pages, and digital experiences for clients, combining UI/UX design with frontend development.",
     },
@@ -39,7 +36,7 @@ const About = () => {
         "Designed and built the UI/UX for an employee management system including a custom dashboard with data visualisation and content management features.",
     },
     {
-      year: "Nov 2018 - April 2019",
+      year: "Nov 2018 - Apr 2019",
       role: "Research & Development Intern",
       company: "The Assembly - Dubai",
       description:
@@ -118,10 +115,10 @@ const About = () => {
                 Hi, I'm Mohammed Zaid.
               </h1>
               <p className="text mb-5">
-                I'm a software engineer based in Navi Mumbai. Over the years, I've worked across Design, Development and Quality Assurance, building software with a focus on reliability and simplicity.
+                I'm a software engineer with 3+ years of experience, based in Navi Mumbai. I work across design and engineering, delivering solutions that are not just functional, but also reliable and intuitive.
               </p>
               <p className="text mb-5">
-                I started my career as a UI/UX designer and frontend developer. That background shapes how I approach software today, helping me think through user flows, edge cases and implementation details early in the development process.
+                I began my career as a UI/UX designer, which continues to influence how I approach engineering today. It helps me think through user flows, anticipate edge cases, and weigh implementation options early on, so what I build feels unified and and truly built for users.
               </p>
               <div className="flex flex-wrap gap-4 mt-8">
                 <Button asChild>
@@ -147,14 +144,14 @@ const About = () => {
               transition={{ duration: 0.5 }}
               className="relative"
             >
-              <div className="aspect-square overflow-hidden rounded-[20px] border border-gray-200 shadow-sm">
+              <div className="aspect-square overflow-hidden rounded-[20px] border border-card-border shadow-sm">
                 <img
-                  src={`${import.meta.env.BASE_URL}zaid.jpg`}
+                  src={`${import.meta.env.BASE_URL}zaid-xbg.png`}
                   alt="Mohammed Zaid - Frontend Developer and Designer"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover bg-secondary"
                 />
               </div>
-              <div className="absolute -bottom-5 -right-5 -z-10 h-full w-full rounded-[28px] border border-gray-200 bg-background hidden sm:block"></div>
+              <div className="absolute -bottom-5 -right-5 -z-10 h-full w-full rounded-[28px] border border-card-border bg-background hidden lg:block"></div>
             </motion.div>
           </div>
         </div>
@@ -186,17 +183,24 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-card border border-gray-200 rounded-[20px] p-6"
+                className="h-full"
               >
-                <div className="p-3 border border-blue-200 bg-blue-50 inline-block rounded-[7px] mb-2">
-                  <service.icon className="h-6 w-6 text-accent-blue" />
-                </div>
-                <h3 className="text-xl mb-1">
-                  {service.title}
-                </h3>
-                <p className="description">
-                  {service.description}
-                </p>
+                <PixelCard
+                  variant="blue"
+                  className="bg-card border border-card-border rounded-[20px] p-6 h-full flex flex-col"
+                >
+                  <div className="relative z-10">
+                    <div className="p-3 border border-blue-200 bg-blue-50 inline-block rounded-[7px] mb-2">
+                      <service.icon className="h-6 w-6 text-accent-blue" />
+                    </div>
+                    <h3 className="text-xl mb-1">
+                      {service.title}
+                    </h3>
+                    <p className="description">
+                      {service.description}
+                    </p>
+                  </div>
+                </PixelCard>
               </motion.div>
             ))}
           </div>
@@ -248,7 +252,7 @@ const About = () => {
                 </div>
 
                 {/* Content Card */}
-                <div className="flex-1 bg-card border border-gray-200 rounded-[20px] px-7 py-6 text-primary shadow-sm hover:shadow-sm transition-all duration-300">
+                <div className="flex-1 bg-card border border-card-border rounded-[20px] px-7 py-6 text-primary shadow-sm hover:shadow-sm transition-all duration-300">
                   <div className="mb-2">
                     <h3 className="text-xl font-medium mb-1 leading-tight">
                       {item.role}
@@ -347,6 +351,7 @@ const About = () => {
             <Button
               asChild
               variant="secondary"
+              glowColor="#8b5cf6"
               size="lg"
               className="rounded-full group"
             >

@@ -8,8 +8,8 @@ import { degToRad } from 'three/src/math/MathUtils.js';
 
 import './Beams.css';
 
-class CanvasErrorBoundary extends Component<{children: ReactNode}, {hasError: boolean}> {
-  constructor(props: {children: ReactNode}) {
+class CanvasErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean }> {
+  constructor(props: { children: ReactNode }) {
     super(props);
     this.state = { hasError: false };
   }
@@ -306,7 +306,7 @@ const MergedPlanes = forwardRef(({ material, width, count, height }: any, ref) =
   return <mesh ref={mesh} geometry={geometry} material={material} />;
 });
 MergedPlanes.displayName = 'MergedPlanes';
-
+9
 const PlaneNoise = forwardRef((props: any, ref) => (
   <MergedPlanes ref={ref} material={props.material} width={props.width} count={props.count} height={props.height} />
 ));

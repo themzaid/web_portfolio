@@ -73,7 +73,7 @@ const CaseStudy = () => {
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-            className="mt-8 md:mt-6 rounded-t-[24px] border border-border border-b-0 overflow-hidden relative flex justify-center items-end"
+            className="mt-8 md:mt-6 rounded-t-[24px] border border-border border-b-0 overflow-hidden relative flex justify-center items-end group"
             style={{ background: project.themeGradient }}
           >
             {/* Background Glows (inside frame) */}
@@ -123,7 +123,7 @@ const CaseStudy = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-border border-[1px] border-border border-t-0 rounded-b-[20px] overflow-hidden mb-10 shadow-sm"
+            className="grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-card-border border-[1px] border-card-border border-t-0 rounded-b-[20px] overflow-hidden mb-10 shadow-sm"
           >
             {[
               { label: "Year", value: project.year },
@@ -162,7 +162,7 @@ const CaseStudy = () => {
 
               {/* Sidebar Links Panel */}
               {project.links && project.links.length > 0 && (
-                <div className="p-4 border-[1px] border-border rounded-2xl bg-card flex flex-col gap-3">
+                <div className="p-4 border-[1px] border-card-border rounded-2xl bg-card flex flex-col gap-3">
                   <div className="text-[11px] tracking-[0.14em] uppercase text-muted-foreground mb-1">Links</div>
 
                   {project.links.map((link, idx) => {
@@ -206,7 +206,7 @@ const CaseStudy = () => {
                   transition={{ duration: 0.5 }}
                   key={i}
                   id={`block-${i}`}
-                  className="p-7 md:p-9 border-[1px] rounded-[20px] transition-colors duration-300 bg-card border-border"
+                  className="p-7 md:p-9 border-[1px] rounded-[20px] transition-colors duration-300 bg-card border-card-border"
                 >
                   <div className="text-[12px] tracking-[0.16em] mb-2 text-foreground/50 font-bold">
                     0{i + 1} / {block.navLabel || block.title.split(' ')[0]}

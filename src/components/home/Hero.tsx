@@ -24,7 +24,7 @@ const Hero = () => {
       style={{ height: "calc(var(--real-vh, 100svh) - 80px)" }}
     >
       {/* Background Container with Corner Radius & Masking */}
-      <div className="absolute inset-x-3 bottom-0 top-0 md:inset-x-6 md:bottom-0 md:top-0 rounded-3xl overflow-hidden bg-background">
+      <div className="absolute inset-x-4 bottom-0 top-0 md:bottom-0 md:top-0 rounded-3xl overflow-hidden bg-background">
         <Iridescence
           color={[0.3, 0.5, 0.9]}
           mouseReact={false}
@@ -56,7 +56,7 @@ const Hero = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="text-4xl md:text-5xl lg:text-6xl tracking-tight text-balance py-2"
+                  className="text-4xl md:text-5xl lg:text-6xl tracking-tight text-balance py-2 md:py-4 lg:py-6"
                 >
                   Building modern web applications with React, Next.js and TypeScript.
                 </motion.h1>
@@ -66,7 +66,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="text max-w-compact mb-10 text-balance !text-white opacity-90"
+                className="text max-w-compact mb-6 md:mb-10 lg-md-12 text-balance !text-white opacity-90"
               >
                 With a background in Design, Engineering and Automation, I build web applications that are fast, reliable, and easy to use.
               </motion.p>
@@ -80,7 +80,8 @@ const Hero = () => {
                   onClick={scrollToProjects}
                   size="lg"
                   variant="secondary"
-                  className="rounded-full group px-8"
+                  glowColor="#4c7fe6"
+                  className="rounded-full group"
                 >
                   View my work
                   <ArrowDownIcon

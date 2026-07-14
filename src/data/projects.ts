@@ -53,19 +53,47 @@ export interface Project {
     heroLede: string;
     focus: string; // Focus metric in metadata bar
     browserUrl: string;
-    fakeNav: string[];
-    fakeH1: string;
-    fakeP: string;
-    fakeBtn: string;
+
     blocks: CaseStudyBlock[];
   };
 
   // Links
   links?: ProjectLink[];
-  screenshot?: string;
+  screenshot?: string | string[];
 }
 
 export const projectsData: Project[] = [
+  {
+    id: 8,
+    slug: "pleximus-internal-tool",
+    title: "Pleximus - Internal Tool",
+    category: "Full-Stack Development",
+    description: "Designed and developed an internal automation dashboard to streamline company workflows, consolidate data, and automate repetitive tasks for the operations team.",
+    tags: ["Internal Tool", "Dashboard", "Automation", "B2B"],
+    year: "2026",
+    role: "Automation Engineer",
+    themeGradient: "linear-gradient(135deg,#0f172a,#1e293b,#334155)",
+    glows: [
+      { width: 220, height: 220, top: -30, right: -30, background: "rgba(99,102,241,0.15)" }
+    ],
+    miniBrowser: {
+      title: "Operations Command Center",
+      desc: "Centralized internal workflow automation."
+    },
+    miniBrowserBg: "#ffffff",
+    miniBrowserAccent: "#4f46e5",
+    caseStudy: {
+      heroLede: "Designed and developed an internal automation dashboard to streamline company workflows, consolidate data, and automate repetitive tasks.",
+      focus: "Workflow Optimization",
+      browserUrl: "internal.company.com",
+      blocks: [
+        { type: 'text', navLabel: 'Overview', title: "Streamlining Internal Operations", p: "As the company scaled, internal operations became bottlenecked by fragmented tools and manual processes. I designed and built a centralized automation dashboard to unify data and streamline daily workflows for the operations team." },
+        { type: 'text', navLabel: 'Challenge', title: "Fragmented Tools and Manual Processes", p: "The operations team was spending hours each week manually syncing data between different platforms and executing repetitive tasks. There was no single source of truth, leading to inefficiencies and a high risk of human error." },
+        { type: 'text', navLabel: 'Solution', isAccent: true, title: "A Unified Automation Hub", p: "I built a custom dashboard that integrates with our core APIs to automate data syncing, task assignments, and reporting. The intuitive interface empowered the team to monitor automated workflows, significantly reducing manual overhead and improving operational efficiency." }
+      ]
+    },
+    screenshot: ["plex-1.png", "plex-2.png", "plex-3.png"],
+  },
   {
     id: 7,
     slug: "hisaab-app",
@@ -89,10 +117,7 @@ export const projectsData: Project[] = [
       heroLede: "Built a sharia compliant portfolio tracker for Muslim investors with compliance checks, dividends, purification, and real P&L insights.",
       focus: "Product Architecture",
       browserUrl: "app.hisaab.one",
-      fakeNav: ["Dashboard", "Portfolio", "Settings"],
-      fakeH1: "Hisaab",
-      fakeP: "A Portfolio Tracker Built Around Principles.",
-      fakeBtn: "Open App",
+
       blocks: [
         { type: 'text', navLabel: 'Overview', title: "A Portfolio Tracker Built Around Principles", p: "Hisaab is a full-stack web app for Indian Muslim investors to track their stock portfolio with Sharia compliance built into the core experience. It brings portfolio monitoring, compliance screening, dividend tracking, purification support, and profit/loss calculation into one focused system instead of forcing users to rely on scattered spreadsheets and manual checks." },
         { type: 'text', navLabel: 'Challenge', title: "Existing Portfolio Tools Ignore a Critical Investor Need", p: "Most investing platforms are built for price tracking and execution, not for faith-based decision making. Muslim investors still have to verify whether a stock is compliant, track impure income, estimate purification, and calculate actual returns manually, which creates friction and makes the whole workflow harder than it should be." },
@@ -127,10 +152,7 @@ export const projectsData: Project[] = [
       heroLede: "Built a conversion focused landing page for Hisaab, translating Sharia-compliant investing into a clear, credible product story.",
       focus: "Positioning & Conversion",
       browserUrl: "hisaab.one",
-      fakeNav: ["Features", "Pricing", "About"],
-      fakeH1: "Hisaab",
-      fakeP: "A Clear Entry Point Into Sharia-Compliant Investing.",
-      fakeBtn: "Sign Up",
+
       blocks: [
         { type: 'text', navLabel: 'Overview', title: "A Clear Entry Point Into Sharia-Compliant Investing", p: "Hisaab is a portfolio tracker built for Muslim investors in India who want to manage their investments without compromising on Sharia compliance. The landing page was designed to introduce that value simply and credibly, helping visitors quickly understand what the product does, who it serves, and why it is different from generic portfolio tools." },
         { type: 'text', navLabel: 'Challenge', title: "Explaining a Niche Product Without Losing Clarity", p: "The challenge was not just visual design, but communication. Hisaab sits at the intersection of investing, compliance screening, dividend tracking, and Islamic finance, so the landing page had to explain a layered product without sounding too technical, too generic, or too niche for first-time visitors." },
@@ -165,10 +187,7 @@ export const projectsData: Project[] = [
       heroLede: "Designed and developed a landing page for a software services company, translating a complex offer into clear positioning for small and mid sized businesses.",
       focus: "UX/UI Flow",
       browserUrl: "https://advance.com",
-      fakeNav: ["Services", "Process", "Work"],
-      fakeH1: "Advance",
-      fakeP: "Digital systems built for growing businesses.",
-      fakeBtn: "Get Started",
+
       blocks: [
         { type: 'text', navLabel: 'Overview', title: "A Digital Front for a Growing Services Business", p: "Advance is a software services company built for small and mid-sized businesses that need more than just a developer — they need a long-term digital partner. The goal was to build a landing page that reflected that positioning clearly and gave potential clients a reason to reach out." },
         { type: 'text', navLabel: 'Challenge', title: "A Complex Offer with No Clear Voice", p: "Software services are difficult to sell without the right framing. Advance’s value wasn’t a simple product, it was a philosophy built around structure, clarity, and long-term ownership. Without a focused digital presence, that message wasn’t reaching the right audience, and the business had no way to stand out in a crowded space." },
@@ -203,10 +222,7 @@ export const projectsData: Project[] = [
       heroLede: "Designed and developed a website for an eye care clinic, helping establish an online presence, build patient trust, and guide visitors from discovery to appointment.",
       focus: "Brand Identity · Interface",
       browserUrl: "https://optcare.com",
-      fakeNav: ["Menu", "Locations", "Story"],
-      fakeH1: "Authentic.",
-      fakeP: "A culinary journey.",
-      fakeBtn: "Book Table",
+
       blocks: [
         { type: 'text', navLabel: 'Overview', title: "Building a Digital Home for Eye Care", p: "Optcare had no digital presence and relied entirely on word of mouth. They needed a professional website that represented their practice well and gave prospective patients a way to find and connect with them online." },
         { type: 'text', navLabel: 'Challenge', title: "Invisible to the People Online", p: "The clinic had no presence online for new patients to explore their services or reach out to them, they were invisible to anyone searching for eye care in their area on the web." },
@@ -243,10 +259,7 @@ export const projectsData: Project[] = [
       heroLede: "Designed and developed a landing page for a UAE based platform connecting skilled professionals with opportunities, focused on fast loading, clarity and smooth user interaction.",
       focus: "Performance",
       browserUrl: "skillscall.com",
-      fakeNav: ["Home", "Services", "About", "Contact"],
-      fakeH1: "Scale your skills. Find your calling.",
-      fakeP: "Connecting skilled professionals with the right opportunities across the UAE.",
-      fakeBtn: "Get started →",
+
       blocks: [
         { type: 'text', navLabel: 'Overview', title: "A service platform built for the UAE market", p: "A landing page built for a UAE based client connecting professionals with opportunities. Kept it simple with plain HTML, CSS and vanilla JS, no framework needed." },
         { type: 'list', navLabel: 'Challenge', title: "High traffic, fast networks, a conversion-first mandate", p: "Needed to build it without a framework since the page had to stay light and load fast on mobile. Every decision came down to keeping things as simple as possible." },
@@ -281,10 +294,7 @@ export const projectsData: Project[] = [
       heroLede: "Logo design for a premium sneaker resale brand, built for recognition across digital and physical touchpoints.",
       focus: "Identity · Scalability",
       browserUrl: "crep.me",
-      fakeNav: ["Shop", "Drops", "About"],
-      fakeH1: "Fast.",
-      fakeP: "Premium goods.",
-      fakeBtn: "Shop Collection",
+
       blocks: [
         { type: 'text', navLabel: 'Overview', title: "Building a mark", p: "Crep Middle East is a premium footwear resale platform. They needed a logo that represented the brand confidently in the streetwear space." },
         { type: 'text', navLabel: 'Challenge', title: "Speed, authenticity, and hype", p: "The streetwear market moves fast. The logo needed to feel instantly recognizable and hold its own next to established global brands." },
@@ -320,10 +330,7 @@ export const projectsData: Project[] = [
       heroLede: "A custom CSS library built from scratch for fast, modular interfaces and flexible design integration.",
       focus: "Performance · UI Standards",
       browserUrl: "ui.bitstrap.com",
-      fakeNav: ["Docs", "Components", "Templates"],
-      fakeH1: "Build better UI",
-      fakeP: "A modular toolkit for developers.",
-      fakeBtn: "Get Started",
+
       blocks: [
         { type: 'text', navLabel: 'Overview', title: "The Need for Modularity", p: "Existing frameworks were too bloated or restrictive. The goal was to build something token-first from the ground up." },
         { type: 'text', navLabel: 'Challenge', title: "Scaling complexity without the weight", p: "Creating a robust CSS design system that doesn't rely on bloated JavaScript bundles, keeping core web vitals high." },

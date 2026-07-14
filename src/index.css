@@ -29,13 +29,15 @@
     --foreground: 220 15% 14%;
 
     --card: 0 0% 100%;
+    --card-border: 214 30% 90%;
     --card-foreground: 240 10% 3.9%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
 
     --primary: 240 3.3% 11.8%;
-    --accent-blue: 209 100% 29%;
+    /* --accent-blue: 209 100% 29%; */
+    --accent-blue: 209 100% 33%;
     --accent-blue-c: 209 100% 49%;
     --primary-foreground: 0 0% 98%;
     --primary-gradient: linear-gradient(0deg, hsla(209, 100%, 29%, 1) 45%, hsla(196, 75%, 48%) 90%);
@@ -52,26 +54,31 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 210 50% 90%;
+    --border: 214 30% 93%;
     --border-accent: 209 75% 75%;
     --input: 240 5.9% 90%;
     --ring: 209 100% 39%;
+    --text-primary: 220 15% 14%;
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 240 10% 3.9%;
+    --background: 0 0% 0%;
     --foreground: 0 0% 98%;
 
-    --card: 240 10% 3.9%;
+    --card: 240 6% 9%;
+    --card-border: 0 0% 100% / 0.1;
     --card-foreground: 0 0% 98%;
 
-    --popover: 240 10% 3.9%;
+    --popover: 240 6% 9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 208 65% 46%;
+    --primary: 208 65% 50%;
     --primary-foreground: 240 5.9% 10%;
+    --accent-blue: 209 80% 50%;
+    --accent-blue-c: 209 100% 75%;
+    --primary-gradient: linear-gradient(0deg, hsla(209, 100%, 45%, 1) 45%, hsla(196, 75%, 55%) 90%);
 
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
@@ -85,10 +92,11 @@
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 3.7% 15.9%;
-    --border-accent: 209 100% 49%;
-    --input: 240 3.7% 15.9%;
-    --ring: 209 100% 49%;
+    --border: 0 0% 100% / 0.1;
+    --border-accent: 209 100% 60%;
+    --input: 220 6% 16%;
+    --ring: 209 100% 60%;
+    --text-primary: 0 0% 90%;
   }
 }
 
@@ -145,7 +153,10 @@
   .dark h1,
   .dark h2,
   .dark h3 {
-    background-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.85) 70%, rgba(255, 255, 255, 0.7) 100%);
+    background-image: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsla(0, 0%, 100%, 0.8) 65%, hsla(0, 0%, 100%, 0.4) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   .section-tag {
@@ -153,7 +164,7 @@
   }
 
   .portfolio-tag {
-    @apply rounded-full border border-gray-300 bg-card text-[12px] tracking-wide font-medium text-foreground/80 whitespace-nowrap inline-flex items-center justify-center transition-colors;
+    @apply rounded-full border border-card-border bg-card text-[12px] tracking-wide font-medium text-foreground/80 whitespace-nowrap inline-flex items-center justify-center transition-colors;
   }
 
 
@@ -166,8 +177,10 @@
 
 /* Hide scrollbar for IE, Edge and Firefox */
 * {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 /* Page Transitions */

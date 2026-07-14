@@ -38,6 +38,7 @@ export default {
 				},
 				'accent-blue': 'hsl(var(--accent-blue))',
 				'accent-blue-c': 'hsl(var(--accent-blue-c))',
+				'text-primary': 'hsl(var(--text-primary) / <alpha-value>)',
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))'
@@ -60,7 +61,8 @@ export default {
 				},
 				card: {
 					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))'
+					foreground: 'hsl(var(--card-foreground))',
+					border: 'hsl(var(--card-border))'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',

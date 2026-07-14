@@ -80,10 +80,10 @@ const ContactForm = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col bg-card border border-gray-200 rounded-[20px] pt-7 pb-8 px-7 md:pt-8 md:pb-12 md:px-10 shadow-sm h-full"
+      className="flex flex-col bg-card/60 backdrop-blur-md shadow-sm border border-card-border rounded-[20px] pt-7 pb-8 px-7 md:pt-8 md:pb-12 md:px-10 h-full text-text-primary dark:text-text-primary"
     >
       <div className="mb-7 shrink-0">
-        <h2 className="text-2xl font-serif pb-4 border-b border-gray-300 tracking-tight">Send Me a Message</h2>
+        <h2 className="text-2xl font-serif pb-4 border-b border-border tracking-tight">Send Me a Message</h2>
         <p className="description mt-4">Usually replies within 24 hours.</p>
       </div>
 

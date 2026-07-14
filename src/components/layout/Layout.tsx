@@ -8,8 +8,9 @@ interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
+
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen transition-colors duration-500 bg-background">
       <Navbar />
       {/* Spacer div to account for fixed navbar height */}
       <div className="h-[64px] w-full shrink-0" aria-hidden="true" />

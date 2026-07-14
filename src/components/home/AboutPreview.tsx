@@ -72,7 +72,7 @@ const AboutPreview = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            <div className="bg-card border border-border-gray-100 rounded-[20px] p-8 shadow-sm relative overflow-hidden">
+            <div className="bg-card border border-card-border rounded-[20px] p-8 shadow-sm relative overflow-hidden">
               <div className="absolute top-0 right-0 w-40 h-40 bg-secondary/30 rounded-full filter blur-3xl -translate-y-1/2 translate-x-1/4"></div>
 
               <h3 className="text-xl mb-6 relative z-10">Skills & Expertise</h3>

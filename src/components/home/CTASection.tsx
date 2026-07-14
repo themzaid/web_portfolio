@@ -33,9 +33,9 @@ const CTASection = () => {
             Interested in working together?
           </h2>
           <p className="text-gray-300 mx-auto mb-10 text-balance max-w-compact">
-            Available for freelance work, collaborations, and full-time opportunities.
+            Available for freelance work, collaborations, and full–time opportunities.
           </p>
-          <Button asChild size="lg" className="rounded-full group" variant="secondary">
+          <Button asChild size="lg" className="rounded-full group" variant="secondary" glowColor="#0ea5e9">
             <Link to="/contact">
               Get in touch
               <ArrowRightIcon
