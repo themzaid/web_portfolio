@@ -155,10 +155,11 @@ export const Navbar = () => {
                 ) : (
                   <motion.div 
                     key="logo"
-                    className="absolute left-0 flex items-center h-full"
+                    className="absolute left-0 flex items-center h-full origin-left"
                     initial="initial"
                     animate="animate"
                     exit="exit"
+                    whileTap={{ scale: 0.95, transition: { type: "spring", stiffness: 500, damping: 15 } }}
                     variants={{
                       initial: {},
                       animate: { transition: { staggerChildren: 0.02 } },
@@ -183,12 +184,12 @@ export const Navbar = () => {
                         }}
                         className="font-sans font-medium tracking-[0.02em] hidden sm:flex items-center gap-[0.25em]"
                       >
-                        <motion.span whileTap={{ scale: 0.9, x: -2, transition: { type: "spring", stiffness: 500, damping: 15 } }} className="inline-flex overflow-hidden">
+                        <span className="inline-flex overflow-hidden">
                           <AnimatedText text="Mohammed" variants={childVariantsLogo} />
-                        </motion.span>
-                        <motion.span whileTap={{ scale: 0.9, x: 2, transition: { type: "spring", stiffness: 500, damping: 15 } }} className="inline-flex overflow-hidden">
+                        </span>
+                        <span className="inline-flex overflow-hidden">
                           <AnimatedText text="Zaid" variants={childVariantsLogo} />
-                        </motion.span>
+                        </span>
                       </motion.span>
                       <motion.span 
                         variants={{
@@ -198,12 +199,12 @@ export const Navbar = () => {
                         }}
                         className="font-sans font-medium tracking-[0.05em] flex sm:hidden items-center"
                       >
-                        <motion.span whileTap={{ scale: 0.85, x: -2, rotate: -6, transition: { type: "spring", stiffness: 500, damping: 15 } }} className="inline-flex overflow-hidden">
+                        <span className="inline-flex overflow-hidden">
                           <AnimatedText text="M" variants={childVariantsLogo} />
-                        </motion.span>
-                        <motion.span whileTap={{ scale: 0.85, x: 2, rotate: 6, transition: { type: "spring", stiffness: 500, damping: 15 } }} className="inline-flex overflow-hidden">
+                        </span>
+                        <span className="inline-flex overflow-hidden">
                           <AnimatedText text="Z" variants={childVariantsLogo} />
-                        </motion.span>
+                        </span>
                       </motion.span>
                     </NavLink>
                   </motion.div>

@@ -34,7 +34,7 @@ const CaseStudy = () => {
 
 
           {/* Hero Top (Title & Lede) */}
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-8 md:gap-12 items-start pt-0">
+          <div className="grid grid-cols-1 sm:grid-cols-[1fr_1fr] gap-8 md:gap-12 items-start pt-0">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
