@@ -342,6 +342,6 @@ export const projectsData: Project[] = [
       { label: "Figma UI Kit", url: "https://www.figma.com/proto/fYuUTd4adyMGVJzQMZaZLd/Bitstrap?node-id=0-1&t=QIYsIRR9VCmeYMow-1", icon: "figma" },
       // { label: "Source Code", url: "https://github.com/themzaid/bitstrap", icon: "github" }
     ],
-    screenshot: "bitstrap.png",
+    screenshot: ["bitstrap-1.png", "bitstrap-2.png", "bitstrap-3.png", "bitstrap-4.png", "bitstrap-5.png", "bitstrap-6.png", "bitstrap-7.png"]
   }
 ];
