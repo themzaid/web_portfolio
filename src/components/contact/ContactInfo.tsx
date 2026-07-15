@@ -61,7 +61,7 @@ const ContactInfo = () => {
               {item.link ? (
                 <a
                   href={item.link}
-                  className="text-base font-medium text-text-primary dark:text-text-primary hover:text-accent-blue transition-colors underline decoration-dotted underline-offset-4 hover:decoration-accent-blue"
+                  className="text-base font-medium text-text-primary dark:text-text-primary hover:text-accent-blue dark:hover:text-accent-blue transition-colors underline decoration-dotted underline-offset-4 hover:decoration-accent-blue dark:hover:decoration-accent-blue"
                 >
                   {item.details}
                 </a>

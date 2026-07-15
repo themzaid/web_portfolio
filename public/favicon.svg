@@ -1,0 +1,37 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Liquid / Marble distortion filter -->
+    <filter id="liquid" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="60" xChannelSelector="R" yChannelSelector="G" result="displaced" />
+    </filter>
+
+    <!-- Softer, Lighter Drop Shadow filter -->
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="15" stdDeviation="20" flood-color="#000000" flood-opacity="0.25" />
+      <feDropShadow dx="0" dy="5" stdDeviation="10" flood-color="#001a4d" flood-opacity="0.3" />
+    </filter>
+
+    <!-- Brighter, vibrant multi-stop gradient -->
+    <linearGradient id="bright-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4facfe" />
+      <stop offset="30%" stop-color="#00f2fe" />
+      <stop offset="65%" stop-color="#0066ff" />
+      <stop offset="100%" stop-color="#0022cc" />
+    </linearGradient>
+
+    <!-- Circle Clip -->
+    <clipPath id="circleClip">
+      <circle cx="256" cy="256" r="180" />
+    </clipPath>
+  </defs>
+
+  <!-- Base circle to provide the drop shadow -->
+  <circle cx="256" cy="256" r="180" fill="url(#bright-grad)" filter="url(#shadow)" />
+
+  <!-- Inner circle containing the liquid marble effect -->
+  <g clip-path="url(#circleClip)">
+    <!-- The rect is drawn larger so the distorted edges don't bleed into the circle -->
+    <rect x="-100" y="-100" width="712" height="712" fill="url(#bright-grad)" filter="url(#liquid)" />
+  </g>
+</svg>

@@ -68,7 +68,7 @@ const Hero = () => {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text max-w-compact mb-6 md:mb-10 lg-md-12 text-balance !text-white opacity-90"
               >
-                With a background in Design, Engineering and Automation, I build web applications that are fast, reliable, and easy to use.
+                With a background in Design and Engineering, I build web applications that are fast, reliable, and easy to use.
               </motion.p>
 
               <motion.div

@@ -7,7 +7,6 @@ import { projectsData } from "@/data/projects";
 import { useState, useEffect, useLayoutEffect } from "react";
 import { Button } from "@/components/ui/button";
 import MacBookFrame from "@/components/common/MacBookFrame";
-import SideRays from "@/components/ui/SideRays";
 
 const CaseStudy = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -33,16 +32,6 @@ const CaseStudy = () => {
       <div className="min-h-screen pb-1 lg:pb-6 px-2">
         <div className="container mx-auto">
 
-          <div className="flex items-center mt-4 mb-5">
-            <Link
-              to="/"
-              data-restore-scroll="true"
-              className="group inline-flex items-center gap-2 text-[13px] tracking-[0.14em] uppercase text-accent-blue dark:text-accent-blue-c font-bold hover:opacity-80 transition-opacity [-webkit-tap-highlight-color:transparent]"
-            >
-              <ArrowLeftIcon className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1 transform-gpu" />
-              <span className="translate-y-[0.5px]">Back to projects</span>
-            </Link>
-          </div>
 
           {/* Hero Top (Title & Lede) */}
           <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-8 md:gap-12 items-start pt-0">
@@ -95,21 +84,16 @@ const CaseStudy = () => {
               ))}
             </div>
 
-            <div className="absolute inset-0 opacity-50">
-              <SideRays
-                speed={2.5}
-                rayColor1="#ffffff"
-                rayColor2="#ffffff"
-                intensity={2}
-                spread={2}
-                origin="top-right"
-                tilt={0}
-                saturation={0}
-                blend={0.75}
-                falloff={1.6}
-                opacity={1.0}
-              />
-            </div>
+            {/* CSS-based light ray effect (replaces WebGL SideRays for performance) */}
+            <div
+              className="absolute inset-0 opacity-40 pointer-events-none"
+              style={{
+                background: `
+                  radial-gradient(ellipse 80% 60% at 100% 0%, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.15) 40%, transparent 70%),
+                  radial-gradient(ellipse 60% 50% at 95% 10%, rgba(255,255,255,0.3) 0%, transparent 60%)
+                `
+              }}
+            />
 
 
             {/* Scaled-down MacBook wrapper */}

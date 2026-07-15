@@ -12,6 +12,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import CaseStudy from "./pages/CaseStudy";
+import Navbar from "@/components/layout/Navbar";
 
 const queryClient = new QueryClient();
 
@@ -138,6 +139,7 @@ const AppRoutes = () => {
   return (
     <>
       <ScrollTracker />
+      <Navbar />
       <AnimatePresence 
         mode="wait"
         onExitComplete={() => {

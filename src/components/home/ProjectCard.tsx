@@ -3,7 +3,7 @@ import { ArrowUpRightIcon } from "@/components/ui/custom-icons";
 import { Link } from "react-router-dom";
 import { Project } from "../../data/projects";
 import MacBookFrame from "@/components/common/MacBookFrame";
-import SideRays from "@/components/ui/SideRays";
+
 interface ProjectCardProps {
   project: Project;
   index: number;
@@ -29,21 +29,16 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         className="relative overflow-hidden aspect-[4/3] [container-type:inline-size]"
         style={{ background: project.themeGradient }}
       >
-        <div className="absolute inset-0 opacity-40">
-          <SideRays
-            speed={2.5}
-            rayColor1="#ffffff"
-            rayColor2="#ffffff"
-            intensity={2}
-            spread={2}
-            origin="top-right"
-            tilt={0}
-            saturation={0}
-            blend={0.75}
-            falloff={1.6}
-            opacity={1.0}
-          />
-        </div>
+        {/* CSS-based light ray effect (replaces WebGL SideRays for performance) */}
+        <div
+          className="absolute inset-0 opacity-40 pointer-events-none"
+          style={{
+            background: `
+              radial-gradient(ellipse 80% 60% at 100% 0%, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.15) 40%, transparent 70%),
+              radial-gradient(ellipse 60% 50% at 95% 10%, rgba(255,255,255,0.3) 0%, transparent 60%)
+            `
+          }}
+        />
         {/* MacBook Frame */}
         <div
           className="absolute inset-x-[clamp(16px,5%,32px)] top-1/2 -translate-y-1/2"

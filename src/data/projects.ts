@@ -127,7 +127,7 @@ export const projectsData: Project[] = [
     links: [
       { label: "WEB APP", url: "https://app.hisaab.one/demo", icon: "external" }
     ],
-    screenshot: "hisaab-app.png",
+    screenshot: ["hisaab-app-1.png", "hisaab-app-2.png"]
   },
   {
     id: 6,
@@ -162,7 +162,7 @@ export const projectsData: Project[] = [
     links: [
       { label: "LANDING PAGE", url: "https://hisaab.one", icon: "external" }
     ],
-    screenshot: "hisaab-landing.png",
+    screenshot: ["hisaab-landing-1.png", "hisaab-landing-2.png", "hisaab-landing-3.png"]
   },
   {
     id: 5,
@@ -197,7 +197,7 @@ export const projectsData: Project[] = [
     links: [
       { label: "Landing Page", url: "https://advance-global.vercel.app/", icon: "external" },
     ],
-    screenshot: "advance.png",
+    screenshot: ["advance-1.png", "advance-2.png", "advance-3.png"]
   },
   {
     id: 4,
