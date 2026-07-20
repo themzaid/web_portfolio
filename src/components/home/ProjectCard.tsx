@@ -85,7 +85,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             className="group inline-flex items-center gap-2 text-sm tracking-[0.12em] uppercase text-accent-blue font-extrabold transition-opacity hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:ring-offset-2 focus-visible:rounded-sm active:opacity-50"
           >
             Case study
-            <ArrowUpRightIcon className="w-4 h-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            <ArrowUpRightIcon className="w-4 h-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-active:-translate-y-0.5 group-active:translate-x-0.5" />
           </Link>
         </div>
       </div>

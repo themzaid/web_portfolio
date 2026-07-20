@@ -32,7 +32,7 @@ const Footer = () => {
               className="group flex items-center justify-between sm:justify-start gap-2 text-xl font-medium border-b border-border sm:border-none py-5 sm:py-0 text-accent-blue dark:text-text-primary hover:opacity-80 transition-all"
             >
               {link.title}
-              <ArrowUpRightIcon className="w-5 h-5 text-accent-blue dark:text-text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
+              <ArrowUpRightIcon className="w-5 h-5 text-accent-blue dark:text-text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-active:-translate-y-0.5 group-active:translate-x-0.5 transition-all" />
             </Link>
           ))}
         </div>

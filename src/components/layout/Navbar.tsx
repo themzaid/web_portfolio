@@ -6,7 +6,8 @@ import { GitHub, LinkedIn } from "@mui/icons-material";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { ArrowLeftIcon } from "@/components/ui/custom-icons";
+import { ArrowLeftIcon, ArrowUpRightIcon } from "@/components/ui/custom-icons";
+import { Button } from "@/components/ui/button";
 
 
 const ICON_SIZE = 26;
@@ -38,32 +39,19 @@ export const Navbar = () => {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
 
-  const [viewportHeight, setViewportHeight] = useState<number>(
-    window.innerHeight
-  );
   const isMobile = useIsMobile();
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
-  // Update viewport height on resize and scroll
   useEffect(() => {
-    const handleResize = () => {
-      setViewportHeight(window.innerHeight);
-    };
-
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
     };
 
-    window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", handleScroll);
-    // Initial height setting
-    handleResize();
-
     return () => {
-      window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isOpen, isMobile]);
+  }, []);
 
   // Close mobile menu when location changes
   useEffect(() => {
@@ -110,22 +98,21 @@ export const Navbar = () => {
 
   return (
     <>
-      <header
+      <motion.header
+        initial={false}
+        animate={{ height: isOpen ? '100dvh' : '64px' }}
+        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 px-2 py-4 transition-all duration-300",
-          scrolled && location.pathname !== "/contact" && !isOpen ? "shadow-sm" : "",
-          location.pathname === "/contact" && !isOpen ? "border-b border-border" : ""
+          "fixed top-0 left-0 right-0 z-50 px-2 py-4 border-b overflow-hidden bg-background/80 dark:bg-background/50 backdrop-blur-md",
+          scrolled && !isOpen 
+            ? "shadow-sm border-black/5 dark:border-border" 
+            : "border-transparent"
         )}
       >
-        <motion.div 
-          initial={false}
-          animate={{ height: isOpen ? '100dvh' : '64px' }}
-          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute top-0 left-0 right-0 bg-background/80 dark:bg-background/50 backdrop-blur-md pointer-events-none origin-top"
-        />
+        {/* --- 2. Top Navigation Bar (Always Visible) --- */}
         <div className="container mx-auto relative group/navbar">
           <nav className="flex items-center justify-between">
-            {/* Logo/Brand / Back Button */}
+            {/* 2a. Logo / Brand / Back Button Area */}
             <div className="relative z-20 flex items-center h-[32px] w-[160px] sm:w-[220px]">
               <AnimatePresence mode="wait">
                 {location.pathname.startsWith('/project/') ? (
@@ -153,7 +140,7 @@ export const Navbar = () => {
                     </NavLink>
                   </motion.div>
                 ) : (
-                  <motion.div 
+                  <motion.div
                     key="logo"
                     className="absolute left-0 flex items-center h-full origin-left"
                     initial="initial"
@@ -176,7 +163,7 @@ export const Navbar = () => {
                       }}
                       className="text-2xl font-normal tracking-normal text-accent-blue dark:text-text-primary block"
                     >
-                      <motion.span 
+                      <motion.span
                         variants={{
                           initial: {},
                           animate: { transition: { staggerChildren: 0.02 } },
@@ -191,7 +178,7 @@ export const Navbar = () => {
                           <AnimatedText text="Zaid" variants={childVariantsLogo} />
                         </span>
                       </motion.span>
-                      <motion.span 
+                      <motion.span
                         variants={{
                           initial: {},
                           animate: { transition: { staggerChildren: 0.02 } },
@@ -212,7 +199,7 @@ export const Navbar = () => {
               </AnimatePresence>
             </div>
 
-            {/* Desktop Navigation */}
+            {/* 2b. Desktop Navigation Links (Hidden on Mobile) --- */}
             <div className="hidden sm:flex items-center space-x-8">
               <ul className="flex space-x-6">
                 {navItems.map((item) => (
@@ -241,7 +228,7 @@ export const Navbar = () => {
               </ul>
             </div>
 
-            {/* Mobile Menu Button with Custom 2-Line Animation */}
+            {/* 2c. Mobile Menu Toggle Button (Hamburger icon, hidden on Desktop) --- */}
             <div className="flex items-center gap-3 sm:hidden relative z-20">
               <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -273,7 +260,7 @@ export const Navbar = () => {
           </nav>
         </div>
 
-        {/* Mobile Menu */}
+        {/* --- 3. Mobile Menu Dropdown Content --- */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -281,81 +268,90 @@ export const Navbar = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              transition={{ 
+              transition={{
                 y: { type: "spring", stiffness: 300, damping: 24 },
                 opacity: { duration: 0.3, ease: "linear" }
               }}
-              className="fixed left-0 right-0 flex flex-col px-6 overflow-auto"
+              // Wrapper for the scrollable menu content
+              className="absolute left-0 right-0 flex flex-col px-2 overflow-auto"
               style={{
                 top: "64px",
                 zIndex: 40,
                 height: "calc(100dvh - 64px)",
-                paddingTop: "2rem",
               }}
             >
-            <ul className="flex flex-col space-y-7 items-center mt-auto">
-              {navItems.map((item) => (
-                <motion.li
-                  key={item.path}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ 
-                    y: { type: "spring", stiffness: 280, damping: 20, delay: 0.1 * navItems.indexOf(item) },
-                    opacity: { duration: 0.4, ease: "linear", delay: 0.1 * navItems.indexOf(item) }
-                  }}
-                >
-                  <NavLink
-                    to={item.path}
-                    onClick={(e) => {
-                      if (location.pathname === item.path) {
-                        e.preventDefault();
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                      }
-                      document.body.style.overflow = "";
-                      setIsOpen(false);
-                    }}
-                    className={({ isActive }) =>
-                      cn(
-                        "text-3xl font-normal transition-colors font-sans font-medium",
-                        isActive
-                          ? "text-accent-blue dark:text-text-primary"
-                          : "text-text-primary/50 hover:text-accent-blue"
-                      )
-                    }
-                  >
-                    {item.title}
-                  </NavLink>
-                </motion.li>
-              ))}
-            </ul>
+              {/* Inner container providing exact Apple padding (pt-8 pb-12 px-12) */}
+              <div className="container mx-auto flex flex-col flex-1 min-h-full pt-10 pb-12 px-12">
 
-            {/* Mobile Social Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ 
-                y: { type: "spring", stiffness: 280, damping: 20, delay: 0.3 },
-                opacity: { duration: 0.4, ease: "linear", delay: 0.3 }
-              }}
-              className="mt-auto mb-10 flex justify-center space-x-5"
-            >
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.label}
-                  className="text-muted-foreground hover:text-primary transition-colors p-2"
-                >
-                  {social.icon({})}
-                </a>
-              ))}
+                {/* 3a. Main Mobile Navigation Links (Explore...) */}
+                <ul className="flex flex-col w-full">
+                  {navItems.map((item) => (
+                    <motion.li
+                      key={item.path}
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{
+                        y: { type: "spring", stiffness: 280, damping: 20, delay: 0.1 * navItems.indexOf(item) },
+                        opacity: { duration: 0.4, ease: "linear", delay: 0.1 * navItems.indexOf(item) }
+                      }}
+                      className="w-full"
+                    >
+                      <NavLink
+                        to={item.path}
+                        onClick={(e) => {
+                          if (location.pathname === item.path) {
+                            e.preventDefault();
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                          }
+                          document.body.style.overflow = "";
+                          setIsOpen(false);
+                        }}
+                        className={({ isActive }) =>
+                          cn(
+                            "block py-[12px] text-[28px] leading-[1.14] font-semibold tracking-[0.02em] transition-colors font-sans",
+                            isActive
+                              ? "text-accent-blue dark:text-text-primary"
+                              : "text-text-primary/60 hover:text-accent-blue dark:hover:text-text-primary/80"
+                          )
+                        }
+                      >
+                        {item.title}
+                      </NavLink>
+                    </motion.li>
+                  ))}
+                </ul>
+
+                {/* 3b. Mobile Social Links (Compare..., flowing below main links with mt-8 gap) */}
+                <ul className="mt-8 flex flex-col w-full">
+                  {socialLinks.map((social, index) => (
+                    <motion.li
+                      key={social.label}
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{
+                        y: { type: "spring", stiffness: 280, damping: 20, delay: 0.3 + index * 0.1 },
+                        opacity: { duration: 0.4, ease: "linear", delay: 0.3 + index * 0.1 }
+                      }}
+                      className="w-full"
+                    >
+                      <a
+                        href={social.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={social.label}
+                        className="group flex items-center justify-between py-[11px] text-[18px] leading-[1.23] font-semibold tracking-[0.04em] transition-all font-sans text-accent-blue dark:text-text-primary hover:opacity-80"
+                      >
+                        <span>{social.label}</span>
+                        <ArrowUpRightIcon className="w-[18px] h-[18px] transition-transform duration-300 group-active:-translate-y-[2px] group-active:translate-x-[2px]" />
+                      </a>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-      </header>
+          )}
+        </AnimatePresence>
+      </motion.header>
     </>
   );
 };
