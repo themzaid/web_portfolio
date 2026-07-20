@@ -12,6 +12,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import CaseStudy from "./pages/CaseStudy";
+import Projects from "./pages/Projects";
 import Navbar from "@/components/layout/Navbar";
 
 const queryClient = new QueryClient();
@@ -162,6 +163,7 @@ const AppRoutes = () => {
         <Routes location={location} key={location.pathname}>
           <Route element={<ScrollRestorer />}>
             <Route path="/" element={<Index />} />
+            <Route path="/projects" element={<Projects />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/project/:slug" element={<CaseStudy />} />

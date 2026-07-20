@@ -73,6 +73,7 @@ export const Navbar = () => {
   // Navigation items
   const navItems = [
     { title: "Home", path: "/" },
+    { title: "Projects", path: "/projects" },
     { title: "About", path: "/about" },
     { title: "Contact", path: "/contact" },
   ];
