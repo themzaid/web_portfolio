@@ -130,7 +130,7 @@ export const Navbar = () => {
                     }}
                   >
                     <NavLink
-                      to="/"
+                      to="/projects"
                       data-restore-scroll="true"
                       className="group inline-flex items-center gap-2 text-[13px] tracking-[0.14em] uppercase text-accent-blue dark:text-accent-blue-c font-bold hover:opacity-80 transition-opacity [-webkit-tap-highlight-color:transparent]"
                     >
