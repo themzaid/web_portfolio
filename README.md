@@ -32,7 +32,7 @@ This project is built using a modern frontend ecosystem:
 Follow these steps to set up the project locally on your machine.
 
 ### Prerequisites
-Make sure you have [Node.js](https://nodejs.org/) (version 18+ recommended) and npm installed.
+Make sure you have [Node.js](https://nodejs.org/) (version 18+ recommended) and pnpm installed.
 
 ### Installation
 
@@ -44,7 +44,7 @@ Make sure you have [Node.js](https://nodejs.org/) (version 18+ recommended) and 
 
 2. **Install dependencies**
    ```bash
-   npm install
+   pnpm install
    ```
 
 3. **Set up Environment Variables**
@@ -56,7 +56,7 @@ Make sure you have [Node.js](https://nodejs.org/) (version 18+ recommended) and 
 
 4. **Start the development server**
    ```bash
-   npm run dev
+   pnpm run dev
    ```
    The application will be available at `http://localhost:5173`.
 
@@ -65,7 +65,7 @@ Make sure you have [Node.js](https://nodejs.org/) (version 18+ recommended) and 
 To create a production-ready build:
 
 ```bash
-npm run build
+pnpm run build
 ```
 
 This will generate a `dist` folder containing optimized static assets.
