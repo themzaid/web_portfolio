@@ -64,6 +64,40 @@ export interface Project {
 
 export const projectsData: Project[] = [
   {
+    id: 9,
+    slug: "uptime-monitor",
+    title: "Uptime Monitor",
+    category: "Full-Stack Development",
+    description: "An application that monitors websites via ping intervals, detects incidents, and alerts users via Slack and Email when downtime occurs.",
+    tags: ["Monitoring", "Web App", "Dashboard", "SaaS"],
+    year: "2026",
+    role: "Full-Stack Developer",
+    themeGradient: "linear-gradient(135deg,#0d1117,#161b22,#21262d)",
+    glows: [
+      { width: 220, height: 220, top: -30, right: -30, background: "rgba(56,189,248,0.15)" }
+    ],
+    miniBrowser: {
+      title: "Uptime Monitor Dashboard",
+      desc: "Real-time incident detection and alerting."
+    },
+    miniBrowserBg: "#ffffff",
+    miniBrowserAccent: "#0ea5e9",
+    caseStudy: {
+      heroLede: "An application that monitors your websites via ping intervals, detects incidents, and alerts you via Slack and Email.",
+      focus: "Background Processing & Architecture",
+      browserUrl: "github.com/themzaid/uptime-app",
+      blocks: [
+        { type: 'text', navLabel: 'Overview', title: "Reliable Website Monitoring", p: "Uptime Monitor is a full-stack application built to monitor website health. It uses a background polling engine to ping targets at scheduled intervals, record the results, and trigger immediate notifications through Slack and email whenever an incident/downtime is detected." },
+        { type: 'text', navLabel: 'Challenge', title: "The Limits of Serverless Polling", p: "Serverless architectures like Vercel are incredible for frontend delivery and API routes, but they are not well suited for long running, continuous tasks like scheduled polling. Relying on serverless functions for critical uptime checks introduces risks from cold starts, execution timeouts, and inconsistent execution intervals." },
+        { type: 'text', navLabel: 'Solution', isAccent: true, title: "Containerized Background Workers", p: "I decoupled the polling engine from the serverless frontend by containerizing a Node.js BullMQ worker with Docker. This ensures stable, continuous background processing powered by Redis that avoids serverless execution limits, while keeping the dashboard on Next.js fast and responsive." }
+      ]
+    },
+    links: [
+      { label: "GITHUB", url: "https://github.com/themzaid/uptime-app", icon: "github" }
+    ],
+    screenshot: ["uptime-0.png", "uptime-1.png", "uptime-2.png"]
+  },
+  {
     id: 8,
     slug: "pleximus-internal-tool",
     title: "Pleximus - Internal Tool",
@@ -100,7 +134,7 @@ export const projectsData: Project[] = [
     title: "Hisaab App",
     category: "Full-Stack Development",
     description: "Built a sharia compliant portfolio tracker for Muslim investors with compliance checks, dividends, purification, and real P&L insights.",
-    tags: ["Fintech", "Web App", "Dashboard", "Islamic Finance"],
+    tags: ["Fintech", "Web App", "Dashboard", "Islamic Finance", "SaaS"],
     year: "2026",
     role: "Full-Stack Developer",
     themeGradient: "linear-gradient(135deg,#0a192f,#020c1b,#112240)",
@@ -135,7 +169,7 @@ export const projectsData: Project[] = [
     title: "Hisaab Landing Page",
     category: "Full-Stack Development",
     description: "Built a conversion focused landing page for Hisaab, translating Sharia compliant investing into a clear, credible product story.",
-    tags: ["Fintech", "Landing Page", "SaaS", "Islamic Finance"],
+    tags: ["Fintech", "Landing Page", "Islamic Finance"],
     year: "2026",
     role: "Full-Stack Developer",
     themeGradient: "linear-gradient(135deg,#052e16,#022c22,#064e3b)",
