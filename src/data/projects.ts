@@ -40,8 +40,6 @@ export interface Project {
   themeGradient: string;
   glows: ProjectGlow[];
   miniBrowser: {
-    title?: string;
-    desc?: string;
     tags?: string[];
     customComponent?: string;
   };
@@ -76,10 +74,7 @@ export const projectsData: Project[] = [
     glows: [
       { width: 220, height: 220, top: -30, right: -30, background: "rgba(100,255,218,0.15)" }
     ],
-    miniBrowser: {
-      title: "Hisaab Dashboard",
-      desc: "Portfolio tracking and compliance."
-    },
+    miniBrowser: {},
     miniBrowserBg: "#ffffff",
     miniBrowserAccent: "#0f766e",
     caseStudy: {
@@ -90,7 +85,8 @@ export const projectsData: Project[] = [
       blocks: [
         { type: 'text', navLabel: 'Overview', title: "A Portfolio Tracker Built Around Principles", p: "Hisaab is a full-stack web app for Indian Muslim investors to track their stock portfolio with Sharia compliance built into the core experience. It brings portfolio monitoring, compliance screening, dividend tracking, purification support, and profit/loss calculation into one focused system instead of forcing users to rely on scattered spreadsheets and manual checks." },
         { type: 'text', navLabel: 'Challenge', title: "Existing Portfolio Tools Ignore a Critical Investor Need", p: "Most investing platforms are built for price tracking and execution, not for faith-based decision making. Muslim investors still have to verify whether a stock is compliant, track impure income, estimate purification, and calculate actual returns manually, which creates friction and makes the whole workflow harder than it should be." },
-        { type: 'text', navLabel: 'Solution', isAccent: true, title: "A Full-Stack System That Makes Compliance Practical", p: "I built Hisaab as a full-stack product that combines portfolio data, compliance logic, dividend tracking, and return calculations in one clean interface. The app was designed to reduce manual effort, surface the right information at the right time, and make Sharia-compliant investing feel operational instead of theoretical." }
+        { type: 'text', navLabel: 'Solution', isAccent: true, title: "A Full-Stack System That Makes Compliance Practical", p: "I built Hisaab as a full-stack product that combines portfolio data, compliance logic, dividend tracking, and return calculations in one clean interface. The app was designed to reduce manual effort, surface the right information at the right time, and make Sharia-compliant investing feel operational instead of theoretical." },
+        { type: 'outcome', navLabel: 'Outcome', title: "Automating Islamic Wealth Obligations", p: "Brokerage apps track execution and standard P&L, but ignore faith based obligations. Hisaab automates the complete workflow: AAOIFI compliance screening, FIFO lot accounting, ~354 days lunar Hawl tracking synced to live bullion spot rates, and exact dividend purification (Tasfiyah) down to the rupee, turning fragmented spreadsheets into an audit-ready system.", outcomes: [{ value: "AAOIFI", label: "Automated compliance screening & portfolio purity scoring" }, { value: "Down to the rupee", label: "Precision dividend purification (Tasfiyah) & Zakat tracking" }] }
       ]
     },
     links: [
@@ -111,10 +107,7 @@ export const projectsData: Project[] = [
     glows: [
       { width: 220, height: 220, top: -30, right: -30, background: "rgba(16,185,129,0.15)" }
     ],
-    miniBrowser: {
-      title: "Clear Entry Point Into Sharia Compliant Investing",
-      desc: "Hisaab: Sharia compliant portfolio tracker."
-    },
+    miniBrowser: {},
     miniBrowserBg: "#ffffff",
     miniBrowserAccent: "#059669",
     caseStudy: {
@@ -146,10 +139,7 @@ export const projectsData: Project[] = [
     glows: [
       { width: 220, height: 220, top: -30, right: -30, background: "rgba(56,189,248,0.15)" }
     ],
-    miniBrowser: {
-      title: "Uptime Monitor Dashboard",
-      desc: "Real-time incident detection and alerting."
-    },
+    miniBrowser: {},
     miniBrowserBg: "#ffffff",
     miniBrowserAccent: "#0ea5e9",
     caseStudy: {
@@ -180,10 +170,7 @@ export const projectsData: Project[] = [
     glows: [
       { width: 220, height: 220, top: -30, right: -30, background: "rgba(60,160,220,0.2)" }
     ],
-    miniBrowser: {
-      title: "Digital systems for growing businesses.",
-      desc: "Advance: Software services partner."
-    },
+    miniBrowser: {},
     miniBrowserBg: "#ffffff",
     miniBrowserAccent: "#0369a1",
     caseStudy: {
@@ -205,7 +192,7 @@ export const projectsData: Project[] = [
   {
     id: 8,
     slug: "pleximus-internal-tool",
-    title: "Pleximus - Internal Tool",
+    title: "Test Automation Platform",
     category: "Full-Stack Development",
     description: "Designed and developed an internal automation dashboard to streamline company workflows, consolidate data, and automate repetitive tasks for the operations team.",
     tags: ["Internal Tool", "Dashboard", "Automation", "B2B"],
@@ -215,10 +202,7 @@ export const projectsData: Project[] = [
     glows: [
       { width: 220, height: 220, top: -30, right: -30, background: "rgba(99,102,241,0.15)" }
     ],
-    miniBrowser: {
-      title: "Operations Command Center",
-      desc: "Centralized internal workflow automation."
-    },
+    miniBrowser: {},
     miniBrowserBg: "#ffffff",
     miniBrowserAccent: "#4f46e5",
     caseStudy: {
@@ -246,10 +230,7 @@ export const projectsData: Project[] = [
     glows: [
       { width: 220, height: 220, top: -30, right: -30, background: "rgba(255,140,60,0.22)" }
     ],
-    miniBrowser: {
-      title: "A taste of home, in every bite.",
-      desc: "Restaurant chain website. Dubai, UAE. Warm and editorial."
-    },
+    miniBrowser: {},
     miniBrowserBg: "#ffffff",
     miniBrowserAccent: "#c2410c",
     caseStudy: {
@@ -283,10 +264,7 @@ export const projectsData: Project[] = [
       // The hero image in the HTML uses 2 glows for skillscall, adding the second one for case study hero use:
       { width: 240, height: 240, bottom: -40, left: -40, background: "rgba(120,60,200,0.12)" }
     ],
-    miniBrowser: {
-      title: "Scale your skills. Find your calling.",
-      desc: "UAE-based service platform. Conversion-focused and fast."
-    },
+    miniBrowser: {},
     miniBrowserBg: "#ffffff",
     miniBrowserAccent: "#7c3aed",
     caseStudy: {
@@ -354,10 +332,7 @@ export const projectsData: Project[] = [
       { width: 240, height: 240, top: -50, right: -50, background: "rgba(99,152,255,0.22)" },
       { width: 140, height: 140, bottom: -20, left: 60, background: "rgba(99,200,255,0.1)" }
     ],
-    miniBrowser: {
-      title: "A CSS library for consistent interfaces.",
-      desc: "Modular. Lightweight. Token-first design system."
-    },
+    miniBrowser: {},
     miniBrowserBg: "#ffffff",
     miniBrowserAccent: "#2563eb",
     caseStudy: {
